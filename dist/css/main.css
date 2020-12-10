@@ -6,6 +6,10 @@
   color: #fe505d;
 }
 
+.high-green {
+  color: #20e900;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +33,7 @@ a {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -115,15 +119,15 @@ a {
 }
 
 #header-home .header-container .nav-links li .hover-about:hover {
-  color: #20e900;
-}
-
-#header-home .header-container .nav-links li .hover-blog:hover {
   color: #01b5ce;
 }
 
+#header-home .header-container .nav-links li .hover-blog:hover {
+  color: #fe929a;
+}
+
 #header-home .header-container .nav-links li .hover-contact:hover {
-  color: #bff900;
+  color: #20e900;
 }
 
 #header-home .header-container .nav-social {
@@ -180,10 +184,25 @@ a {
   color: #772ce8;
 }
 
-#header .hover-blue:hover {
-  color: #20e900;
-  -webkit-transform: scale(2) rotate(360deg);
-          transform: scale(2) rotate(360deg);
+#header-home .headlines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 8vh;
+  height: 50vh;
+}
+
+#header-home .headlines .headline {
+  font-size: 4rem;
 }
 
 #header .hover-twitter:hover {
@@ -208,5 +227,164 @@ a {
   color: #fe929a;
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
+}
+
+#header .hover-blue:hover {
+  color: #20e900;
+  -webkit-transform: scale(2) rotate(360deg);
+          transform: scale(2) rotate(360deg);
+}
+
+#footer-home {
+  width: 100%;
+  margin-top: 15vh;
+}
+
+#footer-home .footer-links {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#footer-home .footer-link-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#footer-home .footer-link-center i {
+  opacity: 0;
+  -webkit-transform: translateY(-2rem) rotate(180deg);
+          transform: translateY(-2rem) rotate(180deg);
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#footer-home .footer-link-center .key-word {
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#footer-home .footer-link-center:hover i {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+  color: #fe929a;
+}
+
+#footer-home .footer-link-center:hover .key-word {
+  color: #fe929a;
+}
+
+#footer-home .footer-link-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#footer-home .footer-link-left a {
+  margin-left: 1rem;
+}
+
+#footer-home .footer-link-left .key-word {
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#footer-home .footer-link-left i {
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  opacity: 0;
+  -webkit-transform: translateX(2rem) rotate(90deg);
+          transform: translateX(2rem) rotate(90deg);
+}
+
+#footer-home .footer-link-left:hover i {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+  color: #01b5ce;
+}
+
+#footer-home .footer-link-left:hover .key-word {
+  color: #01b5ce;
+}
+
+#footer-home .footer-link-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#footer-home .footer-link-right a {
+  margin-right: 1rem;
+}
+
+#footer-home .footer-link-right .key-word {
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#footer-home .footer-link-right i {
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  opacity: 0;
+  -webkit-transform: translateX(-2rem) rotate(-90deg);
+          transform: translateX(-2rem) rotate(-90deg);
+}
+
+#footer-home .footer-link-right:hover i {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+  color: #20e900;
+}
+
+#footer-home .footer-link-right:hover .key-word {
+  color: #20e900;
 }
 /*# sourceMappingURL=main.css.map */

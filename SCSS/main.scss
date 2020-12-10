@@ -43,7 +43,7 @@ a {
   color: inherit;
 }
 .container {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 #header {
@@ -90,17 +90,17 @@ a {
           .hover {
             &-about {
               &:hover {
-                color: $primary-4;
+                color: $secondary-1-4;
               }
             }
             &-blog {
               &:hover {
-                color: $secondary-1-4;
+                color: $complement-2;
               }
             }
             &-contact {
               &:hover {
-                color: $secondary-2-4;
+                color: $primary-4;
               }
             }
           }
@@ -143,14 +143,16 @@ a {
         }
       }
     }
-  }
-
-  .hover-blue {
-    &:hover {
-      color: $primary-4;
-      transform: scale(2) rotate(360deg);
+    .headlines {
+      @include flex(column, space-around);
+      margin-top: 8vh;
+      height: 50vh;
+      .headline {
+        font-size: 4rem;
+      }
     }
   }
+
   .hover-twitter {
     &:hover {
       color: $secondary-1-4;
@@ -173,6 +175,95 @@ a {
     &:hover {
       color: $complement-2;
       transform: scale(2) rotate(360deg);
+    }
+  }
+  .hover-blue {
+    &:hover {
+      color: $primary-4;
+      transform: scale(2) rotate(360deg);
+    }
+  }
+}
+#footer {
+  &-home {
+    width: 100%;
+    margin-top: 15vh;
+    .footer-links {
+      font-size: 1.5rem;
+      @include flex(row, space-between);
+      align-items: flex-start;
+    }
+    .footer-link {
+      &-center {
+        @include flex(column, flex-end);
+
+        i {
+          opacity: 0;
+          transform: translateY(-2rem) rotate(180deg);
+          transition: all 400ms ease-in-out;
+        }
+        .key-word {
+          transition: all 400ms ease-in-out;
+        }
+        &:hover {
+          i {
+            opacity: 1;
+            transform: none;
+            color: $complement-2;
+          }
+          .key-word {
+            color: $complement-2;
+          }
+        }
+      }
+      &-left {
+        @include flex(row, flex-start);
+        a {
+          margin-left: 1rem;
+        }
+        .key-word {
+          transition: all 400ms ease-in-out;
+        }
+        i {
+          transition: all 400ms ease-in-out;
+          opacity: 0;
+          transform: translateX(2rem) rotate(90deg);
+        }
+        &:hover {
+          i {
+            opacity: 1;
+            transform: none;
+            color: $secondary-1-4;
+          }
+          .key-word {
+            color: $secondary-1-4;
+          }
+        }
+      }
+      &-right {
+        @include flex(row, flex-end);
+        a {
+          margin-right: 1rem;
+        }
+        .key-word {
+          transition: all 400ms ease-in-out;
+        }
+        i {
+          transition: all 400ms ease-in-out;
+          opacity: 0;
+          transform: translateX(-2rem) rotate(-90deg);
+        }
+        &:hover {
+          i {
+            opacity: 1;
+            transform: none;
+            color: $primary-4;
+          }
+          .key-word {
+            color: $primary-4;
+          }
+        }
+      }
     }
   }
 }
