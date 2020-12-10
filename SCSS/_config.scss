@@ -11,11 +11,38 @@
   // Above from:
   // https://cssgradient.io/blog/css-gradient-text/
 }
-
+@mixin normalize {
+  animation: normalize 750ms ease-in-out 2000ms;
+  animation-fill-mode: forwards;
+}
 @function set-text-color($bg-color) {
   @if (lightness($bg-color) > 50) {
     @return #222;
   } @else {
     @return #ccc;
   }
+}
+
+// defaults
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  //   border: 1px solid white;
+}
+
+body {
+  //   font-family: "Raleway", sans-serif;
+  font-family: "Staatliches", cursive;
+  background: $dark;
+  color: set-text-color($dark);
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

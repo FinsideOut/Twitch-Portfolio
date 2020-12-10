@@ -1,0 +1,80 @@
+#header {
+  &-home {
+    transform: translateY(-100vh);
+    @include normalize;
+    @include flex(row, flex-start);
+    align-items: baseline;
+    height: 15vh;
+    .nav-links {
+      @include flex(row, flex-start);
+      height: 100%;
+      .logo {
+        align-self: baseline;
+      }
+      li {
+        padding: 0rem 2rem;
+        .nav-link {
+          font-size: 1.5rem;
+          display: inline-block;
+          transition: transform 400ms ease-in-out, color 400ms ease-in-out;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+        .hover {
+          &-about {
+            &:hover {
+              color: $secondary-1-4;
+            }
+          }
+          &-blog {
+            &:hover {
+              color: $complement-2;
+            }
+          }
+          &-contact {
+            &:hover {
+              color: $primary-4;
+            }
+          }
+        }
+      }
+    }
+    .nav-social {
+      width: 100%;
+      height: 100%;
+      @include flex(row, flex-end);
+      li {
+        padding: 1rem;
+        i {
+          transition: transform 400ms ease-in-out;
+          &:hover {
+            transform: scale(2) rotate(360deg);
+          }
+        }
+        .fa-twitter {
+          &:hover {
+            color: $twitter-color;
+          }
+        }
+        .fa-instagram {
+          &:hover {
+            // color: $insta-color;
+            @include text-gradient($insta-color-1, $insta-color-2, 45deg);
+          }
+        }
+        .fa-facebook {
+          &:hover {
+            // color: $facebook-color;
+            @include text-gradient($secondary-1-3, $facebook-color, -135deg);
+          }
+        }
+        .fa-twitch {
+          &:hover {
+            color: $twitch-color;
+          }
+        }
+      }
+    }
+  }
+}

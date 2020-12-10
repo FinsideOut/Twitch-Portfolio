@@ -1,0 +1,55 @@
+// text
+.logo {
+  font-size: 3rem;
+  margin-right: 2rem;
+  height: 100%;
+  //   align-self: baseline;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+// .strict {
+//   //container
+//   overflow: hidden;
+// }
+.spinner {
+  background: $light;
+  border-radius: 50%;
+  color: set-text-color($light);
+  min-height: 150px;
+  min-width: 150px;
+  @include flex(column, center);
+  i {
+    padding: 0.75rem;
+    animation: spin 1000ms ease-in-out;
+    animation-iteration-count: infinite;
+  }
+}
+.shape {
+  //   border: 8px solid $primary-4;
+  animation: spin 5000ms linear;
+  animation-iteration-count: infinite;
+  transition: all 500ms ease-in-out;
+  &:hover {
+    animation-duration: 3000ms;
+  }
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 150, 0.4);
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 150, 150, 0.4);
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 100px solid rgba(150, 0, 150, 0.4);
+}

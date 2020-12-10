@@ -1,0 +1,55 @@
+.right {
+  animation: slideInRight 1000ms ease-in-out;
+}
+.left {
+  animation: slideInLeft 1000ms ease-in-out;
+}
+.bottom {
+  animation: slideInBottom 1000ms ease-in-out;
+}
+.up {
+  animation: slideOutTop 1000ms ease-in-out 3000ms;
+}
+
+@keyframes normalize {
+  to {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes slideOutTop {
+  to {
+    transform: translateY(-110vw);
+    opacity: 0;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100vw);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100vw);
+  }
+}
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100vh);
+  }
+}
+@keyframes spin {
+  // from {
+  //   transform: rotate(0deg);
+  // }
+  to {
+    transform: rotate(360deg);
+  }
+}
