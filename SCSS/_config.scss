@@ -1,0 +1,14 @@
+@mixin flex($direction, $space) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $space;
+}
+
+@function set-text-color($bg-color) {
+  @if (lightness($bg-color) > 50) {
+    @return #222;
+  } @else {
+    @return #ccc;
+  }
+}

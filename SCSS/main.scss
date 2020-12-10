@@ -1,0 +1,129 @@
+// font-family: 'Raleway', sans-serif;
+// font-family: 'Staatliches', cursive;
+
+// $primary-0: #64f54e;
+// $primary-2: #9df88f;
+// $primary-3: #2ff50f;
+// $primary-4: #20e900;
+// $secondary-1-0: #4dd6e9;
+// $secondary-1-2: #8be3ef;
+// $secondary-1-3: #13cee9;
+// $secondary-1-4: #01b5ce;
+// $secondary-2-0: #d4fc50;
+// $secondary-2-2: #e4fd92;
+// $secondary-2-3: #c5fc10;
+// $secondary-2-4: #bff900;
+// $complement-0: #fe505d;
+// $complement-2: #fe929a;
+// $complement-3: #fe1021;
+// $complement-4: #fc0012;
+@import "colors";
+@import "config";
+
+// defaults
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  //   border: 1px solid white;
+}
+
+body {
+  //   font-family: "Raleway", sans-serif;
+  font-family: "Staatliches", cursive;
+  background: $dark;
+  color: set-text-color($dark);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+#header {
+  border: 1px solid white;
+
+  &-home {
+    .header-container {
+      @include flex(row, flex-start);
+      align-items: baseline;
+      height: 15vh;
+
+      .logo {
+        font-size: 3rem;
+        margin-right: 2rem;
+        height: 100%;
+        align-self: baseline;
+      }
+      .nav-links {
+        @include flex(row, flex-start);
+        height: 100%;
+        li {
+          padding: 0rem 2rem;
+          .nav-link {
+            display: inline-block;
+            transition: transform 400ms ease-in-out;
+            &:hover {
+              transform: scale(1.5);
+            }
+          }
+        }
+      }
+      .nav-social {
+        width: 100%;
+        height: 100%;
+        @include flex(row, flex-end);
+        li {
+          padding: 1rem;
+          i {
+            transition: transform 400ms ease-in-out, color 400ms ease-in-out;
+            // padding: 0.7rem;
+            // border: 2px solid white;
+            // border-radius: 50%;
+            // &:hover {
+            //   color: $primary-4;
+            //   transform: scale(2) rotate(360deg);
+            // }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hover-blue {
+  &:hover {
+    color: $primary-4;
+    transform: scale(2) rotate(360deg);
+  }
+}
+.hover-blue {
+  &:hover {
+    color: $secondary-1-4;
+    transform: scale(2) rotate(360deg);
+  }
+}
+.hover-green {
+  &:hover {
+    color: $primary-4;
+    transform: scale(2) rotate(360deg);
+  }
+}
+.hover-yellow {
+  &:hover {
+    color: $secondary-2-4;
+    transform: scale(2) rotate(360deg);
+  }
+}
+.hover-pink {
+  &:hover {
+    color: $complement-2;
+    transform: scale(2) rotate(360deg);
+  }
+}
