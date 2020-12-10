@@ -4,6 +4,13 @@
   align-items: center;
   justify-content: $space;
 }
+@mixin text-gradient($color-1, $color-2, $rotation) {
+  background: -webkit-linear-gradient($rotation, $color-1, $color-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  // Above from:
+  // https://cssgradient.io/blog/css-gradient-text/
+}
 
 @function set-text-color($bg-color) {
   @if (lightness($bg-color) > 50) {

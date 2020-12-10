@@ -33,8 +33,22 @@ a {
   margin: auto;
 }
 
-#header {
-  border: 1px solid white;
+#header-home {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#header-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  z-index: -1;
+  background: url("../img/intro-bg.jpg") no-repeat center center/cover;
 }
 
 #header-home .header-container {
@@ -87,16 +101,29 @@ a {
 }
 
 #header-home .header-container .nav-links li .nav-link {
+  font-size: 1.5rem;
   display: inline-block;
-  -webkit-transition: -webkit-transform 400ms ease-in-out;
-  transition: -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition: color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  transition: color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, color 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
 }
 
 #header-home .header-container .nav-links li .nav-link:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+}
+
+#header-home .header-container .nav-links li .hover-about:hover {
+  color: #20e900;
+}
+
+#header-home .header-container .nav-links li .hover-blog:hover {
+  color: #01b5ce;
+}
+
+#header-home .header-container .nav-links li .hover-contact:hover {
+  color: #bff900;
 }
 
 #header-home .header-container .nav-social {
@@ -122,37 +149,62 @@ a {
 }
 
 #header-home .header-container .nav-social li i {
-  -webkit-transition: color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  transition: color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, color 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
 }
 
-.hover-blue:hover {
+#header-home .header-container .nav-social li i:hover {
+  -webkit-transform: scale(2) rotate(360deg);
+          transform: scale(2) rotate(360deg);
+}
+
+#header-home .header-container .nav-social li .fa-twitter:hover {
+  color: #1da1f2;
+}
+
+#header-home .header-container .nav-social li .fa-instagram:hover {
+  background: -webkit-linear-gradient(45deg, #ffc273, #c1558b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#header-home .header-container .nav-social li .fa-facebook:hover {
+  background: -webkit-linear-gradient(-135deg, #13cee9, #3b5997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#header-home .header-container .nav-social li .fa-twitch:hover {
+  color: #772ce8;
+}
+
+#header .hover-blue:hover {
   color: #20e900;
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
 }
 
-.hover-blue:hover {
+#header .hover-twitter:hover {
   color: #01b5ce;
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
 }
 
-.hover-green:hover {
+#header .hover-green:hover {
   color: #20e900;
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
 }
 
-.hover-yellow:hover {
+#header .hover-yellow:hover {
   color: #bff900;
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
 }
 
-.hover-pink:hover {
+#header .hover-pink:hover {
   color: #fe929a;
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
