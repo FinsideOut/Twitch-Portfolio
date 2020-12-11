@@ -1,9 +1,6 @@
-const logo = document.querySelector(".logo");
-console.log(logo.innerHTML);
-// WUT?
-for (let i = 0; i < logo.innerText.length; i++) {
-  console.log(logo.innerText[i]);
-}
+// const logo = document.querySelector(".logo");
+// console.log(logo.innerHTML);
+
 //   logo.innerText[i].addEventListener("mouseover", logoFunsies());
 // }
 // logo.innerText[0].addEventListener("mouseover", logoFunsies);

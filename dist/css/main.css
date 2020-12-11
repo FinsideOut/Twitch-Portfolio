@@ -160,8 +160,8 @@ a {
 #footer-home {
   -webkit-transform: translateY(100vh);
           transform: translateY(100vh);
-  -webkit-animation: normalize 750ms ease-in-out 2000ms;
-          animation: normalize 750ms ease-in-out 2000ms;
+  -webkit-animation: normalize 2000ms ease-in-out 2000ms;
+          animation: normalize 2000ms ease-in-out 2000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   width: 100%;
@@ -357,12 +357,11 @@ a {
 }
 
 .shape {
-  -webkit-animation: spin 5000ms linear;
-          animation: spin 5000ms linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
+  width: 280px;
+  height: 280px;
+  opacity: 0.6;
 }
 
 .shape:hover {
@@ -370,32 +369,11 @@ a {
           animation-duration: 3000ms;
 }
 
-.square {
-  width: 100px;
-  height: 100px;
-  background: rgba(0, 0, 150, 0.4);
-}
-
-.circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgba(0, 150, 150, 0.4);
-}
-
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 100px solid rgba(150, 0, 150, 0.4);
-}
-
 #header-home {
   -webkit-transform: translateY(-100vh);
           transform: translateY(-100vh);
-  -webkit-animation: normalize 750ms ease-in-out 2000ms;
-          animation: normalize 750ms ease-in-out 2000ms;
+  -webkit-animation: normalize 2000ms ease-in-out 2000ms;
+          animation: normalize 2000ms ease-in-out 2000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   display: -webkit-box;
@@ -560,23 +538,78 @@ a {
 }
 
 #page-home .hero-container #hero-animation {
+  width: 55vw;
+  margin-top: 3vh;
+  position: relative;
+  -webkit-animation: spin 20000ms linear;
+          animation: spin 20000ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+#page-home .hero-container #hero-animation .shapes-container {
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  -webkit-transform: scale(2);
-          transform: scale(2);
-  -webkit-animation: normalize 750ms ease-in-out 2000ms;
-          animation: normalize 750ms ease-in-out 2000ms;
+  -webkit-transform: scale(10);
+          transform: scale(10);
+  -webkit-animation: normalize 2000ms ease-in-out 2000ms;
+          animation: normalize 2000ms ease-in-out 2000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  width: 55vw;
-  height: 100%;
-  position: relative;
+}
+
+#page-home .hero-container #hero-animation .shapes-container .square {
+  -webkit-animation: spin 20000ms linear;
+          animation: spin 20000ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  animation-direction: reverse;
+  background: url("../img/square.png") no-repeat center center/cover;
+  position: absolute;
+  top: calc(50% - calc(280px/ 2) - 70px);
+  left: calc(50% - calc(280px/ 2) - 70px);
+}
+
+#page-home .hero-container #hero-animation .shapes-container .circle {
+  -webkit-animation: spin 3000ms linear;
+          animation: spin 3000ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background: url("../img/circle.png") no-repeat center center/cover;
+  position: absolute;
+  top: calc(50% - calc(280px/ 2) + 70px);
+  left: calc(50% - calc(280px/ 2) + 70px);
+}
+
+#page-home .hero-container #hero-animation .shapes-container .triangle {
+  -webkit-animation: spin 11000ms linear;
+          animation: spin 11000ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background: url("../img/triangle.png") no-repeat center center/cover;
+  position: absolute;
+  top: calc(50% - calc(280px/ 2) - 70px);
+  left: calc(50% - calc(280px/ 2) + 70px);
+}
+
+#page-home .hero-container #hero-animation .shapes-container .cross {
+  -webkit-animation: spin 9000ms linear;
+          animation: spin 9000ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background: url("../img/cross.png") no-repeat center center/cover;
+  position: absolute;
+  top: calc(50% - calc(280px/ 2) + 70px);
+  left: calc(50% - calc(280px/ 2) - 70px);
 }
 
 #page-home .hero-container .headlines {
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
-  -webkit-animation: normalize 750ms ease-in-out 2000ms;
-          animation: normalize 750ms ease-in-out 2000ms;
+  -webkit-animation: normalize 2000ms ease-in-out 2000ms;
+          animation: normalize 2000ms ease-in-out 2000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   display: -webkit-box;

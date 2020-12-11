@@ -12,7 +12,11 @@
   // https://cssgradient.io/blog/css-gradient-text/
 }
 @mixin normalize {
-  animation: normalize 750ms ease-in-out 2000ms;
+  animation: normalize 2000ms ease-in-out 2000ms;
+  animation-fill-mode: forwards;
+}
+@mixin normalize-long {
+  animation: normalize 2000ms ease-in-out 2000ms;
   animation-fill-mode: forwards;
 }
 @function set-text-color($bg-color) {

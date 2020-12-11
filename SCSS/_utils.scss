@@ -26,30 +26,18 @@
     animation-iteration-count: infinite;
   }
 }
+$shape-size: 280px;
+$gap: 70px;
+
 .shape {
   //   border: 8px solid $primary-4;
-  animation: spin 5000ms linear;
-  animation-iteration-count: infinite;
   transition: all 500ms ease-in-out;
+  width: $shape-size;
+  height: $shape-size;
+  // border: 1px solid white;
+  opacity: 0.6;
   &:hover {
     animation-duration: 3000ms;
+    // transform: translate(sclae(2));
   }
-}
-.square {
-  width: 100px;
-  height: 100px;
-  background: rgba(0, 0, 150, 0.4);
-}
-.circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgba(0, 150, 150, 0.4);
-}
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 100px solid rgba(150, 0, 150, 0.4);
 }
