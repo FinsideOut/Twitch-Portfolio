@@ -18,6 +18,12 @@
     visibility: visible;
   }
 }
+@keyframes bg-normalize {
+  to {
+    transform: none;
+    opacity: 0.2;
+  }
+}
 @keyframes fadeOut {
   to {
     opacity: 0;

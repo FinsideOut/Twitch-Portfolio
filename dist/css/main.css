@@ -50,6 +50,22 @@
   }
 }
 
+@-webkit-keyframes bg-normalize {
+  to {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 0.2;
+  }
+}
+
+@keyframes bg-normalize {
+  to {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 0.2;
+  }
+}
+
 @-webkit-keyframes fadeOut {
   to {
     opacity: 0;
@@ -146,8 +162,8 @@
 body {
   font-family: "Staatliches", cursive;
   background: #222;
-  color: #ccc;
-  overflow: hidden;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 ul {
@@ -379,9 +395,9 @@ a {
 .shape {
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
-  width: 280px;
-  height: 280px;
-  opacity: 0.6;
+  width: 550px;
+  height: 550px;
+  opacity: 0.4;
 }
 
 .shape:hover {
@@ -389,7 +405,19 @@ a {
           animation-duration: 3000ms;
 }
 
+.shadowed {
+  -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+  filter: url(#drop-shadow);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+
 #header-home {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
   -webkit-transform: translateY(-100vh);
           transform: translateY(-100vh);
   -webkit-animation: normalize 2000ms ease-in-out 2000ms;
@@ -415,6 +443,11 @@ a {
   height: 15vh;
 }
 
+#header-home .logo {
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
 #header-home .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -430,11 +463,6 @@ a {
       -ms-flex-pack: start;
           justify-content: flex-start;
   height: 100%;
-}
-
-#header-home .nav-links .logo {
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
 }
 
 #header-home .nav-links li {
@@ -524,21 +552,26 @@ a {
 }
 
 #page-home {
-  height: 100vh;
   width: 100vw;
   position: relative;
 }
 
 #page-home::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.2;
   z-index: -1;
   background: url("../img/intro-bg.jpg") no-repeat center center/cover;
+  opacity: 0;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-animation: bg-normalize 5500ms ease-in-out 1500ms;
+          animation: bg-normalize 5500ms ease-in-out 1500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 #page-home .hero-container {
@@ -591,8 +624,8 @@ a {
   animation-direction: reverse;
   background: url("../img/square.png") no-repeat center center/cover;
   position: absolute;
-  top: calc(50% - calc(280px/ 2) - 70px);
-  left: calc(50% - calc(280px/ 2) - 70px);
+  top: calc(50% - calc(550px/ 2) - 120px);
+  left: calc(50% - calc(550px/ 2) - 120px);
 }
 
 #page-home .hero-container #hero-animation .shapes-container .circle {
@@ -602,8 +635,8 @@ a {
           animation-iteration-count: infinite;
   background: url("../img/circle.png") no-repeat center center/cover;
   position: absolute;
-  top: calc(50% - calc(280px/ 2) + 70px);
-  left: calc(50% - calc(280px/ 2) + 70px);
+  top: calc(50% - calc(550px/ 2) + 120px);
+  left: calc(50% - calc(550px/ 2) + 120px);
 }
 
 #page-home .hero-container #hero-animation .shapes-container .triangle {
@@ -613,8 +646,8 @@ a {
           animation-iteration-count: infinite;
   background: url("../img/triangle.png") no-repeat center center/cover;
   position: absolute;
-  top: calc(50% - calc(280px/ 2) - 70px);
-  left: calc(50% - calc(280px/ 2) + 70px);
+  top: calc(50% - calc(550px/ 2) - 120px);
+  left: calc(50% - calc(550px/ 2) + 120px);
 }
 
 #page-home .hero-container #hero-animation .shapes-container .cross {
@@ -624,13 +657,13 @@ a {
           animation-iteration-count: infinite;
   background: url("../img/cross.png") no-repeat center center/cover;
   position: absolute;
-  top: calc(50% - calc(280px/ 2) + 70px);
-  left: calc(50% - calc(280px/ 2) - 70px);
+  top: calc(50% - calc(550px/ 2) + 120px);
+  left: calc(50% - calc(550px/ 2) - 120px);
 }
 
 #page-home .hero-container .headlines {
-  -webkit-transform: translateX(-100vw);
-          transform: translateX(-100vw);
+  -webkit-transform: translateX(-150vw);
+          transform: translateX(-150vw);
   -webkit-animation: normalize 2000ms ease-in-out 2000ms;
           animation: normalize 2000ms ease-in-out 2000ms;
   -webkit-animation-fill-mode: forwards;
@@ -723,7 +756,6 @@ a {
 
 #page-intro {
   width: 100vw;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -759,5 +791,37 @@ a {
 
 #page-intro #intro i {
   font-size: 6rem;
+}
+
+#page-about {
+  margin-top: 5vh;
+}
+
+.section-header {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-header .games:hover {
+  color: #2ff50f;
+}
+
+.section-header .drinks:hover {
+  color: #fe929a;
+}
+
+.about-content img {
+  width: 500px;
+  height: auto;
+  -webkit-filter: drop-shadow(-10px 10px #20e900) drop-shadow(10px -10px #01b5ce);
+          filter: drop-shadow(-10px 10px #20e900) drop-shadow(10px -10px #01b5ce);
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.about-content img:hover {
+  -webkit-filter: drop-shadow(-30px 30px #fe929a) drop-shadow(30px -30px #20e900);
+          filter: drop-shadow(-30px 30px #fe929a) drop-shadow(30px -30px #20e900);
 }
 /*# sourceMappingURL=main.css.map */

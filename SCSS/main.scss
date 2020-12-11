@@ -26,19 +26,22 @@
 
 #page {
   &-home {
-    height: 100vh;
+    // height: 100vh;
     width: 100vw;
     position: relative;
     &::before {
       content: "";
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
-      opacity: 0.2;
       z-index: -1;
       background: url("../img/intro-bg.jpg") no-repeat center center/cover;
+      opacity: 0;
+      transform: scale(1.4);
+      animation: bg-normalize 5500ms ease-in-out 1500ms;
+      animation-fill-mode: forwards;
     }
     .hero-container {
       @include flex(row, space-between);
@@ -101,7 +104,7 @@
       }
 
       .headlines {
-        transform: translateX(-100vw);
+        transform: translateX(-150vw);
         @include normalize;
         @include flex(column, space-around);
 
@@ -173,7 +176,7 @@
 }
 #page-intro {
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -192,6 +195,38 @@
     }
     i {
       font-size: 6rem;
+    }
+  }
+}
+#page-about {
+  margin-top: 5vh;
+  // height: 100vh;
+}
+.section-header {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  .games {
+    &:hover {
+      color: $primary-3;
+    }
+  }
+  .drinks {
+    &:hover {
+      color: $complement-2;
+    }
+  }
+}
+.about-content {
+  img {
+    width: 500px;
+    height: auto;
+    filter: drop-shadow(-10px 10px $primary-4)
+      drop-shadow(10px -10px $secondary-1-4);
+    transition: all 400ms ease-in-out;
+    &:hover {
+      filter: drop-shadow(-30px 30px $complement-2)
+        drop-shadow(30px -30px $primary-4);
     }
   }
 }

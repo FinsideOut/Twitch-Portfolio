@@ -3,6 +3,7 @@
   font-size: 3rem;
   margin-right: 2rem;
   height: 100%;
+
   //   align-self: baseline;
 }
 .container {
@@ -26,8 +27,15 @@
     animation-iteration-count: infinite;
   }
 }
-$shape-size: 280px;
-$gap: 70px;
+// .small {
+//   @extend .spinner;
+//   display: inline-block;
+//   font-size: 1rem;
+//   max-height: 40px;
+//   max-width: 40px;
+// }
+$shape-size: 550px;
+$gap: 120px;
 
 .shape {
   //   border: 8px solid $primary-4;
@@ -35,9 +43,15 @@ $gap: 70px;
   width: $shape-size;
   height: $shape-size;
   // border: 1px solid white;
-  opacity: 0.6;
+  opacity: 0.4;
   &:hover {
     animation-duration: 3000ms;
     // transform: translate(sclae(2));
   }
+}
+.shadowed {
+  -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+  filter: url(#drop-shadow);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }

@@ -1,16 +1,22 @@
 #header {
   &-home {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
     transform: translateY(-100vh);
     @include normalize;
     @include flex(row, flex-start);
     align-items: baseline;
     height: 15vh;
+
+    .logo {
+      align-self: baseline;
+    }
     .nav-links {
       @include flex(row, flex-start);
       height: 100%;
-      .logo {
-        align-self: baseline;
-      }
+
       li {
         padding: 0rem 2rem;
         .nav-link {
@@ -26,6 +32,7 @@
           &-about {
             &:hover {
               @include text-shadow($trans-primary-4, $trans-complement-2);
+              // border-top: 3px solid $primary-3;
             }
           }
           &-blog {
