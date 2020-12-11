@@ -1,7 +1,7 @@
 #header {
   &-home {
-    // transform: translateY(-100vh);
-    // @include normalize;
+    transform: translateY(-100vh);
+    @include normalize;
     @include flex(row, flex-start);
     align-items: baseline;
     height: 15vh;
@@ -16,25 +16,26 @@
         .nav-link {
           font-size: 1.5rem;
           display: inline-block;
-          transition: transform 400ms ease-in-out, color 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
           &:hover {
             transform: scale(1.2);
+            color: #fff;
           }
         }
         .hover {
           &-about {
             &:hover {
-              color: $secondary-1-4;
+              @include text-shadow($trans-primary-4, $trans-complement-2);
             }
           }
           &-blog {
             &:hover {
-              color: $complement-2;
+              @include text-shadow($trans-primary-4, $trans-complement-2);
             }
           }
           &-contact {
             &:hover {
-              color: $primary-4;
+              @include text-shadow($trans-primary-4, $trans-complement-2);
             }
           }
         }

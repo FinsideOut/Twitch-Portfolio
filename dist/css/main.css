@@ -1,5 +1,7 @@
 .high-blue {
   color: #01b5ce;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 .high-pink {
@@ -202,6 +204,8 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 #footer-home .footer-link-center i {
@@ -215,6 +219,10 @@ a {
 #footer-home .footer-link-center .key-word {
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
+}
+
+#footer-home .footer-link-center:hover {
+  color: #fff;
 }
 
 #footer-home .footer-link-center:hover i {
@@ -242,6 +250,8 @@ a {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 #footer-home .footer-link-left a {
@@ -259,6 +269,10 @@ a {
   opacity: 0;
   -webkit-transform: translateX(2rem) rotate(90deg);
           transform: translateX(2rem) rotate(90deg);
+}
+
+#footer-home .footer-link-left:hover {
+  color: #fff;
 }
 
 #footer-home .footer-link-left:hover i {
@@ -286,6 +300,8 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 #footer-home .footer-link-right a {
@@ -303,6 +319,10 @@ a {
   opacity: 0;
   -webkit-transform: translateX(-2rem) rotate(-90deg);
           transform: translateX(-2rem) rotate(-90deg);
+}
+
+#footer-home .footer-link-right:hover {
+  color: #fff;
 }
 
 #footer-home .footer-link-right:hover i {
@@ -370,6 +390,12 @@ a {
 }
 
 #header-home {
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-animation: normalize 2000ms ease-in-out 2000ms;
+          animation: normalize 2000ms ease-in-out 2000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,27 +444,26 @@ a {
 #header-home .nav-links li .nav-link {
   font-size: 1.5rem;
   display: inline-block;
-  -webkit-transition: color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  transition: color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, color 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, color 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 #header-home .nav-links li .nav-link:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+  color: #fff;
 }
 
 #header-home .nav-links li .hover-about:hover {
-  color: #01b5ce;
+  text-shadow: -0.25rem 0.25rem rgba(32, 233, 0, 0.7), 0.25rem -0.25rem rgba(254, 146, 154, 0.7);
 }
 
 #header-home .nav-links li .hover-blog:hover {
-  color: #fe929a;
+  text-shadow: -0.25rem 0.25rem rgba(32, 233, 0, 0.7), 0.25rem -0.25rem rgba(254, 146, 154, 0.7);
 }
 
 #header-home .nav-links li .hover-contact:hover {
-  color: #20e900;
+  text-shadow: -0.25rem 0.25rem rgba(32, 233, 0, 0.7), 0.25rem -0.25rem rgba(254, 146, 154, 0.7);
 }
 
 #header-home .nav-social {
@@ -626,10 +651,44 @@ a {
       -ms-flex-align: end;
           align-items: flex-end;
   height: 100%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 #page-home .hero-container .headlines .headline {
   font-size: 4rem;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#page-home .hero-container .headlines .headline .key-word {
+  display: inline-block;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#page-home .hero-container .headlines .headline:hover {
+  -webkit-transform: translateX(-10vw);
+          transform: translateX(-10vw);
+  color: #fff;
+}
+
+#page-home .hero-container .headlines .headline:hover .key-word {
+  -webkit-transform: scale(1.7) translateX(2.8vw);
+          transform: scale(1.7) translateX(2.8vw);
+}
+
+#page-home .hero-container .headlines .headline:hover .twitch {
+  text-shadow: -0.5rem 0.5rem #772ce8, 0.5rem -0.5rem #01b5ce;
+}
+
+#page-home .hero-container .headlines .headline:hover .shag {
+  text-shadow: -0.5rem 0.5rem rgba(254, 146, 154, 0.7), 0.5rem -0.5rem rgba(1, 181, 206, 0.7);
+}
+
+#page-home .hero-container .headlines .headline:hover .drink {
+  text-shadow: -0.5rem 0.5rem rgba(32, 233, 0, 0.7), 0.5rem -0.5rem rgba(1, 181, 206, 0.7);
 }
 
 #page .hover-twitter:hover {

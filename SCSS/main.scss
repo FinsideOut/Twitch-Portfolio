@@ -107,8 +107,34 @@
 
         align-items: flex-end;
         height: 100%;
+        max-width: fit-content;
         .headline {
           font-size: 4rem;
+          transition: all 400ms ease-in-out;
+
+          .key-word {
+            display: inline-block;
+            transition: all 400ms ease-in-out;
+          }
+          &:hover {
+            transform: translateX(-10vw);
+            color: #fff;
+            .key-word {
+              transform: scale(1.7) translateX(2.8vw);
+            }
+            .twitch {
+              @include text-shadow-big($twitch-color, $secondary-1-4);
+            }
+            .shag {
+              @include text-shadow-big(
+                $trans-complement-2,
+                $trans-secondary-1-4
+              );
+            }
+            .drink {
+              @include text-shadow-big($trans-primary-4, $trans-secondary-1-4);
+            }
+          }
         }
       }
     }

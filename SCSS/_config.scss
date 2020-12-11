@@ -11,6 +11,12 @@
   // Above from:
   // https://cssgradient.io/blog/css-gradient-text/
 }
+@mixin text-shadow($color1, $color2) {
+  text-shadow: -0.25rem 0.25rem $color1, 0.25rem -0.25rem $color2;
+}
+@mixin text-shadow-big($color1, $color2) {
+  text-shadow: -0.5rem 0.5rem $color1, 0.5rem -0.5rem $color2;
+}
 @mixin normalize {
   animation: normalize 2000ms ease-in-out 2000ms;
   animation-fill-mode: forwards;
