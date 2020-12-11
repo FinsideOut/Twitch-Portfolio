@@ -1,7 +1,7 @@
 #header {
   &-home {
-    transform: translateY(-100vh);
-    @include normalize;
+    // transform: translateY(-100vh);
+    // @include normalize;
     @include flex(row, flex-start);
     align-items: baseline;
     height: 15vh;
@@ -47,7 +47,7 @@
       li {
         padding: 1rem;
         i {
-          transition: transform 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
           &:hover {
             transform: scale(2) rotate(360deg);
           }
@@ -69,10 +69,18 @@
             @include text-gradient($secondary-1-3, $facebook-color, -135deg);
           }
         }
-        .fa-twitch {
+
+        .fa-tiktok {
           &:hover {
-            color: $twitch-color;
+            color: #000;
+            // @include text-gradient($insta-color-2, $twitter-color, -135deg);
+            text-shadow: 2px 2px $tiktok-color-2, -2px -2px $tiktok-color-1;
           }
+        }
+      }
+      .fa-twitch {
+        &:hover {
+          color: $twitch-color;
         }
       }
     }

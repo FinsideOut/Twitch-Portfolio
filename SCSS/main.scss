@@ -51,6 +51,7 @@
         animation: spin 20000ms linear;
         animation-iteration-count: infinite;
         animation-direction: reverse;
+        z-index: -1;
         .shapes-container {
           width: 100%;
           height: 100%;

@@ -309,11 +309,11 @@ a {
   opacity: 1;
   -webkit-transform: none;
           transform: none;
-  color: #20e900;
+  color: #772ce8;
 }
 
 #footer-home .footer-link-right:hover .key-word {
-  color: #20e900;
+  color: #772ce8;
 }
 
 .logo {
@@ -370,12 +370,6 @@ a {
 }
 
 #header-home {
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
-  -webkit-animation: normalize 2000ms ease-in-out 2000ms;
-          animation: normalize 2000ms ease-in-out 2000ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,10 +464,8 @@ a {
 }
 
 #header-home .nav-social li i {
-  -webkit-transition: -webkit-transform 400ms ease-in-out;
-  transition: -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 #header-home .nav-social li i:hover {
@@ -497,7 +489,12 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
-#header-home .nav-social li .fa-twitch:hover {
+#header-home .nav-social li .fa-tiktok:hover {
+  color: #000;
+  text-shadow: 2px 2px #de2e57, -2px -2px #20b0b9;
+}
+
+#header-home .nav-social .fa-twitch:hover {
   color: #772ce8;
 }
 
@@ -546,6 +543,7 @@ a {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   animation-direction: reverse;
+  z-index: -1;
 }
 
 #page-home .hero-container #hero-animation .shapes-container {
