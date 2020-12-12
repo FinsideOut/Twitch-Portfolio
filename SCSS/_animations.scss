@@ -32,32 +32,35 @@
   to {
     transform: translateY(-110vw);
     opacity: 0;
+    visibility: hidden;
     display: none;
   }
 }
 @keyframes slideInRight {
   from {
     display: none;
-
+    visibility: hidden;
     transform: translateX(100vw);
   }
 }
 @keyframes slideInLeft {
   from {
     display: none;
-
+    visibility: hidden;
     transform: translateX(-100vw);
   }
 }
 @keyframes slideInBottom {
   from {
     display: none;
+    visibility: hidden;
     transform: translateY(100vh);
   }
 }
 @keyframes slideInTop {
   from {
     display: none;
+    visibility: hidden;
     transform: translateY(-100vh);
   }
 }
@@ -74,6 +77,19 @@ $gap: 120px;
   //   animation-duration: 3000ms;
   //   transform: translate(sclae(2));
   // }
+}
+.spinner {
+  background: $light;
+  border-radius: 50%;
+  color: set-text-color($light);
+  min-height: 150px;
+  min-width: 150px;
+  @include flex(column, center);
+  i {
+    padding: 0.75rem;
+    animation: spin 1000ms ease-in-out;
+    animation-iteration-count: infinite;
+  }
 }
 @keyframes spin {
   // from {
@@ -95,7 +111,7 @@ $gap: 120px;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transform: scale(10);
+    transform: scale(5);
     @include normalize;
     .square {
       animation: spin 20000ms linear;

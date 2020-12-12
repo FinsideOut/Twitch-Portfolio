@@ -1,4 +1,6 @@
 #footer-home {
+  transition: all $transit-time ease-in-out;
+
   .footer-container {
     transform: translateY(100vh);
     @include normalize;

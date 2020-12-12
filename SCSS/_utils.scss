@@ -48,25 +48,41 @@ a {
     }
   }
 }
+// colros
+.high-blue {
+  color: $blue;
+  transition: all 400ms ease-in-out;
+}
+.high-pink {
+  color: $pink;
+}
+.high-green {
+  color: $green;
+}
 .container {
   width: 90%;
   margin: auto;
 }
-
-.spinner {
-  background: $light;
-  border-radius: 50%;
-  color: set-text-color($light);
-  min-height: 150px;
-  min-width: 150px;
-  @include flex(column, center);
-  i {
-    padding: 0.75rem;
-    animation: spin 1000ms ease-in-out;
-    animation-iteration-count: infinite;
-  }
+// js stuff
+// scrolls
+html {
+  scroll-behavior: smooth;
 }
 
+.header-scrolled {
+  opacity: 0.05;
+  // background: rgba(0, 0, 0, 0);
+  &:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+.footer-scrolled {
+  opacity: 0;
+  visibility: hidden;
+
+  // background: rgba(0, 0, 0, 0);
+}
 // .shadowed {
 //   -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
 //   filter: url(#drop-shadow);
