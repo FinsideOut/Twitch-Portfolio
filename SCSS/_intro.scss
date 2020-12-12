@@ -1,0 +1,32 @@
+#page-intro {
+  width: 100vw;
+  // height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: $dark;
+  animation: fadeOut 750ms ease-in-out 1750ms;
+  animation-fill-mode: forwards;
+  .intro-container {
+    animation: slideOutTop 1000ms ease-in-out 3000ms;
+    @include flex(column, space-around);
+    text-align: center;
+    margin-top: 5vh;
+    height: 85vh;
+    .logo {
+      animation: slideInLeft 1000ms ease-in-out;
+      font-size: 10rem;
+    }
+    .key-word {
+      animation: slideInRight 1000ms ease-in-out;
+      color: $blue;
+    }
+    .spinner {
+      animation: slideInBottom 1000ms ease-in-out;
+      i {
+        font-size: 6rem;
+      }
+    }
+  }
+}

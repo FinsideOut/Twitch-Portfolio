@@ -4,197 +4,86 @@
 // $primary-0: #64f54e;
 // $primary-2: #9df88f;
 // $primary-3: #2ff50f;
-// $primary-4: #20e900;
+// $green: #20e900;
 // $secondary-1-0: #4dd6e9;
 // $secondary-1-2: #8be3ef;
 // $secondary-1-3: #13cee9;
-// $secondary-1-4: #01b5ce;
+// $blue: #01b5ce;
 // $secondary-2-0: #d4fc50;
 // $secondary-2-2: #e4fd92;
 // $secondary-2-3: #c5fc10;
-// $secondary-2-4: #bff900;
-// $complement-0: #fe505d;
-// $complement-2: #fe929a;
+// $yellow: #bff900;
+// $pink: #fe505d;
+// $pink: #fe929a;
 // $complement-3: #fe1021;
-// $complement-4: #fc0012;
+// $red: #fc0012;
+
+//utilities
 @import "colors";
-@import "animations";
 @import "config";
-@import "footers";
 @import "utils";
+@import "animations";
+
+//page default stuff
+@import "footers";
 @import "headers";
 
-#page {
-  &-home {
-    // height: 100vh;
-    width: 100vw;
-    position: relative;
-    &::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-      background: url("../img/intro-bg.jpg") no-repeat center center/cover;
-      opacity: 0;
-      transform: scale(1.4);
-      animation: bg-normalize 5500ms ease-in-out 1500ms;
-      animation-fill-mode: forwards;
-    }
-    .hero-container {
-      @include flex(row, space-between);
-      margin-top: 8vh;
-      height: 50vh;
-      #hero-animation {
-        width: 55vw;
-        margin-top: 3vh;
-        position: relative;
-        animation: spin 20000ms linear;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        z-index: -1;
-        .shapes-container {
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          transform: scale(10);
-          @include normalize;
-          .square {
-            animation: spin 20000ms linear;
-            animation-iteration-count: infinite;
-            animation-direction: reverse;
-
-            background: url("../img/square.png") no-repeat center center/cover;
-            position: absolute;
-            top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-            left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-          }
-          //bottom right
-          .circle {
-            animation: spin 3000ms linear;
-            animation-iteration-count: infinite;
-            background: url("../img/circle.png") no-repeat center center/cover;
-            position: absolute;
-            top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-            left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-          }
-          //top left
-          .triangle {
-            animation: spin 11000ms linear;
-            animation-iteration-count: infinite;
-            background: url("../img/triangle.png") no-repeat center center/cover;
-            position: absolute;
-            top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-            left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-          }
-          //bottom left
-          .cross {
-            animation: spin 9000ms linear;
-            animation-iteration-count: infinite;
-            background: url("../img/cross.png") no-repeat center center/cover;
-            position: absolute;
-            top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-            left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-          }
-        }
-
-        // top left
-      }
-
-      .headlines {
-        transform: translateX(-150vw);
-        @include normalize;
-        @include flex(column, space-around);
-
-        align-items: flex-end;
-        height: 100%;
-        max-width: fit-content;
-        .headline {
-          font-size: 4rem;
-          transition: all 400ms ease-in-out;
-
-          .key-word {
-            display: inline-block;
-            transition: all 400ms ease-in-out;
-          }
-          &:hover {
-            transform: translateX(-10vw);
-            color: #fff;
-            .key-word {
-              transform: scale(1.7) translateX(2.8vw);
-            }
-            .twitch {
-              @include text-shadow-big($twitch-color, $secondary-1-4);
-            }
-            .shag {
-              @include text-shadow-big(
-                $trans-complement-2,
-                $trans-secondary-1-4
-              );
-            }
-            .drink {
-              @include text-shadow-big($trans-primary-4, $trans-secondary-1-4);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .hover-twitter {
-    &:hover {
-      color: $secondary-1-4;
-      transform: scale(2) rotate(360deg);
-    }
-  }
-  .hover-green {
-    &:hover {
-      color: $primary-4;
-      transform: scale(2) rotate(360deg);
-    }
-  }
-  .hover-yellow {
-    &:hover {
-      color: $secondary-2-4;
-      transform: scale(2) rotate(360deg);
-    }
-  }
-  .hover-pink {
-    &:hover {
-      color: $complement-2;
-      transform: scale(2) rotate(360deg);
-    }
-  }
-  .hover-blue {
-    &:hover {
-      color: $primary-4;
-      transform: scale(2) rotate(360deg);
-    }
-  }
-}
-#page-intro {
+// unique pages
+@import "intro";
+#page-home {
   width: 100vw;
-  // height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: $dark;
-  animation: fadeOut 750ms ease-in-out 1750ms;
-  animation-fill-mode: forwards;
-
-  #intro {
-    @include flex(column, space-around);
-    text-align: center;
-    margin-top: 5vh;
-    height: 85vh;
-    .logo {
-      font-size: 10rem;
-    }
-    i {
-      font-size: 6rem;
+  position: relative;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: url("../img/intro-bg.jpg") no-repeat center center/cover;
+    opacity: 0;
+    transform: scale(1.4);
+    animation: bg-normalize 5500ms ease-in-out 1500ms;
+    animation-fill-mode: forwards;
+  }
+  .hero-container {
+    @include flex(row, space-between);
+    margin-top: 8vh;
+    height: 50vh;
+    .headlines {
+      visibility: hidden;
+      transform: translateX(-150vw);
+      @include normalize;
+      @include flex(column, space-around);
+      align-items: flex-end;
+      height: 100%;
+      max-width: fit-content;
+      $transit-time: 400ms;
+      .headline {
+        font-size: 4rem;
+        transition: all $transit-time ease-in-out;
+        .key-word {
+          display: inline-block;
+          transition: all $transit-time ease-in-out;
+        }
+        &:hover {
+          transform: translateX(-10vw);
+          color: #fff;
+          .key-word {
+            transform: scale(1.7) translateX(2.8vw);
+          }
+          .twitch {
+            @include text-shadow-big($twitch-color, $blue);
+          }
+          .shag {
+            @include text-shadow-big($trans-complement-2, $trans-secondary-1-4);
+          }
+          .drink {
+            @include text-shadow-big($trans-primary-4, $trans-secondary-1-4);
+          }
+        }
+      }
     }
   }
 }
@@ -213,20 +102,62 @@
   }
   .drinks {
     &:hover {
-      color: $complement-2;
+      color: $pink;
     }
   }
 }
 .about-content {
+  @include flex(row, space-between);
+  .about-text {
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    h3 {
+      font-size: 3rem;
+    }
+    .high-blue {
+      margin-top: 2.75rem;
+      border-top: 3px solid $blue;
+    }
+  }
   img {
     width: 500px;
     height: auto;
-    filter: drop-shadow(-10px 10px $primary-4)
-      drop-shadow(10px -10px $secondary-1-4);
+    filter: drop-shadow(-10px 10px $green) drop-shadow(10px -10px $blue);
     transition: all 400ms ease-in-out;
     &:hover {
-      filter: drop-shadow(-30px 30px $complement-2)
-        drop-shadow(30px -30px $primary-4);
+      filter: drop-shadow(-30px 30px $pink) drop-shadow(30px -30px $green);
     }
   }
 }
+// .hover-twitter {
+//   &:hover {
+//     color: $blue;
+//     transform: scale(2) rotate(360deg);
+//   }
+// }
+// .hover-green {
+//   &:hover {
+//     color: $green;
+//     transform: scale(2) rotate(360deg);
+//   }
+// }
+// .hover-yellow {
+//   &:hover {
+//     color: $yellow;
+//     transform: scale(2) rotate(360deg);
+//   }
+// }
+// .hover-pink {
+//   &:hover {
+//     color: $pink;
+//     transform: scale(2) rotate(360deg);
+//   }
+// }
+// .hover-blue {
+//   &:hover {
+//     color: $green;
+//     transform: scale(2) rotate(360deg);
+//   }
+// }

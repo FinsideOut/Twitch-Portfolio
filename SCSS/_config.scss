@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: $space;
 }
+
+// text stuff
 @mixin text-gradient($color-1, $color-2, $rotation) {
   background: -webkit-linear-gradient($rotation, $color-1, $color-2);
   -webkit-background-clip: text;
@@ -17,47 +19,11 @@
 @mixin text-shadow-big($color1, $color2) {
   text-shadow: -0.5rem 0.5rem $color1, 0.5rem -0.5rem $color2;
 }
-@mixin normalize {
-  animation: normalize 2000ms ease-in-out 2000ms;
-  animation-fill-mode: forwards;
-}
-@mixin normalize-long {
-  animation: normalize 2000ms ease-in-out 2000ms;
-  animation-fill-mode: forwards;
-}
-@mixin bg-normalize {
-  animation: bg-normalize 8000ms ease-in-out 1000ms;
-  animation-fill-mode: forwards;
-}
+
 @function set-text-color($bg-color) {
   @if (lightness($bg-color) > 50) {
     @return #222;
   } @else {
     @return #ccc;
   }
-}
-
-// defaults
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  // border: 1px solid white;
-}
-
-body {
-  //   font-family: "Raleway", sans-serif;
-  font-family: "Staatliches", cursive;
-  background: $dark;
-  // color: set-text-color($dark);
-  color: #fff;
-  overflow-x: hidden;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
 }

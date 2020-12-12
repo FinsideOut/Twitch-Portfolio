@@ -1,95 +1,94 @@
-#header {
-  &-home {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    transform: translateY(-100vh);
-    @include normalize;
+#header-home {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  visibility: hidden;
+  transform: translateY(-100vh);
+  @include normalize;
+  @include flex(row, flex-start);
+  align-items: baseline;
+  height: 15vh;
+
+  .logo {
+    align-self: baseline;
+    .key-word {
+      color: $blue;
+    }
+  }
+  .main-nav {
     @include flex(row, flex-start);
-    align-items: baseline;
-    height: 15vh;
-
-    .logo {
-      align-self: baseline;
-    }
-    .nav-links {
-      @include flex(row, flex-start);
-      height: 100%;
-
-      li {
-        padding: 0rem 2rem;
-        .nav-link {
-          font-size: 1.5rem;
-          display: inline-block;
-          transition: all 400ms ease-in-out;
-          &:hover {
-            transform: scale(1.2);
-            color: #fff;
-          }
-        }
-        .hover {
-          &-about {
-            &:hover {
-              @include text-shadow($trans-primary-4, $trans-complement-2);
-              // border-top: 3px solid $primary-3;
-            }
-          }
-          &-blog {
-            &:hover {
-              @include text-shadow($trans-primary-4, $trans-complement-2);
-            }
-          }
-          &-contact {
-            &:hover {
-              @include text-shadow($trans-primary-4, $trans-complement-2);
-            }
-          }
-        }
-      }
-    }
-    .nav-social {
-      width: 100%;
-      height: 100%;
-      @include flex(row, flex-end);
-      li {
-        padding: 1rem;
-        i {
-          transition: all 400ms ease-in-out;
-          &:hover {
-            transform: scale(2) rotate(360deg);
-          }
-        }
-        .fa-twitter {
-          &:hover {
-            color: $twitter-color;
-          }
-        }
-        .fa-instagram {
-          &:hover {
-            // color: $insta-color;
-            @include text-gradient($insta-color-1, $insta-color-2, 45deg);
-          }
-        }
-        .fa-facebook {
-          &:hover {
-            // color: $facebook-color;
-            @include text-gradient($secondary-1-3, $facebook-color, -135deg);
-          }
-        }
-
-        .fa-tiktok {
-          &:hover {
-            color: #000;
-            // @include text-gradient($insta-color-2, $twitter-color, -135deg);
-            text-shadow: 2px 2px $tiktok-color-2, -2px -2px $tiktok-color-1;
-          }
-        }
-      }
-      .fa-twitch {
+    height: 100%;
+    li {
+      padding: 0rem 2rem;
+      .nav-link {
+        font-size: 1.5rem;
+        display: inline-block;
+        transition: all 400ms ease-in-out;
         &:hover {
-          color: $twitch-color;
+          transform: scale(1.2);
+          color: #fff;
         }
+      }
+      .hover {
+        &-about {
+          &:hover {
+            @include text-shadow($trans-primary-4, $trans-complement-2);
+            // border-top: 3px solid $primary-3;
+          }
+        }
+        &-blog {
+          &:hover {
+            @include text-shadow($trans-primary-4, $trans-complement-2);
+          }
+        }
+        &-contact {
+          &:hover {
+            @include text-shadow($trans-primary-4, $trans-complement-2);
+          }
+        }
+      }
+    }
+  }
+  .nav-social {
+    width: 100%;
+    height: 100%;
+    @include flex(row, flex-end);
+    li {
+      padding: 1rem;
+      i {
+        transition: all 400ms ease-in-out;
+        // comma sep properties?
+        &:hover {
+          transform: scale(2) rotate(360deg);
+        }
+      }
+      .fa-twitter {
+        &:hover {
+          color: $twitter-color;
+        }
+      }
+      .fa-instagram {
+        &:hover {
+          @include text-gradient($insta-color-1, $insta-color-2, 45deg);
+        }
+      }
+      .fa-facebook {
+        &:hover {
+          @include text-gradient($secondary-1-3, $facebook-color, -135deg);
+        }
+      }
+
+      .fa-tiktok {
+        &:hover {
+          color: #000;
+          text-shadow: 2px 2px $tiktok-color-2, -2px -2px $tiktok-color-1;
+        }
+      }
+    }
+    .fa-twitch {
+      &:hover {
+        color: $twitch-color;
       }
     }
   }

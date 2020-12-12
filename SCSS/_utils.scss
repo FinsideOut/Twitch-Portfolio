@@ -1,19 +1,42 @@
+// defaults
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  // border: 1px solid white;
+}
+
+body {
+  //   font-family: "Raleway", sans-serif;
+  font-family: "Staatliches", cursive;
+  background: $dark;
+  // color: set-text-color($dark);
+  color: #fff;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 // text
 .logo {
   font-size: 3rem;
   margin-right: 2rem;
   height: 100%;
-
-  //   align-self: baseline;
+  .key-word {
+    color: #fff;
+  }
 }
 .container {
   width: 90%;
   margin: auto;
 }
-// .strict {
-//   //container
-//   overflow: hidden;
-// }
+
 .spinner {
   background: $light;
   border-radius: 50%;
@@ -27,31 +50,10 @@
     animation-iteration-count: infinite;
   }
 }
-// .small {
-//   @extend .spinner;
-//   display: inline-block;
-//   font-size: 1rem;
-//   max-height: 40px;
-//   max-width: 40px;
-// }
-$shape-size: 550px;
-$gap: 120px;
 
-.shape {
-  //   border: 8px solid $primary-4;
-  transition: all 500ms ease-in-out;
-  width: $shape-size;
-  height: $shape-size;
-  // border: 1px solid white;
-  opacity: 0.4;
-  &:hover {
-    animation-duration: 3000ms;
-    // transform: translate(sclae(2));
-  }
-}
-.shadowed {
-  -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
-  filter: url(#drop-shadow);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-}
+// .shadowed {
+//   -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+//   filter: url(#drop-shadow);
+//   -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+//   filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+// }
