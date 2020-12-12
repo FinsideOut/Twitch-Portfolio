@@ -90,74 +90,34 @@
 #page-about {
   margin-top: 5vh;
   // height: 100vh;
-}
-.section-header {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  .games {
-    &:hover {
-      color: $primary-3;
-    }
+  .key-word {
+    color: $blue;
   }
-  .drinks {
-    &:hover {
-      color: $pink;
+
+  .about-content {
+    @include flex(row, space-between);
+    .about-text {
+      width: 50%;
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      h3 {
+        font-size: 3rem;
+      }
+      .mini-footer {
+        color: $blue;
+        margin-top: 2.75rem;
+        border-top: 3px solid $blue;
+      }
     }
-  }
-}
-.about-content {
-  @include flex(row, space-between);
-  .about-text {
-    width: 50%;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    h3 {
-      font-size: 3rem;
-    }
-    .high-blue {
-      margin-top: 2.75rem;
-      border-top: 3px solid $blue;
-    }
-  }
-  img {
-    width: 500px;
-    height: auto;
-    filter: drop-shadow(-10px 10px $green) drop-shadow(10px -10px $blue);
-    transition: all 400ms ease-in-out;
-    &:hover {
-      filter: drop-shadow(-30px 30px $pink) drop-shadow(30px -30px $green);
+    img {
+      width: 500px;
+      height: auto;
+      filter: drop-shadow(-10px 10px $green) drop-shadow(10px -10px $blue);
+      transition: all $transit-time ease-in-out;
+      &:hover {
+        filter: drop-shadow(-30px 30px $pink) drop-shadow(30px -30px $green);
+      }
     }
   }
 }
-// .hover-twitter {
-//   &:hover {
-//     color: $blue;
-//     transform: scale(2) rotate(360deg);
-//   }
-// }
-// .hover-green {
-//   &:hover {
-//     color: $green;
-//     transform: scale(2) rotate(360deg);
-//   }
-// }
-// .hover-yellow {
-//   &:hover {
-//     color: $yellow;
-//     transform: scale(2) rotate(360deg);
-//   }
-// }
-// .hover-pink {
-//   &:hover {
-//     color: $pink;
-//     transform: scale(2) rotate(360deg);
-//   }
-// }
-// .hover-blue {
-//   &:hover {
-//     color: $green;
-//     transform: scale(2) rotate(360deg);
-//   }
-// }
