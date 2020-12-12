@@ -1,91 +1,67 @@
-#footer {
-  &-home {
-    transform: translateY(100vh);
-    @include normalize;
-    width: 100%;
-    margin-top: 15vh;
-    .footer-links {
-      font-size: 1.5rem;
-      @include flex(row, space-between);
-      align-items: flex-start;
+#footer-home {
+  transform: translateY(100vh);
+  @include normalize;
+  width: 100%;
+  margin-top: 15vh;
+  .footer-links {
+    font-size: 1.5rem;
+    @include flex(row, space-between);
+    align-items: flex-start;
+  }
+  .footer-link {
+    @include flex(column, flex-end);
+    i {
+      opacity: 0;
+      transform: translateY(-2rem) rotate(180deg);
     }
-    .footer-link {
-      &-center {
-        @include flex(column, flex-end);
-        transition: all 400ms ease-in-out;
+    .key-word,
+    i {
+      // transition: transform 400ms ease-in-out, color 400ms ease-in-out;
+      transition: all $transit-time ease-in-out;
+    }
+    &:hover {
+      color: #fff;
+      i {
+        opacity: 1;
+        transform: none;
+        color: $pink;
+      }
+      .key-word {
+        color: $pink;
+      }
+    }
+
+    &:first-child {
+      @include flex(row, flex-start);
+      a {
+        margin-left: 1rem;
+      }
+      i {
+        transform: translateX(2rem) rotate(90deg);
+      }
+      &:hover {
+        .key-word,
         i {
-          opacity: 0;
-          transform: translateY(-2rem) rotate(180deg);
-          transition: all 400ms ease-in-out;
-        }
-        .key-word {
-          transition: all 400ms ease-in-out;
-        }
-        &:hover {
-          color: #fff;
-          i {
-            opacity: 1;
-            transform: none;
-            color: $pink;
-          }
-          .key-word {
-            color: $pink;
-          }
+          color: $blue;
+          transform: none;
         }
       }
-      &-left {
-        @include flex(row, flex-start);
-        transition: all 400ms ease-in-out;
-
-        a {
-          margin-left: 1rem;
-        }
-        .key-word {
-          transition: all 400ms ease-in-out;
-        }
-        i {
-          transition: all 400ms ease-in-out;
-          opacity: 0;
-          transform: translateX(2rem) rotate(90deg);
-        }
-        &:hover {
-          color: #fff;
-
-          i {
-            opacity: 1;
-            transform: none;
-            color: $blue;
-          }
-          .key-word {
-            color: $blue;
-          }
-        }
+    }
+    &:last-child {
+      @include flex(row, flex-end);
+      a {
+        margin-right: 1rem;
       }
-      &-right {
-        @include flex(row, flex-end);
-        transition: all 400ms ease-in-out;
-
-        a {
-          margin-right: 1rem;
-        }
-        .key-word {
-          transition: all 400ms ease-in-out;
-        }
+      i {
+        transform: translateX(-2rem) rotate(-90deg);
+      }
+      &:hover {
         i {
-          transition: all 400ms ease-in-out;
-          opacity: 0;
-          transform: translateX(-2rem) rotate(-90deg);
+          transform: none;
         }
-        &:hover {
-          color: #fff;
-          i {
-            opacity: 1;
-            transform: none;
-            color: $twitch-color;
-          }
-          .key-word {
-            color: $twitch-color;
-          }
+        .key-word,
+        i {
+          color: $twitch-color;
         }
       }
     }

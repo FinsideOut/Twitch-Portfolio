@@ -1,3 +1,5 @@
+$transit-time: 400ms;
+
 @mixin flex($direction, $space) {
   display: flex;
   flex-direction: $direction;

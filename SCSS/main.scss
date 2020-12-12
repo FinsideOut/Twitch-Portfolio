@@ -59,7 +59,7 @@
       align-items: flex-end;
       height: 100%;
       max-width: fit-content;
-      $transit-time: 400ms;
+
       .headline {
         font-size: 4rem;
         transition: all $transit-time ease-in-out;
