@@ -204,6 +204,30 @@ textarea:focus {
           transform: translateX(45vw) translateY(90vh) scale(0.7);
 }
 
+.scrolled-icons {
+  -webkit-transition: all 1500ms ease-in-out;
+  transition: all 1500ms ease-in-out;
+  z-index: -1;
+  -webkit-transform: translateX(-70vw) translateY(60vh) scale(1.4);
+          transform: translateX(-70vw) translateY(60vh) scale(1.4);
+}
+
+.scrolled-video {
+  -webkit-transition: all 1500ms ease-in-out;
+  transition: all 1500ms ease-in-out;
+  z-index: -1;
+  -webkit-transform: scale(0.2) translateX(80vw);
+          transform: scale(0.2) translateX(80vw);
+}
+
+.scrolled-contact {
+  -webkit-transition: all 1500ms ease-in-out;
+  transition: all 1500ms ease-in-out;
+  z-index: -1;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
 .scrolled-home {
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
@@ -402,7 +426,34 @@ textarea:focus {
   }
 }
 
-.animation-wrapper {
+.animation-wrapper-about {
+  -webkit-transition: -webkit-transform 1000ms ease-in-out;
+  transition: -webkit-transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.animation-wrapper-icons {
+  -webkit-transition: -webkit-transform 1000ms ease-in-out;
+  transition: -webkit-transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.animation-wrapper-video {
+  -webkit-transition: -webkit-transform 1000ms ease-in-out;
+  transition: -webkit-transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.animation-wrapper-contact {
   -webkit-transition: -webkit-transform 1000ms ease-in-out;
   transition: -webkit-transform 1000ms ease-in-out;
   transition: transform 1000ms ease-in-out;

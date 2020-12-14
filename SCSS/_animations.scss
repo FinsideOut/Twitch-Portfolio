@@ -100,7 +100,19 @@ $gap: 120px;
     transform: rotate(360deg);
   }
 }
-.animation-wrapper {
+.animation-wrapper-about {
+  transition: transform 1000ms ease-in-out;
+  transform: none;
+}
+.animation-wrapper-icons {
+  transition: transform 1000ms ease-in-out;
+  transform: none;
+}
+.animation-wrapper-video {
+  transition: transform 1000ms ease-in-out;
+  transform: none;
+}
+.animation-wrapper-contact {
   transition: transform 1000ms ease-in-out;
   transform: none;
 }
