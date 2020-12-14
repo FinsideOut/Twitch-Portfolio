@@ -113,7 +113,27 @@ textarea {
   border: none;
   background: transparent;
   border-bottom: 3px solid $blue;
+  &:focus {
+    border-bottom: 3px solid $pink;
+  }
 }
+
+.btn {
+  font-family: "Staatliches", cursive;
+
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background: $blue;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  transition: all $transit-time ease-in-out;
+  &:hover {
+    background-color: darken($blue, 20%);
+  }
+}
+
 .header-scrolled {
   opacity: 0.05;
   // background: rgba(0, 0, 0, 0);
