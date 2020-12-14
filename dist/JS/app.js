@@ -6,17 +6,24 @@ window.onscroll = function () {
   if (window.pageYOffset > 10) {
     header.classList.add("header-scrolled");
     footer.classList.add("footer-scrolled");
+    animation.classList.remove("scrolled-icons");
   } else {
     header.classList.remove("header-scrolled");
     footer.classList.remove("footer-scrolled");
+
     animation.classList.add("scrolled-home");
     animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-icons");
   }
 
-  if (window.pageYOffset > 400) {
+  if (window.pageYOffset > 350) {
     animation.classList.remove("scrolled-home");
-
     animation.classList.add("scrolled-about");
+  }
+  if (window.pageYOffset > 800) {
+    animation.classList.remove("scrolled-home");
+    animation.classList.remove("scrolled-about");
+    animation.classList.add("scrolled-icons");
   }
 };
 

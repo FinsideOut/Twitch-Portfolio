@@ -165,15 +165,17 @@
 .video-display {
   margin-top: 3rem;
   @include flex(row, space-between);
+
   .video-wrapper {
-    max-width: fit-content;
-    max-height: fit-content;
+    // max-width: fit-content;
+    // max-height: fit-content;
+
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.9);
   }
 }
 
 #page-contact {
-  margin-top: 60vh;
+  // margin-top: 60vh;
   .key-word {
     color: $pink;
   }

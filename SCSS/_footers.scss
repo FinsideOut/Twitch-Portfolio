@@ -6,68 +6,76 @@
     transform: translateY(100vh);
     @include normalize;
     margin-top: 15vh;
-    .footer-links {
-      font-size: 1.5rem;
-      @include flex(row, space-between);
-      align-items: flex-start;
+  }
+}
+.footer-links {
+  font-size: 1.5rem;
+  @include flex(row, space-between);
+  align-items: flex-start;
+}
+.footer-link {
+  @include flex(column, flex-end);
+  i {
+    opacity: 0;
+    transform: translateY(-2rem) rotate(180deg);
+  }
+  .key-word,
+  i {
+    // transition: transform 400ms ease-in-out, color 400ms ease-in-out;
+    transition: all $transit-time ease-in-out;
+  }
+  &:hover {
+    color: #fff;
+    i {
+      opacity: 1;
+      transform: none;
+      color: $pink;
     }
-    .footer-link {
-      @include flex(column, flex-end);
+    .key-word {
+      color: $pink;
+    }
+  }
+
+  &:first-child {
+    @include flex(row, flex-start);
+    a {
+      margin-left: 1rem;
+    }
+    i {
+      transform: translateX(2rem) rotate(90deg);
+    }
+    &:hover {
+      .key-word,
       i {
-        opacity: 0;
-        transform: translateY(-2rem) rotate(180deg);
+        color: $blue;
+        transform: none;
+      }
+    }
+  }
+  &:last-child {
+    @include flex(row, flex-end);
+    a {
+      margin-right: 1rem;
+    }
+    i {
+      transform: translateX(-2rem) rotate(-90deg);
+    }
+    &:hover {
+      i {
+        transform: none;
       }
       .key-word,
       i {
-        // transition: transform 400ms ease-in-out, color 400ms ease-in-out;
-        transition: all $transit-time ease-in-out;
-      }
-      &:hover {
-        color: #fff;
-        i {
-          opacity: 1;
-          transform: none;
-          color: $pink;
-        }
-        .key-word {
-          color: $pink;
-        }
-      }
-
-      &:first-child {
-        @include flex(row, flex-start);
-        a {
-          margin-left: 1rem;
-        }
-        i {
-          transform: translateX(2rem) rotate(90deg);
-        }
-        &:hover {
-          .key-word,
-          i {
-            color: $blue;
-            transform: none;
-          }
-        }
-      }
-      &:last-child {
-        @include flex(row, flex-end);
-        a {
-          margin-right: 1rem;
-        }
-        i {
-          transform: translateX(-2rem) rotate(-90deg);
-        }
-        &:hover {
-          i {
-            transform: none;
-          }
-          .key-word,
-          i {
-            color: $twitch-color;
-          }
-        }
+        color: $twitch-color;
       }
     }
+  }
+}
+#page-footer {
+  height: 10vh;
+  @include flex(row, center);
+  margin-top: 10vh;
+  p {
+    font-weight: lighter;
   }
 }

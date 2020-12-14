@@ -63,7 +63,7 @@ a {
   border-top: 3px solid $blue;
 }
 
-//video stuff
+// video stuff
 // .video-wrapper {
 //   overflow: hidden;
 //   padding-bottom: 56.25%;
@@ -77,12 +77,42 @@ a {
 //     left: 0;
 //     top: 0;
 //     height: 100%;
-//     width: 50%;
+//     width: 100%;
 //     position: absolute;
 //     // box-shadow: -0.5rem 0.5rem $blue, 0.5rem -0.5rem $yellow;
 //   }
 // }
+.back-to-container {
+  height: 40vh;
+  font-size: 2rem;
+  @include flex(row, center);
+  // border: 1px solid white;
+  color: #fff;
+  .back-to-link {
+    @include flex(column, space-between);
 
+    i,
+    .key-wrd {
+      display: inline-block;
+      transition: all $transit-time ease-in-out;
+      color: #fff;
+    }
+    i {
+      transform: translateY(2rem) rotate(-180deg);
+      opacity: 0;
+    }
+    &:hover {
+      i {
+        opacity: 1;
+        transform: none;
+      }
+      .key-wrd,
+      i {
+        color: $blue;
+      }
+    }
+  }
+}
 // colros
 .high-blue {
   color: $blue;
@@ -151,6 +181,12 @@ textarea {
   opacity: 0.7;
   z-index: -1;
   transform: translateX(45vw) translateY(90vh) scale(0.7);
+}
+.scrolled-icons {
+  transition: all 1500ms ease-in-out;
+  opacity: 0.7;
+  z-index: -1;
+  transform: translateX(10vw) translateY(190vh) scale(1.5);
 }
 .scrolled-home {
   transition: all 1000ms ease-in-out;
