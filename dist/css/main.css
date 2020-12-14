@@ -32,6 +32,7 @@ a {
 }
 
 .section-header {
+  z-index: 10;
   font-size: 3rem;
   text-align: center;
   margin: 15vh 0 1rem;
@@ -63,6 +64,7 @@ a {
 }
 
 .mini-footer {
+  z-index: -10;
   color: #01b5ce;
   margin-top: 2.75rem;
   border-top: 3px solid #01b5ce;
@@ -149,6 +151,7 @@ a {
 .container {
   width: 90%;
   margin: auto;
+  position: relative;
 }
 
 input,
@@ -199,33 +202,33 @@ textarea:focus {
   -webkit-transition: all 1500ms ease-in-out;
   transition: all 1500ms ease-in-out;
   opacity: 0.7;
-  z-index: -1;
-  -webkit-transform: translateX(45vw) translateY(90vh) scale(0.7);
-          transform: translateX(45vw) translateY(90vh) scale(0.7);
+  -webkit-transform: translateX(45vw) translateY(100vh) scale(0.7);
+          transform: translateX(45vw) translateY(100vh) scale(0.7);
 }
 
 .scrolled-icons {
   -webkit-transition: all 1500ms ease-in-out;
   transition: all 1500ms ease-in-out;
   z-index: -1;
-  -webkit-transform: translateX(-70vw) translateY(60vh) scale(1.4);
-          transform: translateX(-70vw) translateY(60vh) scale(1.4);
+  -webkit-transform: translateX(-60vw) translateY(100vh);
+          transform: translateX(-60vw) translateY(100vh);
 }
 
 .scrolled-video {
   -webkit-transition: all 1500ms ease-in-out;
   transition: all 1500ms ease-in-out;
   z-index: -1;
-  -webkit-transform: scale(0.2) translateX(80vw);
-          transform: scale(0.2) translateX(80vw);
+  -webkit-transform: translateX(30vw) translateY(210vh);
+          transform: translateX(30vw) translateY(210vh);
 }
 
 .scrolled-contact {
   -webkit-transition: all 1500ms ease-in-out;
   transition: all 1500ms ease-in-out;
   z-index: -1;
-  -webkit-transform: scale(2);
-          transform: scale(2);
+  -webkit-transform: translateX(30vw) translateY(100vh);
+          transform: translateX(30vw) translateY(100vh);
+  scale: 2;
 }
 
 .scrolled-home {
@@ -412,6 +415,36 @@ textarea:focus {
           animation-iteration-count: infinite;
 }
 
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  50% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  50% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+}
+
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
@@ -433,6 +466,7 @@ textarea:focus {
   transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
   -webkit-transform: none;
           transform: none;
+  z-index: -10;
 }
 
 .animation-wrapper-icons {
@@ -442,6 +476,7 @@ textarea:focus {
   transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
   -webkit-transform: none;
           transform: none;
+  z-index: -10;
 }
 
 .animation-wrapper-video {
@@ -451,6 +486,7 @@ textarea:focus {
   transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
   -webkit-transform: none;
           transform: none;
+  z-index: -10;
 }
 
 .animation-wrapper-contact {
@@ -460,6 +496,7 @@ textarea:focus {
   transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
   -webkit-transform: none;
           transform: none;
+  z-index: -10;
 }
 
 #main-animation {
@@ -471,7 +508,7 @@ textarea:focus {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   animation-direction: reverse;
-  z-index: -1;
+  z-index: -10;
 }
 
 #main-animation .shapes-container {
@@ -487,6 +524,7 @@ textarea:focus {
 }
 
 #main-animation .shapes-container .square {
+  z-index: -10;
   -webkit-animation: spin 20000ms linear;
           animation: spin 20000ms linear;
   -webkit-animation-iteration-count: infinite;
@@ -499,6 +537,7 @@ textarea:focus {
 }
 
 #main-animation .shapes-container .circle {
+  z-index: -10;
   -webkit-animation: spin 3000ms linear;
           animation: spin 3000ms linear;
   -webkit-animation-iteration-count: infinite;
@@ -510,6 +549,7 @@ textarea:focus {
 }
 
 #main-animation .shapes-container .triangle {
+  z-index: -10;
   -webkit-animation: spin 11000ms linear;
           animation: spin 11000ms linear;
   -webkit-animation-iteration-count: infinite;
@@ -521,6 +561,7 @@ textarea:focus {
 }
 
 #main-animation .shapes-container .cross {
+  z-index: -10;
   -webkit-animation: spin 9000ms linear;
           animation: spin 9000ms linear;
   -webkit-animation-iteration-count: infinite;
@@ -915,7 +956,7 @@ textarea:focus {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: -1;
+  z-index: -10;
   background: url("../img/intro-bg.jpg") no-repeat center center/cover;
   opacity: 0;
   -webkit-transform: scale(1.4);
@@ -940,11 +981,17 @@ textarea:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: -1;
+  position: relative;
   margin-top: 8vh;
   height: 50vh;
 }
 
-#page-home .hero-container .headlines {
+.headlines {
+  position: absolute;
+  right: 0;
+  top: -50vh;
+  height: 50vh;
   visibility: hidden;
   -webkit-transform: translateX(-150vw);
           transform: translateX(-150vw);
@@ -962,49 +1009,49 @@ textarea:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  height: 100%;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
-#page-home .hero-container .headlines .headline {
+.headlines .headline {
   font-size: 4rem;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
 }
 
-#page-home .hero-container .headlines .headline .key-word {
+.headlines .headline .key-word {
   display: inline-block;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
 }
 
-#page-home .hero-container .headlines .headline:hover {
+.headlines .headline:hover {
   -webkit-transform: translateX(-10vw);
           transform: translateX(-10vw);
   color: #fff;
 }
 
-#page-home .hero-container .headlines .headline:hover .key-word {
+.headlines .headline:hover .key-word {
   -webkit-transform: scale(1.7) translateX(2.8vw);
           transform: scale(1.7) translateX(2.8vw);
 }
 
-#page-home .hero-container .headlines .headline:hover .twitch {
+.headlines .headline:hover .twitch {
   text-shadow: -0.5rem 0.5rem #772ce8, 0.5rem -0.5rem #01b5ce;
 }
 
-#page-home .hero-container .headlines .headline:hover .shag {
+.headlines .headline:hover .shag {
   text-shadow: -0.5rem 0.5rem rgba(254, 146, 154, 0.7), 0.5rem -0.5rem rgba(1, 181, 206, 0.7);
 }
 
-#page-home .hero-container .headlines .headline:hover .drink {
+.headlines .headline:hover .drink {
   text-shadow: -0.5rem 0.5rem rgba(32, 233, 0, 0.7), 0.5rem -0.5rem rgba(1, 181, 206, 0.7);
 }
 
@@ -1014,6 +1061,44 @@ textarea:focus {
 
 #page-about .key-word {
   color: #01b5ce;
+}
+
+#page-about .img-container {
+  border: 1px solid white;
+  position: relative;
+}
+
+#page-about .img-container:hover .right,
+#page-about .img-container:hover .left {
+  visibility: visible;
+  opacity: 1;
+}
+
+#page-about .img-container .left,
+#page-about .img-container .right {
+  background: -webkit-linear-gradient(45deg, red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 18%;
+  visibility: hidden;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  opacity: 0;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  -webkit-animation: shake 1000ms linear;
+          animation: shake 1000ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+#page-about .img-container .left {
+  left: 40%;
+}
+
+#page-about .img-container .right {
+  left: 50%;
 }
 
 .icons-display {

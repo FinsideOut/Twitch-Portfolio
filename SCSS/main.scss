@@ -40,7 +40,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: -10;
     background: url("../img/intro-bg.jpg") no-repeat center center/cover;
     opacity: 0;
     transform: scale(1.4);
@@ -49,40 +49,48 @@
   }
   .hero-container {
     @include flex(row, space-between);
+    z-index: -1;
+    position: relative;
     margin-top: 8vh;
     height: 50vh;
-    .headlines {
-      visibility: hidden;
-      transform: translateX(-150vw);
-      @include normalize;
-      @include flex(column, space-around);
-      align-items: flex-end;
-      height: 100%;
-      max-width: fit-content;
+  }
+}
+.headlines {
+  position: absolute;
+  right: 0;
+  top: -50vh;
+  height: 50vh;
+  // margin-top: 2vh;
+  // height: 20vh;
+  visibility: hidden;
+  transform: translateX(-150vw);
+  @include normalize;
+  @include flex(column, space-between);
+  align-items: flex-end;
+  // height: 100%;
+  max-width: fit-content;
 
-      .headline {
-        font-size: 4rem;
-        transition: all $transit-time ease-in-out;
-        .key-word {
-          display: inline-block;
-          transition: all $transit-time ease-in-out;
-        }
-        &:hover {
-          transform: translateX(-10vw);
-          color: #fff;
-          .key-word {
-            transform: scale(1.7) translateX(2.8vw);
-          }
-          .twitch {
-            @include text-shadow-big($twitch-color, $blue);
-          }
-          .shag {
-            @include text-shadow-big($trans-pink, $trans-blue);
-          }
-          .drink {
-            @include text-shadow-big($trans-green, $trans-blue);
-          }
-        }
+  .headline {
+    font-size: 4rem;
+    transition: all $transit-time ease-in-out;
+    .key-word {
+      display: inline-block;
+      transition: all $transit-time ease-in-out;
+    }
+    &:hover {
+      transform: translateX(-10vw);
+      color: #fff;
+      .key-word {
+        transform: scale(1.7) translateX(2.8vw);
+      }
+      .twitch {
+        @include text-shadow-big($twitch-color, $blue);
+      }
+      .shag {
+        @include text-shadow-big($trans-pink, $trans-blue);
+      }
+      .drink {
+        @include text-shadow-big($trans-green, $trans-blue);
       }
     }
   }
@@ -92,6 +100,36 @@
   // height: 100vh;
   .key-word {
     color: $blue;
+  }
+  .img-container {
+    border: 1px solid white;
+    position: relative;
+    &:hover {
+      .right,
+      .left {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .left,
+    .right {
+      @include text-gradient(red, orange, 45deg);
+      position: absolute;
+      top: 18%;
+      visibility: hidden;
+      transition: all $transit-time ease-in-out;
+      opacity: 0;
+      transform-origin: center bottom;
+
+      animation: shake 1000ms linear;
+      animation-iteration-count: infinite;
+    }
+    .left {
+      left: 40%;
+    }
+    .right {
+      left: 50%;
+    }
   }
 }
 // .about-icons {

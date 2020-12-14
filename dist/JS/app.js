@@ -29,7 +29,7 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-home");
     animation_icons.classList.add("scrolled-icons");
   }
-  if (window.pageYOffset > 1800) {
+  if (window.pageYOffset > 1600) {
     animation.classList.remove("scrolled-home");
     animation_video.classList.add("scrolled-video");
   }
