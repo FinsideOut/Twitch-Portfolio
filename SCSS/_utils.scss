@@ -36,17 +36,28 @@ a {
   font-size: 3rem;
   text-align: center;
   margin: 20vh 0 1rem;
-
-  .games {
+  a {
+    transition: color $transit-time ease-in-out;
     &:hover {
-      color: $primary-3;
+      color: $yellow;
     }
   }
-  .drinks {
-    &:hover {
-      color: $pink;
-    }
+}
+.about-text {
+  // width: 50%;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
   }
+}
+.mini-footer {
+  color: $blue;
+  margin-top: 2.75rem;
+  border-top: 3px solid $blue;
 }
 // colros
 .high-blue {
@@ -73,11 +84,11 @@ a {
 // }
 
 .header-scrolled {
-  opacity: 0.15;
+  opacity: 0.05;
   // background: rgba(0, 0, 0, 0);
   &:hover {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
   }
 }
 .footer-scrolled {

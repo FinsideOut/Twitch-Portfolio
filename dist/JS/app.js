@@ -5,15 +5,14 @@ const animation = document.getElementById("animation-wrapper");
 window.onscroll = function () {
   if (window.pageYOffset > 10) {
     header.classList.add("header-scrolled");
+    footer.classList.add("footer-scrolled");
   } else {
     header.classList.remove("header-scrolled");
     footer.classList.remove("footer-scrolled");
     animation.classList.add("scrolled-home");
     animation.classList.remove("scrolled-about");
   }
-  if (window.pageYOffset > 10) {
-    footer.classList.add("footer-scrolled");
-  }
+
   if (window.pageYOffset > 400) {
     animation.classList.remove("scrolled-home");
 

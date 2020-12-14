@@ -37,12 +37,31 @@ a {
   margin: 20vh 0 1rem;
 }
 
-.section-header .games:hover {
-  color: #2ff50f;
+.section-header a {
+  -webkit-transition: color 400ms ease-in-out;
+  transition: color 400ms ease-in-out;
 }
 
-.section-header .drinks:hover {
-  color: #fe929a;
+.section-header a:hover {
+  color: #bff900;
+}
+
+.about-text {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.about-text h3 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mini-footer {
+  color: #01b5ce;
+  margin-top: 2.75rem;
+  border-top: 3px solid #01b5ce;
 }
 
 .high-blue {
@@ -69,12 +88,12 @@ a {
 }
 
 .header-scrolled {
-  opacity: 0.15;
+  opacity: 0.05;
 }
 
 .header-scrolled:hover {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
 }
 
 .footer-scrolled {
@@ -828,54 +847,7 @@ a {
   color: #01b5ce;
 }
 
-#page-about .about-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#page-about .about-content .about-text {
-  width: 50%;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-#page-about .about-content .about-text h3 {
-  font-size: 3rem;
-}
-
-#page-about .about-content .about-text .mini-footer {
-  color: #01b5ce;
-  margin-top: 2.75rem;
-  border-top: 3px solid #01b5ce;
-}
-
-#page-about .about-content img {
-  width: 450px;
-  height: auto;
-  -webkit-filter: drop-shadow(-10px 10px #20e900) drop-shadow(10px -10px #01b5ce);
-          filter: drop-shadow(-10px 10px #20e900) drop-shadow(10px -10px #01b5ce);
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
-}
-
-#page-about .about-content img:hover {
-  -webkit-filter: drop-shadow(-30px 30px #fe929a) drop-shadow(30px -30px #20e900);
-          filter: drop-shadow(-30px 30px #fe929a) drop-shadow(30px -30px #20e900);
-}
-
-#page-about .icons-display {
+.icons-display {
   margin-top: 3rem;
   font-size: 1.5rem;
   display: -webkit-box;
@@ -892,9 +864,9 @@ a {
       justify-content: space-around;
 }
 
-#page-about .icons-display .about-icon {
+.icons-display .about-icon {
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -907,9 +879,69 @@ a {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
-#page-about .icons-display .about-icon i {
+.icons-display .about-icon i {
+  display: inline-block;
   margin-right: 1rem;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.icons-display .about-icon:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.icons-display .about-icon:hover i {
+  color: #bff900;
+  -webkit-transform: scale(1.5) rotate(360deg);
+          transform: scale(1.5) rotate(360deg);
+}
+
+.icons-display .about-icon .icon-item {
+  padding: 1rem 0 0.5rem;
+  border-top: 1px solid #bff900;
+  font-weight: lighter;
+}
+
+.icons-display .about-icon .meta a {
+  color: #bff900;
+}
+
+.about-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-content .about-text {
+  width: 50%;
+}
+
+.about-content img {
+  width: 450px;
+  height: auto;
+  -webkit-filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #bff900);
+          filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #bff900);
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.about-content img:hover {
+  -webkit-filter: drop-shadow(-20px 20px #01b5ce) drop-shadow(20px -20px #bff900);
+          filter: drop-shadow(-20px 20px #01b5ce) drop-shadow(20px -20px #bff900);
 }
 /*# sourceMappingURL=main.css.map */
