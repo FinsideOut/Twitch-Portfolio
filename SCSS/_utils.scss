@@ -35,7 +35,10 @@ a {
 .section-header {
   font-size: 3rem;
   text-align: center;
-  margin: 20vh 0 1rem;
+  margin: 15vh 0 1rem;
+  .leade {
+    margin-top: 1rem;
+  }
   a {
     transition: color $transit-time ease-in-out;
     &:hover {
@@ -59,6 +62,27 @@ a {
   margin-top: 2.75rem;
   border-top: 3px solid $blue;
 }
+
+//video stuff
+// .video-wrapper {
+//   overflow: hidden;
+//   padding-bottom: 56.25%;
+//   position: relative;
+//   // width: 400px;
+//   height: 0;
+
+//   iframe,
+//   object,
+//   embed {
+//     left: 0;
+//     top: 0;
+//     height: 100%;
+//     width: 50%;
+//     position: absolute;
+//     // box-shadow: -0.5rem 0.5rem $blue, 0.5rem -0.5rem $yellow;
+//   }
+// }
+
 // colros
 .high-blue {
   color: $blue;
@@ -82,7 +106,14 @@ a {
 // html {
 //   scroll-behavior: smooth;
 // }
-
+// form stuff
+input,
+textarea {
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid $blue;
+}
 .header-scrolled {
   opacity: 0.05;
   // background: rgba(0, 0, 0, 0);

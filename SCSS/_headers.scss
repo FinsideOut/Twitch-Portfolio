@@ -36,18 +36,18 @@
         .hover {
           &-about {
             &:hover {
-              @include text-shadow($trans-primary-4, $trans-complement-2);
+              @include text-shadow($trans-yellow, $trans-blue);
               // border-top: 3px solid $primary-3;
             }
           }
           &-blog {
             &:hover {
-              @include text-shadow($trans-primary-4, $trans-complement-2);
+              @include text-shadow($trans-blue, $trans-pink);
             }
           }
           &-contact {
             &:hover {
-              @include text-shadow($trans-primary-4, $trans-complement-2);
+              @include text-shadow($trans-blue, $trans-pink);
             }
           }
         }
