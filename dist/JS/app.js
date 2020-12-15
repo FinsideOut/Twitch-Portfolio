@@ -2,9 +2,26 @@
 const header = document.getElementById("header-home");
 const footer = document.getElementById("footer-home");
 const animation = document.getElementById("animation-wrapper");
+// $(window).on("scroll", function () {
+//   var s = $(window).scrollTop(),
+//     d = $(document).height(),
+//     c = $(window).height();
 
+//   var getScrollPercent() = (s / (d - c)) * 100;
+
+//   // console.clear();
+//   console.log(scrollPercent);
+// });
+function getScrollPercent() {
+  var h = document.documentElement,
+    b = document.body,
+    st = "scrollTop",
+    sh = "scrollHeight";
+  console.log(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+  return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+}
 window.onscroll = function () {
-  if (window.pageYOffset > 10) {
+  if (getScrollPercent() > 2) {
     header.classList.add("header-scrolled");
     footer.classList.add("footer-scrolled");
     // animation.classList.remove("scrolled-home");
@@ -19,17 +36,17 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-contact");
   }
 
-  if (window.pageYOffset > 350) {
+  if (getScrollPercent() > 15) {
     animation.classList.add("scrolled-about");
   }
-  if (window.pageYOffset > 800) {
+  if (getScrollPercent() > 32) {
     animation.classList.remove("scrolled-about");
     animation.classList.add("scrolled-icons");
   }
-  if (window.pageYOffset > 1600) {
+  if (getScrollPercent() > 50) {
     animation.classList.add("scrolled-video");
   }
-  if (window.pageYOffset > 2600) {
+  if (getScrollPercent() > 80) {
     animation.classList.add("scrolled-contact");
   }
 };
