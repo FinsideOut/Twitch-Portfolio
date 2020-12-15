@@ -5,6 +5,7 @@ const animation = document.getElementById("animation-wrapper-about");
 const animation_icons = document.getElementById("animation-wrapper-icons");
 const animation_video = document.getElementById("animation-wrapper-video");
 const animation_contact = document.getElementById("animation-wrapper-contact");
+
 window.onscroll = function () {
   if (window.pageYOffset > 10) {
     header.classList.add("header-scrolled");
@@ -53,4 +54,9 @@ $("a").on("click", function (e) {
       800
     );
   }
+});
+
+// scroll top on refresh
+$(window).on("unload", function () {
+  $(window).scrollTop(0);
 });

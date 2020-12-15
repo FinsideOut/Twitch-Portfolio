@@ -1,29 +1,34 @@
 #page-intro {
   width: 100vw;
-  // height: 100vh;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 10;
   background: $dark;
-  animation: fadeOut 750ms ease-in-out 1750ms;
+  // animation: fadeOut $short-time ease-in-out $long-delay-time;
+  animation: slideOutTop $short-time ease-in-out $long-delay-time;
   animation-fill-mode: forwards;
   .intro-container {
-    animation: slideOutTop 1000ms ease-in-out 3000ms;
     @include flex(column, space-around);
     text-align: center;
     margin-top: 5vh;
     height: 85vh;
     .logo {
-      animation: slideInLeft 1000ms ease-in-out;
+      visibility: hidden;
+      transform: translateX(100vw);
+      @include normalize($short-time, $short-delay-time);
       font-size: 10rem;
     }
     .key-word {
-      animation: slideInRight 1000ms ease-in-out;
+      transform: translateX(-100vw);
+      @include normalize($short-time, calc(#{$short-delay-time} + 200ms));
       color: $blue;
     }
     .spinner {
-      animation: slideInBottom 1000ms ease-in-out;
+      visibility: hidden;
+      transform: translateY(100vh);
+      @include normalize($short-time, calc(#{$short-delay-time} + 400ms));
       i {
         font-size: 6rem;
       }

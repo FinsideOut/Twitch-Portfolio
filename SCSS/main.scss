@@ -42,9 +42,10 @@
     width: 100%;
     z-index: -10;
     background: url("../img/intro-bg.jpg") no-repeat center center/cover;
-    opacity: 0;
-    transform: scale(1.4);
-    animation: bg-normalize 5500ms ease-in-out 1500ms;
+    opacity: 0.2;
+    transform: scale(1.1);
+    animation: bg-normalize calc(1500ms + #{$long-time}) ease-in-out;
+    animation-delay: $long-delay-time;
     animation-fill-mode: forwards;
   }
   .hero-container {
@@ -63,8 +64,9 @@
   // margin-top: 2vh;
   // height: 20vh;
   visibility: hidden;
-  transform: translateX(-150vw);
-  @include normalize;
+  // transform: translateX(-150vw);
+  opacity: 0;
+  @include normalize($short-time, calc(700ms + #{$long-delay-time}));
   @include flex(column, space-between);
   align-items: flex-end;
   // height: 100%;
@@ -102,7 +104,6 @@
     color: $blue;
   }
   .img-container {
-    border: 1px solid white;
     position: relative;
     &:hover {
       .right,

@@ -1,0 +1,81 @@
+@import "config";
+// added with js
+$animation-shift: 1000ms;
+.scrolled-about {
+  transition: transform $animation-shift ease-in-out;
+  opacity: 0.4;
+  transform: translateX(45vw) translateY(100vh) scale(0.7);
+}
+.scrolled-icons {
+  transition: transform $animation-shift ease-in-out;
+  transform: translateX(-60vw) translateY(100vh);
+}
+.scrolled-video {
+  transition: transform $animation-shift ease-in-out;
+  transform: translateX(30vw) translateY(210vh);
+}
+.scrolled-contact {
+  transition: transform $animation-shift ease-in-out;
+  transform: translateX(30vw) translateY(100vh);
+}
+.scrolled-home {
+  transition: transform $animation-shift ease-in-out;
+  transform: none;
+}
+// main animation
+$shape-size: 550px;
+$gap: 120px;
+.shape {
+  width: $shape-size;
+  height: $shape-size;
+  opacity: 0.3;
+  position: absolute;
+}
+#main-animation {
+  width: 55vw;
+  margin-top: 3vh;
+  position: relative;
+  animation: spin 20000ms linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  z-index: -10;
+  .shapes-container {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(100vh) scale(0.5);
+    @include normalize($long-time, calc(300ms + #{$long-delay-time}));
+    .square {
+      animation: spin 20000ms linear;
+      background: url("../img/square.png") no-repeat center center/cover;
+      animation-iteration-count: infinite;
+      animation-direction: reverse;
+      top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
+      left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
+    }
+    //bottom right
+    .circle {
+      animation: spin 3000ms linear;
+      animation-iteration-count: infinite;
+      background: url("../img/circle.png") no-repeat center center/cover;
+      top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
+      left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
+    }
+    //top left
+    .triangle {
+      animation: spin 11000ms linear;
+      animation-iteration-count: infinite;
+      background: url("../img/triangle.png") no-repeat center center/cover;
+      top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
+      left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
+    }
+    //bottom left
+    .cross {
+      animation: spin 9000ms linear;
+      animation-iteration-count: infinite;
+      background: url("../img/cross.png") no-repeat center center/cover;
+      top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
+      left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
+    }
+  }
+}

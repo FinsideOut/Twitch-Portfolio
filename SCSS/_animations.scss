@@ -1,12 +1,12 @@
 // transitions
-@mixin normalize {
-  animation: normalize 2000ms ease-in-out 2000ms;
+@mixin normalize($time, $delay) {
+  animation: normalize $time ease-in-out $delay;
   animation-fill-mode: forwards;
 }
-@mixin bg-normalize {
-  animation: bg-normalize 8000ms ease-in-out 1000ms;
-  animation-fill-mode: forwards;
-}
+// @mixin bg-normalize {
+//   animation: bg-normalize 8000ms ease-in-out 1000ms;
+//   animation-fill-mode: forwards;
+// }
 
 @keyframes normalize {
   to {
@@ -25,7 +25,6 @@
   to {
     opacity: 0;
     visibility: hidden;
-    display: none;
   }
 }
 @keyframes slideOutTop {
@@ -33,51 +32,44 @@
     transform: translateY(-110vw);
     opacity: 0;
     visibility: hidden;
-    display: none;
   }
 }
-@keyframes slideInRight {
-  from {
-    display: none;
-    visibility: hidden;
-    transform: translateX(100vw);
+// @keyframes slideInRight {
+//   from {
+//     visibility: hidden;
+//     transform: translateX(100vw);
+//   }
+// }
+// @keyframes slideInLeft {
+//   from {
+//     visibility: hidden;
+//     transform: translateX(-100vw);
+//   }
+// }
+// @keyframes slideInBottom {
+//   from {
+//     visibility: hidden;
+//     transform: translateY(100vh);
+//   }
+// }
+// @keyframes slideInTop {
+//   from {
+//     visibility: hidden;
+//     transform: translateY(-100vh);
+//   }
+// }
+@keyframes shake {
+  0% {
+    transform: none;
   }
-}
-@keyframes slideInLeft {
-  from {
-    display: none;
-    visibility: hidden;
-    transform: translateX(-100vw);
+  50% {
+    transform: rotate(30deg);
   }
-}
-@keyframes slideInBottom {
-  from {
-    display: none;
-    visibility: hidden;
-    transform: translateY(100vh);
-  }
-}
-@keyframes slideInTop {
-  from {
-    display: none;
-    visibility: hidden;
-    transform: translateY(-100vh);
+  100% {
+    transform: rotate(-60deg);
   }
 }
 
-// main animation
-$shape-size: 550px;
-$gap: 120px;
-.shape {
-  // transition: all 500ms ease-in-out;
-  width: $shape-size;
-  height: $shape-size;
-  opacity: 0.3;
-  // &:hover {
-  //   animation-duration: 3000ms;
-  //   transform: translate(sclae(2));
-  // }
-}
 .spinner {
   background: $light;
   border-radius: 50%;
@@ -91,102 +83,16 @@ $gap: 120px;
     animation-iteration-count: infinite;
   }
 }
-@keyframes shake {
-  0% {
-    transform: none;
-  }
-  50% {
-    transform: rotate(30deg);
-  }
-  100% {
-    transform: rotate(-60deg);
-  }
-}
+
 @keyframes spin {
-  // from {
-  //   transform: rotate(0deg);
-  // }
   to {
     transform: rotate(360deg);
   }
 }
-.animation-wrapper-about {
-  transition: transform 1000ms ease-in-out;
-  transform: none;
-  z-index: -10;
-}
-.animation-wrapper-icons {
-  transition: transform 1000ms ease-in-out;
-  transform: none;
-  z-index: -10;
-}
-.animation-wrapper-video {
-  transition: transform 1000ms ease-in-out;
-  transform: none;
-  z-index: -10;
-}
-.animation-wrapper-contact {
-  transition: transform 1000ms ease-in-out;
-  transform: none;
-  z-index: -10;
-}
-#main-animation {
-  width: 55vw;
-  margin-top: 3vh;
-  position: relative;
-  animation: spin 20000ms linear;
-  animation-iteration-count: infinite;
-  animation-direction: reverse;
-  z-index: -10;
-  .shapes-container {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transform: scale(5);
-    @include normalize;
-    .square {
-      z-index: -10;
 
-      animation: spin 20000ms linear;
-      animation-iteration-count: infinite;
-      animation-direction: reverse;
-      background: url("../img/square.png") no-repeat center center/cover;
-      position: absolute;
-      top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-      left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-    }
-    //bottom right
-    .circle {
-      z-index: -10;
-
-      animation: spin 3000ms linear;
-      animation-iteration-count: infinite;
-      background: url("../img/circle.png") no-repeat center center/cover;
-      position: absolute;
-      top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-      left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-    }
-    //top left
-    .triangle {
-      z-index: -10;
-
-      animation: spin 11000ms linear;
-      animation-iteration-count: infinite;
-      background: url("../img/triangle.png") no-repeat center center/cover;
-      position: absolute;
-      top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-      left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-    }
-    //bottom left
-    .cross {
-      z-index: -10;
-
-      animation: spin 9000ms linear;
-      animation-iteration-count: infinite;
-      background: url("../img/cross.png") no-repeat center center/cover;
-      position: absolute;
-      top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
-      left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
-    }
-  }
+.footer-scrolled {
+  opacity: 0;
+  visibility: hidden;
 }
+
+@import "_main_animation";

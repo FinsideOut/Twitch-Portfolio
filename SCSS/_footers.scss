@@ -4,7 +4,8 @@
 
   .footer-container {
     transform: translateY(100vh);
-    @include normalize;
+    opacity: 0;
+    @include normalize($long-time, $long-delay-time);
     margin-top: 15vh;
   }
 }
