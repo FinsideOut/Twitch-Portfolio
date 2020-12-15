@@ -1,27 +1,54 @@
 @import "config";
 // added with js
 $animation-shift: 1000ms;
+#animation-wrapper {
+  position: absolute;
+  top: 20vh;
+  left: 0vw;
+  transition: all 1000ms ease-in-out;
+}
 .scrolled-about {
-  transition: transform $animation-shift ease-in-out;
   opacity: 0.4;
-  transform: translateX(45vw) translateY(100vh) scale(0.7);
+  position: absolute;
+  top: 120vh !important;
+  left: 45vw !important;
 }
 .scrolled-icons {
-  transition: transform $animation-shift ease-in-out;
-  transform: translateX(-60vw) translateY(100vh);
+  opacity: 0.4;
+
+  position: absolute;
+  top: 220vh !important;
+  left: 0vw !important;
 }
 .scrolled-video {
-  transition: transform $animation-shift ease-in-out;
-  transform: translateX(30vw) translateY(210vh);
+  opacity: 1 !important;
+  position: absolute;
+  top: 450vh !important;
+  left: 18vw !important;
 }
 .scrolled-contact {
-  transition: transform $animation-shift ease-in-out;
-  transform: translateX(30vw) translateY(100vh);
+  opacity: 0.4;
+
+  position: absolute;
+  top: 550vh !important;
+  left: 40vw !important;
 }
-.scrolled-home {
-  transition: transform $animation-shift ease-in-out;
-  transform: none;
-}
+// .scrolled-icons {
+//   transition: transform $animation-shift ease-in-out;
+//   transform: translateX(-10vw) translateY(2000vh);
+// }
+// .scrolled-video {
+//   transition: transform $animation-shift ease-in-out;
+//   transform: translateX(30vw) translateY(210vh);
+// }
+// .scrolled-contact {
+//   transition: transform $animation-shift ease-in-out;
+//   transform: translateX(30vw) translateY(100vh);
+// }
+// .scrolled-home {
+//   transition: transform $animation-shift ease-in-out;
+//   transform: none;
+// }
 // main animation
 $shape-size: 550px;
 $gap: 120px;
