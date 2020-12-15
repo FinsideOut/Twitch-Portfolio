@@ -1,6 +1,6 @@
 @import "config";
 // added with js
-$animation-shift: 1000ms;
+$animation-shift: 1500ms;
 #animation-wrapper {
   position: absolute;
   top: 20vh;
@@ -8,24 +8,19 @@ $animation-shift: 1000ms;
   transition: all 1000ms ease-in-out;
 }
 .scrolled-about {
-  opacity: 0.4;
+  opacity: 0.6;
+  transform: scale(0.8);
 }
 .scrolled-icons {
-  opacity: 0.4;
-
-  position: absolute;
-  top: 220vh !important;
-  left: 0vw !important;
+  opacity: 0.3;
+  transform: scale(1.5);
 }
 .scrolled-video {
-  opacity: 1 !important;
+  opacity: 1;
+  transform: scale(0.5);
 }
 .scrolled-contact {
   opacity: 0.4;
-
-  position: absolute;
-  top: 550vh !important;
-  left: 40vw !important;
 }
 // .scrolled-icons {
 //   transition: transform $animation-shift ease-in-out;

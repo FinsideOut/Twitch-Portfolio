@@ -39,7 +39,7 @@ const animation = document.getElementById("animation-wrapper");
 const aboutStop = document.getElementById("about-stop");
 const aboutPos = getPos(aboutStop);
 const aboutPosX = aboutPos.x - animation.offsetWidth / 4 + "px";
-const aboutPosY = aboutPos.y - 150 + "px";
+const aboutPosY = aboutPos.y - 250 + "px";
 
 const iconsStop = document.getElementById("icons-stop");
 const iconsPos = getPos(iconsStop);
@@ -57,38 +57,75 @@ const contactPosX = contactPos.x - animation.offsetWidth / 3 + "px";
 const contactPosY = contactPos.y + 150 + "px";
 
 window.onscroll = function () {
-  if (getScrollPercent() > 2) {
+  if (getScrollPercent() > 2 && getScrollPercent() < 15) {
     header.classList.add("header-scrolled");
     footer.classList.add("footer-scrolled");
   } else {
     header.classList.remove("header-scrolled");
     footer.classList.remove("footer-scrolled");
     animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-icons");
+    animation.classList.remove("scrolled-video");
+    animation.classList.remove("scrolled-contact");
 
     animation.style.left = "";
     animation.style.top = "";
   }
 
-  if (getScrollPercent() > 15) {
+  if (getScrollPercent() > 15 && getScrollPercent() < 32) {
     animation.classList.add("scrolled-about");
     animation.style.left = aboutPosX;
     animation.style.top = aboutPosY;
+
+    animation.classList.remove("scrolled-icons");
+    animation.classList.remove("scrolled-video");
+    animation.classList.remove("scrolled-contact");
   }
-  if (getScrollPercent() > 32) {
+  if (getScrollPercent() > 32 && getScrollPercent() < 50) {
     // animation.classList.remove("scrolled-about");
-    // animation.classList.add("scrolled-icons");
+    animation.classList.add("scrolled-icons");
     animation.style.left = iconsPosX;
     animation.style.top = iconsPosY;
+
+    animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-video");
+    animation.classList.remove("scrolled-contact");
   }
-  if (getScrollPercent() > 50) {
-    // animation.classList.add("scrolled-video");
+  if (getScrollPercent() > 50 && getScrollPercent() < 70) {
+    animation.classList.add("scrolled-icons");
+    animation.style.left = videoPosX;
+    animation.style.top = videoPos.y - 600 + "px";
+    animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-video");
+    animation.classList.remove("scrolled-contact");
+  }
+
+  if (getScrollPercent() > 70 && getScrollPercent() < 80) {
+    animation.classList.add("scrolled-video");
     animation.style.left = videoPosX;
     animation.style.top = videoPosY;
+
+    animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-icons");
+
+    animation.classList.remove("scrolled-contact");
   }
-  if (getScrollPercent() > 80) {
-    // animation.classList.add("scrolled-contact");
+  if (getScrollPercent() > 80 && getScrollPercent() < 95) {
+    animation.classList.add("scrolled-contact");
     animation.style.left = contactPosX;
     animation.style.top = contactPosY;
+
+    animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-icons");
+    animation.classList.remove("scrolled-video");
+  }
+  if (getScrollPercent() > 95) {
+    animation.classList.add("scrolled-video");
+    animation.style.left = videoPosX;
+    animation.style.top = videoPos.y + 900 + "px";
+    animation.classList.remove("scrolled-about");
+    animation.classList.remove("scrolled-icons");
+    animation.classList.remove("scrolled-contact");
   }
 };
 

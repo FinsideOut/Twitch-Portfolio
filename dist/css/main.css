@@ -332,25 +332,25 @@ textarea:focus {
 }
 
 .scrolled-about {
-  opacity: 0.4;
+  opacity: 0.6;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .scrolled-icons {
-  opacity: 0.4;
-  position: absolute;
-  top: 220vh !important;
-  left: 0vw !important;
+  opacity: 0.3;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .scrolled-video {
-  opacity: 1 !important;
+  opacity: 1;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
 }
 
 .scrolled-contact {
   opacity: 0.4;
-  position: absolute;
-  top: 550vh !important;
-  left: 40vw !important;
 }
 
 .shape {
