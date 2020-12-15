@@ -1134,12 +1134,13 @@ textarea:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .video-display .video-wrapper {
+  margin: 3rem;
   -webkit-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.9);
           box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.9);
 }
@@ -1149,7 +1150,9 @@ textarea:focus {
 }
 
 #page-contact .contact-container {
-  height: 90vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   margin-top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1181,6 +1184,12 @@ textarea:focus {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #page-contact .contact-container form .message {
@@ -1190,18 +1199,14 @@ textarea:focus {
   width: 100%;
 }
 
-#page-contact .contact-container form .about-text {
+#page-contact .contact-container form .button {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
-}
-
-#page-contact .contact-container form .btn {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1 / span 2;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #page-contact .contact-container form .input-wrapper {
@@ -1220,6 +1225,7 @@ textarea:focus {
           justify-content: flex-start;
   margin: 1rem 0.5rem;
   width: 100%;
+  border: 1px solid white;
 }
 
 #page-contact .contact-container form .input-wrapper input,

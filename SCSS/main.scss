@@ -210,12 +210,12 @@
 
 .video-display {
   margin-top: 3rem;
-  @include flex(row, space-between);
+  @include flex(row, space-evenly);
 
   .video-wrapper {
     // max-width: fit-content;
     // max-height: fit-content;
-
+    margin: 3rem;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.9);
   }
 }
@@ -226,7 +226,8 @@
     color: $blue;
   }
   .contact-container {
-    height: 90vh;
+    // height: 90vh;
+    min-height: fit-content;
     margin-top: 10vh;
 
     @include flex(row, space-between);
@@ -241,23 +242,25 @@
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      justify-content: center;
       .message {
         grid-column: 1 / span 2;
-
         width: 100%;
       }
-      .about-text {
+      // .about-text {
+      //   grid-column: 1 / span 2;
+      // }
+      .button {
         grid-column: 1 / span 2;
-      }
-      .btn {
-        grid-column: 1 / span 2;
-
-        justify-self: center;
+        width: 100%;
+        align-self: center;
       }
       .input-wrapper {
         @include flex(column, flex-start);
         margin: 1rem 0.5rem;
         width: 100%;
+        border: 1px solid white;
         input,
         textarea {
           width: 80%;
