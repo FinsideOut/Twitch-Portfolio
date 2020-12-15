@@ -48,13 +48,13 @@ const iconsPosY = iconsPos.y - animation.offsetHeight / 2 + "px";
 
 const videoStop = document.getElementById("video-stop");
 const videoPos = getPos(videoStop);
-const videoPosX = videoPos.x + animation.offsetWidth / 2 + "px";
+const videoPosX = videoPos.x + animation.offsetWidth / 4 + "px";
 const videoPosY = videoPos.y - animation.offsetHeight * 1.5 + "px";
 
 const middleStop = document.getElementById("middle-stop");
 const middlePos = getPos(middleStop);
 const middlePosX = middlePos.x - animation.offsetWidth / 2 + "px";
-const middlePosY = middlePos.y - animation.offsetHeight / 2 + "px";
+const middlePosY = middlePos.y - animation.offsetHeight / 1.5 + "px";
 
 const contactStop = document.getElementById("contact-stop");
 const contactPos = getPos(contactStop);
@@ -64,7 +64,7 @@ const contactPosY = contactPos.y + "px";
 const bottomStop = document.getElementById("bottom-stop");
 const bottomPos = getPos(bottomStop);
 const bottomPosX = bottomPos.x - animation.offsetWidth / 2 + "px";
-const bottomPosY = bottomPos.y - animation.offsetHeight / 2 + "px";
+const bottomPosY = bottomPos.y - animation.offsetHeight / 1.5 + "px";
 
 window.onscroll = function () {
   if (getScrollPercent() > 2) {
