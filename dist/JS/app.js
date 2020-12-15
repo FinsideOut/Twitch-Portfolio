@@ -1,7 +1,6 @@
 // scroll stuff
 const header = document.getElementById("header-home");
 const footer = document.getElementById("footer-home");
-const animation = document.getElementById("animation-wrapper");
 // $(window).on("scroll", function () {
 //   var s = $(window).scrollTop(),
 //     d = $(document).height(),
@@ -31,25 +30,31 @@ function getPos(el) {
 }
 // from
 // https://stackoverflow.com/questions/288699/get-the-position-of-a-div-span-tag
-const videoStop = document.getElementById("video-stop");
-const videoPos = getPos(videoStop);
-const videoPosX = videoPos.x - animation.offsetWidth / 2 + "px";
-const videoPosY = videoPos.y - animation.offsetHeight / 2 + "px";
+
+const animation = document.getElementById("animation-wrapper");
+// const animationPos = getPos(animation);
+// const animationOrigX = animationPos.x - 100 + "px";
+// const animationOrigY = animationPos.y - 150 + "px";
 
 const aboutStop = document.getElementById("about-stop");
 const aboutPos = getPos(aboutStop);
-const aboutPosX = aboutPos.x - animation.offsetWidth / 2 + "px";
-const aboutPosY = aboutPos.y - animation.offsetHeight / 2 + "px";
+const aboutPosX = aboutPos.x - animation.offsetWidth / 4 + "px";
+const aboutPosY = aboutPos.y - 150 + "px";
 
 const iconsStop = document.getElementById("icons-stop");
 const iconsPos = getPos(iconsStop);
-const iconsPosX = iconsPos.x - animation.offsetWidth / 2 + "px";
-const iconsPosY = iconsPos.y - animation.offsetHeight / 2 + "px";
+const iconsPosX = iconsPos.x - animation.offsetWidth / 2 - 150 + "px";
+const iconsPosY = iconsPos.y - 150 + "px";
+
+const videoStop = document.getElementById("video-stop");
+const videoPos = getPos(videoStop);
+const videoPosX = videoPos.x - animation.offsetWidth / 2 + "px";
+const videoPosY = videoPos.y - 100 + "px";
 
 const contactStop = document.getElementById("contact-stop");
 const contactPos = getPos(contactStop);
-const contactPosX = contactPos.x - animation.offsetWidth / 2 + "px";
-const contactPosY = contactPos.y - animation.offsetHeight / 2 + "px";
+const contactPosX = contactPos.x - animation.offsetWidth / 3 + "px";
+const contactPosY = contactPos.y + 150 + "px";
 
 window.onscroll = function () {
   if (getScrollPercent() > 2) {
@@ -58,12 +63,14 @@ window.onscroll = function () {
   } else {
     header.classList.remove("header-scrolled");
     footer.classList.remove("footer-scrolled");
-    animation.style.left = "0px";
-    animation.style.top = "0px";
+    animation.classList.remove("scrolled-about");
+
+    animation.style.left = "";
+    animation.style.top = "";
   }
 
   if (getScrollPercent() > 15) {
-    // animation.classList.add("scrolled-about");
+    animation.classList.add("scrolled-about");
     animation.style.left = aboutPosX;
     animation.style.top = aboutPosY;
   }

@@ -329,14 +329,10 @@ textarea:focus {
   left: 0vw;
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
-  border: 1px solid white;
 }
 
 .scrolled-about {
   opacity: 0.4;
-  position: absolute;
-  top: 120vh !important;
-  left: 45vw !important;
 }
 
 .scrolled-icons {
@@ -348,9 +344,6 @@ textarea:focus {
 
 .scrolled-video {
   opacity: 1 !important;
-  position: absolute;
-  top: 450vh !important;
-  left: 18vw !important;
 }
 
 .scrolled-contact {
@@ -368,7 +361,6 @@ textarea:focus {
 }
 
 #main-animation {
-  border: 1px solid white;
   width: 55vw;
   margin-top: 3vh;
   position: relative;
@@ -381,7 +373,6 @@ textarea:focus {
 }
 
 #main-animation .shapes-container {
-  border: 1px solid white;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -1218,7 +1209,6 @@ textarea:focus {
           justify-content: flex-start;
   margin: 1rem 0.5rem;
   width: 100%;
-  border: 1px solid white;
 }
 
 #page-contact .contact-container form .input-wrapper input,
