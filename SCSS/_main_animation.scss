@@ -1,12 +1,12 @@
 @import "config";
 // added with js
-$animation-shift: 1500ms;
+$animation-shift: 1800ms;
 #animation-wrapper {
   position: absolute;
   top: 20vh;
   left: 0vw;
   transition: all 1000ms ease-in-out;
-  border: 1px solid white;
+  // border: 1px solid white;
   height: 50vh;
 }
 .scrolled-about {

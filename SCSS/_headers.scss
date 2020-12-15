@@ -37,7 +37,7 @@
         .hover {
           &-about {
             &:hover {
-              @include text-shadow($trans-yellow, $trans-blue);
+              @include text-shadow($trans-pink, $trans-blue);
               // border-top: 3px solid $primary-3;
             }
           }
