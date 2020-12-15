@@ -6,6 +6,8 @@ $animation-shift: 1000ms;
   top: 20vh;
   left: 0vw;
   transition: all 1000ms ease-in-out;
+  border: 1px solid white;
+  // height: 30vh;
 }
 .scrolled-about {
   opacity: 0.4;
@@ -59,6 +61,8 @@ $gap: 120px;
   position: absolute;
 }
 #main-animation {
+  border: 1px solid white;
+
   width: 55vw;
   margin-top: 3vh;
   position: relative;
@@ -67,6 +71,8 @@ $gap: 120px;
   animation-direction: reverse;
   z-index: -10;
   .shapes-container {
+    border: 1px solid white;
+
     width: 100%;
     height: 100%;
     opacity: 0;
