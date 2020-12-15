@@ -92,7 +92,12 @@
     color: $blue;
   }
   .img-container {
+    width: 40vw;
     position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
     &:hover {
       .right,
       .left {

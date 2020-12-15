@@ -965,7 +965,13 @@ textarea:focus {
 }
 
 #page-about .img-container {
+  width: 40vw;
   position: relative;
+}
+
+#page-about .img-container img {
+  width: 100%;
+  height: auto;
 }
 
 #page-about .img-container:hover .right,
