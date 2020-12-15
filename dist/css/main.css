@@ -278,9 +278,9 @@ textarea:focus {
 .spinner {
   background: #ccc;
   border-radius: 50%;
+  min-height: 200px;
+  min-width: 200px;
   color: #222;
-  min-height: 150px;
-  min-width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -589,6 +589,7 @@ textarea:focus {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 10vh;
+  margin-bottom: 15vh;
 }
 
 #page-footer p {

@@ -82,9 +82,9 @@
 .spinner {
   background: $light;
   border-radius: 50%;
+  min-height: 200px;
+  min-width: 200px;
   color: set-text-color($light);
-  min-height: 150px;
-  min-width: 150px;
   @include flex(column, center);
   i {
     padding: 0.75rem;

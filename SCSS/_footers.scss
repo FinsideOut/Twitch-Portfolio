@@ -76,6 +76,7 @@
   height: 10vh;
   @include flex(row, center);
   margin-top: 10vh;
+  margin-bottom: 15vh;
   p {
     font-weight: lighter;
   }
