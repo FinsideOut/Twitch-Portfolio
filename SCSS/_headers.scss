@@ -72,6 +72,11 @@
             color: $twitter-color;
           }
         }
+        .fa-reddit {
+          &:hover {
+            color: $reddit-color;
+          }
+        }
         .fa-instagram {
           &:hover {
             @include text-gradient($insta-color-1, $insta-color-2, 45deg);

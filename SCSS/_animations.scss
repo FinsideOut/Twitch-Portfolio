@@ -59,14 +59,23 @@
 //   }
 // }
 @keyframes shake {
-  0% {
+  // 0% {
+  //   transform: none;
+  // }
+  // 25% {
+  //   transform: rotate(30deg);
+  // }
+  // 75% {
+  //   transform: rotate(-30deg);
+  // }
+  // 100% {
+  //   transform: none;
+  // }
+  from {
     transform: none;
   }
-  50% {
-    transform: rotate(30deg);
-  }
-  100% {
-    transform: rotate(-60deg);
+  to {
+    transform: scale(1.5);
   }
 }
 

@@ -5,6 +5,7 @@
 // Feel free to copy&paste color codes to your application */
 
 // As hex codes */
+$trans-opacity: 0.7;
 $dark: #222;
 $medium: #777;
 $light: #ccc;
@@ -14,7 +15,9 @@ $insta-color-2: #c1558b;
 $tiktok-color-1: #20b0b9;
 $tiktok-color-2: #de2e57;
 $facebook-color: #3b5997;
+$reddit-color: #fe4502;
 $twitch-color: #772ce8;
+$trans-twitch-color: rgba(119, 44, 232, $trans-opacity);
 // SASS style sheet */
 // Palette color codes */
 // Palette URL: http://paletton.com/#uid=62M0-0klSTZ2h+7dzVIt+TJUTLf */
@@ -41,7 +44,6 @@ $complement-3: #fe1021;
 $red: #fc0012;
 
 // As RGBa codes */
-$trans-opacity: 0.7;
 $trans-primary-0: rgba(100, 245, 78, 1);
 $trans-primary-1: rgba(238, 254, 236, 1);
 $trans-primary-2: rgba(157, 248, 143, 1);

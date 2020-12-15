@@ -20,6 +20,7 @@ body {
   width: 90%;
   margin: 0 auto;
   position: relative;
+  // border: 1px solid white;
 }
 
 ul {
@@ -45,7 +46,7 @@ a {
   font-size: 3rem;
   text-align: center;
   margin: 15vh 0 1rem;
-  .leade {
+  .lead {
     margin-top: 1rem;
   }
   a {
@@ -130,6 +131,8 @@ a {
   transition: all 400ms ease-in-out;
 }
 .high-pink {
+  transition: color $transit-time ease-in-out;
+
   color: $pink;
 }
 .high-green {

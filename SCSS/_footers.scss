@@ -30,10 +30,10 @@
     i {
       opacity: 1;
       transform: none;
-      color: $pink;
+      color: $blue;
     }
     .key-word {
-      color: $pink;
+      color: $blue;
     }
   }
 
@@ -48,7 +48,7 @@
     &:hover {
       .key-word,
       i {
-        color: $blue;
+        color: $pink;
         transform: none;
       }
     }
