@@ -39,30 +39,35 @@ const animation = document.getElementById("animation-wrapper");
 const aboutStop = document.getElementById("about-stop");
 const aboutPos = getPos(aboutStop);
 const aboutPosX = aboutPos.x - animation.offsetWidth / 4 + "px";
-const aboutPosY = aboutPos.y - 250 + "px";
+const aboutPosY = aboutPos.y - animation.offsetHeight / 2 + "px";
 
 const iconsStop = document.getElementById("icons-stop");
 const iconsPos = getPos(iconsStop);
-const iconsPosX = iconsPos.x - animation.offsetWidth / 2 - 150 + "px";
-const iconsPosY = iconsPos.y - 150 + "px";
+const iconsPosX = iconsPos.x - animation.offsetWidth / 2 + "px";
+const iconsPosY = iconsPos.y - animation.offsetHeight / 2 + "px";
 
 const videoStop = document.getElementById("video-stop");
 const videoPos = getPos(videoStop);
-const videoPosX = videoPos.x - animation.offsetWidth / 2 + "px";
-const videoPosY = videoPos.y - 100 + "px";
+const videoPosX = videoPos.x + "px";
+const videoPosY = videoPos.y - animation.offsetHeight / 2 + "px";
+
+const middleStop = document.getElementById("middle-stop");
+const middlePos = getPos(middleStop);
+const middlePosX = middlePos.x - animation.offsetWidth / 2 + "px";
+const middlePosY = middlePos.y - animation.offsetHeight / 2 + "px";
 
 const contactStop = document.getElementById("contact-stop");
 const contactPos = getPos(contactStop);
 const contactPosX = contactPos.x - animation.offsetWidth / 3 + "px";
-const contactPosY = contactPos.y + 150 + "px";
+const contactPosY = contactPos.y + "px";
 
 const bottomStop = document.getElementById("bottom-stop");
 const bottomPos = getPos(bottomStop);
 const bottomPosX = bottomPos.x - animation.offsetWidth / 2 + "px";
-const bottomPosY = bottomPos.y - 100 + "px";
+const bottomPosY = bottomPos.y - animation.offsetHeight / 2 + "px";
 
 window.onscroll = function () {
-  if (getScrollPercent() > 2 && getScrollPercent() < 15) {
+  if (getScrollPercent() > 2) {
     header.classList.add("header-scrolled");
     footer.classList.add("footer-scrolled");
   } else {
@@ -99,7 +104,7 @@ window.onscroll = function () {
   if (getScrollPercent() > 50 && getScrollPercent() < 70) {
     animation.classList.add("scrolled-icons");
     animation.style.left = videoPosX;
-    animation.style.top = videoPos.y - 800 + "px";
+    animation.style.top = videoPos.y + "px";
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-video");
     animation.classList.remove("scrolled-contact");
@@ -107,8 +112,8 @@ window.onscroll = function () {
 
   if (getScrollPercent() > 70 && getScrollPercent() < 80) {
     animation.classList.add("scrolled-video");
-    animation.style.left = videoPosX;
-    animation.style.top = videoPosY;
+    animation.style.left = middlePosX;
+    animation.style.top = middlePosY;
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");

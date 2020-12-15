@@ -329,6 +329,7 @@ textarea:focus {
   left: 0vw;
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
+  height: 50vh;
 }
 
 .scrolled-about {

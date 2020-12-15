@@ -6,6 +6,8 @@ $animation-shift: 1500ms;
   top: 20vh;
   left: 0vw;
   transition: all 1000ms ease-in-out;
+  // border: 1px solid white;
+  height: 50vh;
 }
 .scrolled-about {
   opacity: 0.3;
