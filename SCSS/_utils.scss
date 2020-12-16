@@ -29,6 +29,7 @@ a {
 }
 
 // text
+
 .logo {
   font-size: 3rem;
   margin-right: 2rem;
@@ -99,20 +100,6 @@ a {
   }
 }
 // colros
-.high-blue {
-  color: $blue;
-  transition: color $transit-time ease-in-out;
-}
-.high-pink {
-  transition: color $transit-time ease-in-out;
-  color: $pink;
-}
-// .high-green {
-//   color: $green;
-// }
-// .high-yellow {
-//   color: $yellow;
-// }
 
 // form stuff
 input,

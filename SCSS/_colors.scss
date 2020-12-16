@@ -5,7 +5,7 @@
 // Feel free to copy&paste color codes to your application */
 
 // As hex codes */
-$trans-opacity: 0.7;
+
 $dark: #222;
 $medium: #777;
 $light: #ccc;
@@ -28,6 +28,20 @@ $red: #fc0012;
 $trans-green: rgba(32, 233, 0, $trans-opacity);
 $trans-blue: rgba(1, 181, 206, $trans-opacity);
 $trans-yellow: rgba(191, 249, 0, $trans-opacity);
+.high-blue {
+  color: $blue;
+  transition: color $transit-time ease-in-out;
+}
+.high-pink {
+  transition: color $transit-time ease-in-out;
+  color: $pink;
+}
+.high-green {
+  color: $green;
+}
+// .high-yellow {
+//   color: $yellow;
+// }
 // $primary-0: #64f54e;
 // $primary-2: #9df88f;
 // $primary-3: #2ff50f;

@@ -2,8 +2,8 @@
 // font-family: 'Staatliches', cursive;
 
 //utilities
-@import "colors";
 @import "config";
+@import "colors";
 @import "utils";
 @import "animations";
 
@@ -24,43 +24,9 @@
     height: 50vh;
   }
 }
-#headlines {
-  position: absolute;
-  right: 0;
-  top: -50vh;
-  height: 50vh;
 
-  visibility: hidden;
-  transform: translateX(-100vw);
-  @include flex(column, space-between);
-  align-items: flex-end;
-  max-width: fit-content;
+@import "headlines";
 
-  .headline {
-    font-size: 4rem;
-    transition: all $transit-time ease-in-out;
-    .key-word {
-      display: inline-block;
-      transition: all $transit-time ease-in-out;
-    }
-    &:hover {
-      transform: translateX(-10vw);
-      color: #fff;
-      .key-word {
-        transform: scale(1.7) translateX(2.8vw);
-      }
-      .twitch {
-        @include text-shadow-big($trans-twitch-color, $trans-blue);
-      }
-      .shag {
-        @include text-shadow-big($trans-pink, $trans-blue);
-      }
-      .drink {
-        @include text-shadow-big($trans-green, $trans-blue);
-      }
-    }
-  }
-}
 #page-about {
   margin-top: 5vh;
   a:hover {
@@ -68,52 +34,61 @@
       color: $yellow;
     }
   }
-  // height: 100vh;
   .key-word {
     color: $blue;
   }
-  .img-container {
-    width: 40vw;
-    position: relative;
-    img {
-      width: 100%;
-      height: auto;
-    }
+}
+.about-content {
+  @include flex(row, space-between);
+  .section-text {
+    width: 50%;
+  }
+  img {
+    width: 450px;
+    height: auto;
+    filter: drop-shadow(-10px 10px $blue) drop-shadow(10px -10px $pink);
+    transition: filter $transit-time ease-in-out;
     &:hover {
-      .right,
-      .left {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-    .left,
-    .right {
-      @include text-gradient(red, orange, 45deg);
-      position: absolute;
-      top: 18%;
-      visibility: hidden;
-      transition: all $transit-time ease-in-out;
-      opacity: 0;
-      transform-origin: center bottom;
-
-      animation: shake 100ms ease-in-out alternate;
-      animation-iteration-count: infinite;
-    }
-    .left {
-      left: 40%;
-    }
-    .right {
-      left: 50%;
+      filter: drop-shadow(-20px 20px $blue) drop-shadow(20px -20px $pink);
     }
   }
 }
-// .about-icons {
-//   .lead {
-//     text-align: left;
-//   }
-// }
+.img-container {
+  width: 40vw;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  &:hover {
+    .right,
+    .left {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .left,
+  .right {
+    @include text-gradient(red, orange, 45deg);
+    position: absolute;
+    top: 18%;
+    visibility: hidden;
+    transition: opacity $transit-time ease-in-out;
+    opacity: 0;
+    transform-origin: center bottom;
+
+    animation: shake 100ms ease-in-out alternate;
+    animation-iteration-count: infinite;
+  }
+  .left {
+    left: 40%;
+  }
+  .right {
+    left: 50%;
+  }
+}
+
 .icons-display {
-  // width: 100%;
   margin-top: 3rem;
   font-size: 1.5rem;
   @include flex(row, space-around);
@@ -123,8 +98,7 @@
     line-height: 1.7;
     font-size: 1.5rem;
     @include flex(column, space-around);
-    transition: all $transit-time ease-in-out;
-
+    transition: transform $transit-time ease-in-out;
     i {
       display: inline-block;
       margin-right: 1rem;
@@ -133,12 +107,13 @@
     .high-pink,
     .meta a,
     .icon-item {
-      transition: all $transit-time ease-in-out;
+      transition-property: transform, color, border-color;
+      transition-duration: $transit-time;
+      $transition-timing-function: ease-in-out;
     }
 
     &:hover {
       transform: scale(1.4);
-      cursor: pointer;
       i,
       .high-pink,
       .meta a {
@@ -151,9 +126,6 @@
         transform: scale(1.5) rotate(360deg);
       }
     }
-    // .icon-title {
-    //   border-bottom: 1px solid $pink;
-    // }
     .icon-item {
       padding: 1rem 0 0.5rem;
       border-top: 1px solid $pink;
@@ -161,30 +133,6 @@
     }
     .meta a {
       color: $pink;
-
-      // transition: color $transit-time ease-in-out;
-      // &:hover {
-      //   color: $pink;
-      // }
-    }
-  }
-}
-
-.about-content {
-  @include flex(row, space-between);
-  .section-text {
-    width: 50%;
-  }
-  img {
-    width: 450px;
-    height: auto;
-    filter: drop-shadow(-10px 10px $blue) drop-shadow(10px -10px $pink);
-    transition: all $transit-time ease-in-out;
-    &:hover {
-      // filter: drop-shadow(-10px 10px $blue) drop-shadow(10px -10px $pink)
-      //   drop-shadow(-30px 30px $green) drop-shadow(10px -30px $pink);
-
-      filter: drop-shadow(-20px 20px $blue) drop-shadow(20px -20px $pink);
     }
   }
 }

@@ -9,6 +9,7 @@ $shape-opacity: 0.4;
 $gap: 120px;
 $animation-shift: 1800ms;
 $bg-shift: 1200ms;
+$trans-opacity: 0.7;
 
 @mixin flex($direction, $space) {
   display: flex;

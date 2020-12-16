@@ -38,7 +38,7 @@ const videoPosY = videoPos.y - animation.offsetHeight * 1.5 + "px";
 const middleStop = document.getElementById("middle-stop");
 const middlePos = getPos(middleStop);
 const middlePosX = middlePos.x - animation.offsetWidth / 2 + "px";
-const middlePosY = middlePos.y - animation.offsetHeight / 1.5 + "px";
+const middlePosY = middlePos.y - animation.offsetHeight + "px";
 
 const contactStop = document.getElementById("contact-stop");
 const contactPos = getPos(contactStop);
@@ -48,7 +48,7 @@ const contactPosY = contactPos.y + "px";
 const bottomStop = document.getElementById("bottom-stop");
 const bottomPos = getPos(bottomStop);
 const bottomPosX = bottomPos.x - animation.offsetWidth / 2 + "px";
-const bottomPosY = bottomPos.y - animation.offsetHeight / 1.5 + "px";
+const bottomPosY = bottomPos.y - animation.offsetHeight + "px";
 
 function getScrollPercent() {
   var h = document.documentElement,
@@ -89,16 +89,14 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-middle");
     animation.classList.remove("scrolled-contact");
 
-    animation.style.left = "";
-    animation.style.top = "";
+    animation.style.transform = "none";
   }
   // about section
   if (getScrollPercent() > 5 && getScrollPercent() < 23) {
     animation.classList.add("scrolled-about");
 
-    animation.style.left = aboutPosX;
-    animation.style.top = aboutPosY;
-
+    animation.style.transform =
+      "translateX(" + aboutPosX + ") translateY(" + aboutPosY + ") scale(1.3)";
     animation.classList.remove("scrolled-icons");
     animation.classList.remove("scrolled-middle");
     animation.classList.remove("scrolled-contact");
@@ -112,8 +110,8 @@ window.onscroll = function () {
   // icons section
   if (getScrollPercent() > 23 && getScrollPercent() < 38) {
     animation.classList.add("scrolled-icons");
-    animation.style.left = iconsPosX;
-    animation.style.top = iconsPosY;
+    animation.style.transform =
+      "translateX(" + iconsPosX + ") translateY(" + iconsPosY + ") scale(1.5)";
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-middle");
@@ -128,8 +126,8 @@ window.onscroll = function () {
   // video seciton
   if (getScrollPercent() > 38 && getScrollPercent() < 62) {
     animation.classList.add("scrolled-icons");
-    animation.style.left = videoPosX;
-    animation.style.top = videoPosY;
+    animation.style.transform =
+      "translateX(" + videoPosX + ") translateY(" + videoPosY + ")scale(1.4)";
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-middle");
@@ -144,9 +142,12 @@ window.onscroll = function () {
   // ?middle link
   if (getScrollPercent() > 62 && getScrollPercent() < 74) {
     animation.classList.add("scrolled-middle");
-
-    animation.style.left = middlePosX;
-    animation.style.top = middlePosY;
+    animation.style.transform =
+      "translateX(" +
+      middlePosX +
+      ") translateY(" +
+      middlePosY +
+      ") scale(0.5)";
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");
@@ -160,9 +161,12 @@ window.onscroll = function () {
   //     contact
   if (getScrollPercent() > 74 && getScrollPercent() < 90) {
     animation.classList.add("scrolled-contact");
-
-    animation.style.left = contactPosX;
-    animation.style.top = contactPosY;
+    animation.style.transform =
+      "translateX(" +
+      contactPosX +
+      ") translateY(" +
+      contactPosY +
+      ") scale(1.5)";
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");
@@ -177,9 +181,12 @@ window.onscroll = function () {
   // bottom
   if (getScrollPercent() > 90) {
     animation.classList.add("scrolled-middle");
-
-    animation.style.left = bottomPosX;
-    animation.style.top = bottomPosY;
+    animation.style.transform =
+      "translateX(" +
+      bottomPosX +
+      ") translateY(" +
+      bottomPosY +
+      ") scale(0.5)";
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");

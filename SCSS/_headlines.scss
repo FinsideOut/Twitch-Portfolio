@@ -1,0 +1,41 @@
+#headlines {
+  position: absolute;
+  right: 0;
+  top: -50vh;
+  height: 50vh;
+
+  visibility: hidden;
+  transform: translateX(-100vw);
+  @include flex(column, space-between);
+  align-items: flex-end;
+  max-width: fit-content;
+
+  .headline {
+    font-size: 4rem;
+    transition-property: transform, color, text-shadow;
+    transition-duration: $transit-time;
+    transition-timing-function: ease-in-out;
+    .key-word {
+      display: inline-block;
+      transition-property: transform, color, text-shadow;
+      transition-duration: $transit-time;
+      transition-timing-function: ease-in-out;
+    }
+    &:hover {
+      transform: translateX(-10vw);
+
+      .key-word {
+        transform: scale(1.7) translateX(2.8vw);
+      }
+      .twitch {
+        @include text-shadow-big($trans-twitch-color, $trans-blue);
+      }
+      .shag {
+        @include text-shadow-big($trans-pink, $trans-blue);
+      }
+      .drink {
+        @include text-shadow-big($trans-green, $trans-blue);
+      }
+    }
+  }
+}
