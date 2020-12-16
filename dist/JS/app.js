@@ -92,7 +92,7 @@ window.onscroll = function () {
     animation.style.top = "";
   }
   // about section
-  if (getScrollPercent() > 15 && getScrollPercent() < 32) {
+  if (getScrollPercent() > 5 && getScrollPercent() < 23) {
     animation.classList.add("scrolled-about");
 
     animation.style.left = aboutPosX;
@@ -109,7 +109,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   // icons section
-  if (getScrollPercent() > 32 && getScrollPercent() < 50) {
+  if (getScrollPercent() > 23 && getScrollPercent() < 38) {
     animation.classList.add("scrolled-icons");
     animation.style.left = iconsPosX;
     animation.style.top = iconsPosY;
@@ -126,7 +126,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   // video seciton
-  if (getScrollPercent() > 50 && getScrollPercent() < 70) {
+  if (getScrollPercent() > 38 && getScrollPercent() < 64) {
     animation.classList.add("scrolled-icons");
     animation.style.left = videoPosX;
     animation.style.top = videoPosY;
@@ -141,7 +141,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   // ?middle link
-  if (getScrollPercent() > 65 && getScrollPercent() < 75) {
+  if (getScrollPercent() > 64 && getScrollPercent() < 73) {
     animation.classList.add("scrolled-middle");
     // animation.classList.add("scrolled-middle");
 
@@ -158,7 +158,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   //     contact
-  if (getScrollPercent() > 75 && getScrollPercent() < 95) {
+  if (getScrollPercent() > 73 && getScrollPercent() < 85) {
     animation.classList.add("scrolled-contact");
 
     animation.style.left = contactPosX;
@@ -173,7 +173,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-video");
     //  bg.classList.remove("bg-contact");
   }
-  if (getScrollPercent() > 95) {
+  if (getScrollPercent() > 85) {
     bg.classList.add("bg-video");
     animation.classList.add("scrolled-middle");
     animation.style.left = bottomPosX;
@@ -217,6 +217,7 @@ $(window).on("unload", function () {
 
 const itemsLeft = document.getElementsByClassName("hide-left");
 const itemsRight = document.getElementsByClassName("hide-right");
+const itemsBottom = document.getElementsByClassName("hide-bottom");
 // const itemsLeft = document.querySelectorAll("hide-left");
 
 const isInViewport = (el) => {
@@ -240,6 +241,11 @@ function run() {
   for (let i = 0; i < itemsRight.length; i++) {
     if (isInViewport(itemsRight[i])) {
       itemsRight[i].classList.add("show-from-right");
+    }
+  }
+  for (let i = 0; i < itemsBottom.length; i++) {
+    if (isInViewport(itemsBottom[i])) {
+      itemsBottom[i].classList.add("show-from-bottom");
     }
   }
 }

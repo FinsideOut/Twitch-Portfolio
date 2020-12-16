@@ -375,21 +375,54 @@ textarea:focus {
   }
 }
 
+@-webkit-keyframes slideInBottom {
+  from {
+    visibility: hidden;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    visibility: hidden;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 .hide-left,
-.hide-right {
+.hide-right,
+.hide-bottom {
   opacity: 0;
 }
 
 .show-from-left {
   opacity: 1 !important;
-  -webkit-animation: slideInLeft 500ms ease-in-out forwards;
-          animation: slideInLeft 500ms ease-in-out forwards;
+  -webkit-animation: slideInLeft 800ms ease-in-out forwards;
+          animation: slideInLeft 800ms ease-in-out forwards;
 }
 
 .show-from-right {
   opacity: 1 !important;
-  -webkit-animation: slideInRight 500ms ease-in-out forwards;
-          animation: slideInRight 500ms ease-in-out forwards;
+  -webkit-animation: slideInRight 800ms ease-in-out forwards;
+          animation: slideInRight 800ms ease-in-out forwards;
+}
+
+.show-from-bottom {
+  opacity: 1 !important;
+  -webkit-animation: slideInBottom 800ms ease-in-out forwards;
+          animation: slideInBottom 800ms ease-in-out forwards;
 }
 
 .bg-about {

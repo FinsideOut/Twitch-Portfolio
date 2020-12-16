@@ -113,8 +113,19 @@
     transform: none;
   }
 }
+@keyframes slideInBottom {
+  from {
+    visibility: hidden;
+    transform: translateY(100vh);
+  }
+  to {
+    visibility: visible;
+    transform: none;
+  }
+}
 .hide-left,
-.hide-right {
+.hide-right,
+.hide-bottom {
   opacity: 0;
 }
 $slide-time: 800ms;
@@ -125,5 +136,9 @@ $slide-time: 800ms;
 .show-from-right {
   opacity: 1 !important;
   animation: slideInRight $slide-time ease-in-out forwards;
+}
+.show-from-bottom {
+  opacity: 1 !important;
+  animation: slideInBottom $slide-time ease-in-out forwards;
 }
 @import "_main_animation";
