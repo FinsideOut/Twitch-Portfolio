@@ -34,18 +34,7 @@
     visibility: hidden;
   }
 }
-// @keyframes slideInRight {
-//   from {
-//     visibility: hidden;
-//     transform: translateX(100vw);
-//   }
-// }
-// @keyframes slideInLeft {
-//   from {
-//     visibility: hidden;
-//     transform: translateX(-100vw);
-//   }
-// }
+
 // @keyframes slideInBottom {
 //   from {
 //     visibility: hidden;
@@ -104,4 +93,37 @@
   visibility: hidden;
 }
 
+@keyframes slideInLeft {
+  from {
+    visibility: hidden;
+    transform: translateX(-100vw);
+  }
+  to {
+    visibility: visible;
+    transform: none;
+  }
+}
+@keyframes slideInRight {
+  from {
+    visibility: hidden;
+    transform: translateX(100vw);
+  }
+  to {
+    visibility: visible;
+    transform: none;
+  }
+}
+.hide-left,
+.hide-right {
+  opacity: 0;
+}
+$slide-time: 800ms;
+.show-from-left {
+  opacity: 1 !important;
+  animation: slideInLeft $slide-time ease-in-out forwards;
+}
+.show-from-right {
+  opacity: 1 !important;
+  animation: slideInRight $slide-time ease-in-out forwards;
+}
 @import "_main_animation";

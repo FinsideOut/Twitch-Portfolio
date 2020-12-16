@@ -12,25 +12,11 @@
 @import "headers";
 
 // unique pages
+
 @import "intro";
 #page-home {
-  // width: 100vw;
   position: relative;
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -10;
-    background: url("../img/intro-bg.jpg") no-repeat center center/cover;
-    opacity: 0.2;
-    transform: scale(1.1);
-    animation: bg-normalize calc(1500ms + #{$long-time}) ease-in-out;
-    animation-delay: $long-delay-time;
-    animation-fill-mode: forwards;
-  }
+
   .hero-container {
     @include flex(row, space-between);
     z-index: -1;

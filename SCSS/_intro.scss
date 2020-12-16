@@ -6,6 +6,7 @@
   left: 0;
   z-index: 10;
   background: $dark;
+
   // animation: fadeOut $short-time ease-in-out $long-delay-time;
   animation: slideOutTop $short-time ease-in-out $long-delay-time;
   animation-fill-mode: forwards;

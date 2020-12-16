@@ -1,6 +1,53 @@
 @import "config";
-// added with js
+$shape-size: 550px;
+$gap: 120px;
 $animation-shift: 1800ms;
+$bg-shift: 1200ms;
+// .hidden {
+//   visibility: hidden;
+// }
+// added with js
+.bg-about {
+  transform: translate(50px, 30px) scale(1.15) !important;
+  transform-origin: center;
+}
+.bg-icons {
+  transform: translate(-30px, -20px) scale(1.2) !important;
+  transform-origin: center;
+}
+.bg-video {
+  transform: translate(-30px, -25px) scale(1.15) !important;
+  transform-origin: center;
+}
+.bg-contact {
+  transform: translate(-50px, 20px) scale(1.25) !important;
+  transform-origin: center;
+}
+#bg-wrapper {
+  transition: all $bg-shift ease-in-out;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+#bg {
+  // content: "";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  background: url("../img/intro-bg.jpg") no-repeat center center/cover;
+  opacity: 0.2;
+  transform: scale(1.1);
+  animation: bg-normalize calc(1500ms + #{$long-time}) ease-in-out;
+  animation-delay: $long-delay-time;
+  animation-fill-mode: forwards;
+  transition: all $transit-time ease-in-out;
+}
 #animation-wrapper {
   position: absolute;
   top: 20vh;
@@ -19,7 +66,7 @@ $animation-shift: 1800ms;
   transform: scale(1.5);
   transform-origin: center;
 }
-.scrolled-video {
+.scrolled-middle {
   opacity: 1;
   transform: scale(0.5);
   transform-origin: center;
@@ -32,7 +79,7 @@ $animation-shift: 1800ms;
 //   transition: transform $animation-shift ease-in-out;
 //   transform: translateX(-10vw) translateY(2000vh);
 // }
-// .scrolled-video {
+// .scrolled-middle {
 //   transition: transform $animation-shift ease-in-out;
 //   transform: translateX(30vw) translateY(210vh);
 // }
@@ -45,8 +92,7 @@ $animation-shift: 1800ms;
 //   transform: none;
 // }
 // main animation
-$shape-size: 550px;
-$gap: 120px;
+
 .shape {
   width: $shape-size;
   height: $shape-size;

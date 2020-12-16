@@ -323,6 +323,134 @@ textarea:focus {
   visibility: hidden;
 }
 
+@-webkit-keyframes slideInLeft {
+  from {
+    visibility: hidden;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    visibility: hidden;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    visibility: hidden;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    visibility: hidden;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.hide-left,
+.hide-right {
+  opacity: 0;
+}
+
+.show-from-left {
+  opacity: 1 !important;
+  -webkit-animation: slideInLeft 500ms ease-in-out forwards;
+          animation: slideInLeft 500ms ease-in-out forwards;
+}
+
+.show-from-right {
+  opacity: 1 !important;
+  -webkit-animation: slideInRight 500ms ease-in-out forwards;
+          animation: slideInRight 500ms ease-in-out forwards;
+}
+
+.bg-about {
+  -webkit-transform: translate(50px, 30px) scale(1.15) !important;
+          transform: translate(50px, 30px) scale(1.15) !important;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.bg-icons {
+  -webkit-transform: translate(-30px, -20px) scale(1.2) !important;
+          transform: translate(-30px, -20px) scale(1.2) !important;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.bg-video {
+  -webkit-transform: translate(-30px, -25px) scale(1.15) !important;
+          transform: translate(-30px, -25px) scale(1.15) !important;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.bg-contact {
+  -webkit-transform: translate(-50px, 20px) scale(1.25) !important;
+          transform: translate(-50px, 20px) scale(1.25) !important;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+#bg-wrapper {
+  -webkit-transition: all 1200ms ease-in-out;
+  transition: all 1200ms ease-in-out;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+#bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  background: url("../img/intro-bg.jpg") no-repeat center center/cover;
+  opacity: 0.2;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-animation: bg-normalize calc(1500ms + 1500ms) ease-in-out;
+          animation: bg-normalize calc(1500ms + 1500ms) ease-in-out;
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
 #animation-wrapper {
   position: absolute;
   top: 20vh;
@@ -348,7 +476,7 @@ textarea:focus {
           transform-origin: center;
 }
 
-.scrolled-video {
+.scrolled-middle {
   opacity: 1;
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
@@ -837,26 +965,6 @@ textarea:focus {
 
 #page-home {
   position: relative;
-}
-
-#page-home::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -10;
-  background: url("../img/intro-bg.jpg") no-repeat center center/cover;
-  opacity: 0.2;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-animation: bg-normalize calc(1500ms + 1500ms) ease-in-out;
-          animation: bg-normalize calc(1500ms + 1500ms) ease-in-out;
-  -webkit-animation-delay: 2500ms;
-          animation-delay: 2500ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 #page-home .hero-container {
