@@ -7,7 +7,7 @@
 .high-pink {
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
-  color: #fe505d;
+  color: #fe929a;
 }
 
 .high-green {
@@ -164,7 +164,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-bottom: 3px solid #fe505d;
+  border-bottom: 3px solid #fe929a;
 }
 
 .btn {
@@ -544,22 +544,22 @@ textarea:focus {
 }
 
 .finished {
-  -webkit-animation: slideOutTop 1000ms ease-in-out 2500ms;
-          animation: slideOutTop 1000ms ease-in-out 2500ms;
+  -webkit-animation: slideOutTop 1000ms ease-in-out 3500ms;
+          animation: slideOutTop 1000ms ease-in-out 3500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
 .bg-loaded {
-  -webkit-animation: bg-normalize 1500ms ease-in-out 2500ms;
-          animation: bg-normalize 1500ms ease-in-out 2500ms;
+  -webkit-animation: bg-normalize 1500ms ease-in-out 3500ms;
+          animation: bg-normalize 1500ms ease-in-out 3500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
 .loaded {
-  -webkit-animation: normalize 1000ms ease-in-out 2500ms;
-          animation: normalize 1000ms ease-in-out 2500ms;
+  -webkit-animation: normalize 1000ms ease-in-out 3500ms;
+          animation: normalize 1000ms ease-in-out 3500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -749,7 +749,7 @@ textarea:focus {
 
 .arrow-link:first-child:hover .key-word,
 .arrow-link:first-child:hover i {
-  color: #fe505d;
+  color: #fe929a;
   -webkit-transform: none;
           transform: none;
 }
@@ -1104,8 +1104,8 @@ textarea:focus {
 .about-content img {
   width: 450px;
   height: auto;
-  -webkit-filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #fe505d);
-          filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #fe505d);
+  -webkit-filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #fe929a);
+          filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #fe929a);
   -webkit-transition: -webkit-filter 300ms ease-in-out;
   transition: -webkit-filter 300ms ease-in-out;
   transition: filter 300ms ease-in-out;
@@ -1113,8 +1113,8 @@ textarea:focus {
 }
 
 .about-content img:hover {
-  -webkit-filter: drop-shadow(-20px 20px #01b5ce) drop-shadow(20px -20px #fe505d);
-          filter: drop-shadow(-20px 20px #01b5ce) drop-shadow(20px -20px #fe505d);
+  -webkit-filter: drop-shadow(-20px 20px #01b5ce) drop-shadow(20px -20px #fe929a);
+          filter: drop-shadow(-20px 20px #01b5ce) drop-shadow(20px -20px #fe929a);
 }
 
 .img-container {
@@ -1238,12 +1238,12 @@ textarea:focus {
 
 .icons-display .about-icon .icon-item {
   padding: 1rem 0 0.5rem;
-  border-top: 1px solid #fe505d;
+  border-top: 1px solid #fe929a;
   font-weight: lighter;
 }
 
 .icons-display .about-icon .meta a {
-  color: #fe505d;
+  color: #fe929a;
 }
 
 .video-display {
@@ -1364,7 +1364,7 @@ textarea:focus {
 
 #page-contact .contact-container form .input-wrapper input:focus,
 #page-contact .contact-container form .input-wrapper textarea:focus {
-  border-bottom: 3px solid #fe505d;
+  border-bottom: 3px solid #fe929a;
 }
 
 #page-contact .contact-container form .input-wrapper input {
