@@ -126,7 +126,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   // video seciton
-  if (getScrollPercent() > 38 && getScrollPercent() < 64) {
+  if (getScrollPercent() > 38 && getScrollPercent() < 58) {
     animation.classList.add("scrolled-icons");
     animation.style.left = videoPosX;
     animation.style.top = videoPosY;
@@ -141,7 +141,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   // ?middle link
-  if (getScrollPercent() > 64 && getScrollPercent() < 73) {
+  if (getScrollPercent() > 58 && getScrollPercent() < 70) {
     animation.classList.add("scrolled-middle");
     // animation.classList.add("scrolled-middle");
 
@@ -158,7 +158,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   //     contact
-  if (getScrollPercent() > 73 && getScrollPercent() < 85) {
+  if (getScrollPercent() > 70 && getScrollPercent() < 90) {
     animation.classList.add("scrolled-contact");
 
     animation.style.left = contactPosX;
@@ -173,7 +173,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-video");
     //  bg.classList.remove("bg-contact");
   }
-  if (getScrollPercent() > 85) {
+  if (getScrollPercent() > 90) {
     bg.classList.add("bg-video");
     animation.classList.add("scrolled-middle");
     animation.style.left = bottomPosX;
