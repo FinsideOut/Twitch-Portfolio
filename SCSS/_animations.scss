@@ -1,39 +1,23 @@
-// transitions
 @mixin normalize($time, $delay) {
   animation: normalize $time ease-in-out $delay;
   animation-fill-mode: forwards;
 }
-// @mixin bg-normalize {
-//   animation: bg-normalize 8000ms ease-in-out 1000ms;
-//   animation-fill-mode: forwards;
-// }
 
 @keyframes normalize {
   to {
     transform: none;
-    opacity: 1;
+    // opacity: 1;
     visibility: visible;
   }
 }
-@keyframes normalize-animation {
-  to {
-    // transform: none;
-    opacity: 1;
-    visibility: visible;
-  }
-}
+
 @keyframes bg-normalize {
   to {
     transform: none;
     opacity: 0.2;
   }
 }
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
+
 @keyframes slideOutTop {
   to {
     transform: translateY(-110vw);
@@ -43,50 +27,12 @@
   }
 }
 
-// @keyframes slideInBottom {
-//   from {
-//     visibility: hidden;
-//     transform: translateY(100vh);
-//   }
-// }
-// @keyframes slideInTop {
-//   from {
-//     visibility: hidden;
-//     transform: translateY(-100vh);
-//   }
-// }
 @keyframes shake {
-  // 0% {
-  //   transform: none;
-  // }
-  // 25% {
-  //   transform: rotate(30deg);
-  // }
-  // 75% {
-  //   transform: rotate(-30deg);
-  // }
-  // 100% {
-  //   transform: none;
-  // }
   from {
     transform: none;
   }
   to {
     transform: scale(1.5);
-  }
-}
-
-.spinner {
-  background: $light;
-  border-radius: 50%;
-  min-height: 200px;
-  min-width: 200px;
-  color: set-text-color($light);
-  @include flex(column, center);
-  i {
-    padding: 0.75rem;
-    animation: spin 1000ms ease-in-out;
-    animation-iteration-count: infinite;
   }
 }
 
@@ -96,57 +42,58 @@
   }
 }
 
-.footer-scrolled {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@keyframes slideInLeft {
-  from {
-    visibility: hidden;
-    transform: translateX(-100vw);
-  }
-  to {
-    visibility: visible;
-    transform: none;
-  }
-}
-@keyframes slideInRight {
-  from {
-    visibility: hidden;
-    transform: translateX(100vw);
-  }
-  to {
-    visibility: visible;
-    transform: none;
-  }
-}
-@keyframes slideInBottom {
-  from {
-    visibility: hidden;
-    transform: translateY(100vh);
-  }
-  to {
-    visibility: visible;
-    transform: none;
-  }
-}
 .hide-left,
 .hide-right,
 .hide-bottom {
   opacity: 0;
 }
-$slide-time: 800ms;
 .show-from-left {
   opacity: 1 !important;
   animation: slideInLeft $slide-time ease-in-out forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100vw);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
 }
 .show-from-right {
   opacity: 1 !important;
   animation: slideInRight $slide-time ease-in-out forwards;
 }
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100vw);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
 .show-from-bottom {
   opacity: 1 !important;
   animation: slideInBottom $slide-time ease-in-out forwards;
 }
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100vh);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
 @import "_main_animation";

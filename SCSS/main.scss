@@ -7,16 +7,15 @@
 @import "utils";
 @import "animations";
 
+@import "intro";
 //page default stuff
 @import "footers";
 @import "headers";
 
 // unique pages
 
-@import "intro";
 #page-home {
   position: relative;
-
   .hero-container {
     @include flex(row, space-between);
     z-index: -1;
@@ -33,11 +32,8 @@
 
   visibility: hidden;
   transform: translateX(-100vw);
-  opacity: 0;
-  // @include normalize($short-time, calc(700ms + #{$long-delay-time}));
   @include flex(column, space-between);
   align-items: flex-end;
-  // height: 100%;
   max-width: fit-content;
 
   .headline {
@@ -176,7 +172,7 @@
 
 .about-content {
   @include flex(row, space-between);
-  .about-text {
+  .section-text {
     width: 50%;
   }
   img {
@@ -233,7 +229,7 @@
         grid-column: 1 / span 2;
         width: 100%;
       }
-      // .about-text {
+      // .section-text {
       //   grid-column: 1 / span 2;
       // }
       .button {
@@ -265,7 +261,7 @@
         }
       }
     }
-    .about-text {
+    .section-text {
       max-width: 35vw;
       margin-top: 0;
     }

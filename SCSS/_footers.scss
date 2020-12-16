@@ -1,19 +1,15 @@
 #footer-home {
-  transition: all 800ms ease-in-out;
+  transition: all $transit-time ease-in-out;
   transform: translateY(100vh);
-  opacity: 0;
   visibility: none;
-  .footer-container {
-    // @include normalize($long-time, $long-delay-time);
-    margin-top: 15vh;
-  }
+  margin-top: 15vh;
 }
 .footer-links {
   font-size: 1.5rem;
   @include flex(row, space-between);
   align-items: flex-start;
 }
-.footer-link {
+.arrow-link {
   @include flex(column, flex-end);
   i {
     opacity: 0;
@@ -21,17 +17,14 @@
   }
   .key-word,
   i {
-    // transition: transform 400ms ease-in-out, color 400ms ease-in-out;
-    transition: all $transit-time ease-in-out;
+    transition: opacity, color, transform $transit-time ease-in-out;
   }
   &:hover {
     color: #fff;
-    i {
+    i,
+    key-word {
       opacity: 1;
       transform: none;
-      color: $blue;
-    }
-    .key-word {
       color: $blue;
     }
   }
@@ -79,4 +72,8 @@
   p {
     font-weight: lighter;
   }
+}
+.footer-scrolled {
+  opacity: 0;
+  visibility: hidden;
 }

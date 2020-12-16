@@ -1,17 +1,18 @@
-.loaded {
+// applied when page fully loaded
+.finished {
   animation: slideOutTop $short-time ease-in-out $long-delay-time;
   animation-fill-mode: forwards;
 }
-.load {
+.bg-loaded {
   animation: bg-normalize $long-time ease-in-out $long-delay-time;
   animation-fill-mode: forwards;
 }
 
-.load-from {
+.loaded {
   animation: normalize $short-time ease-in-out $long-delay-time;
   animation-fill-mode: forwards;
 }
-
+// preload page
 #page-intro {
   width: 100vw;
   height: 100vh;
@@ -20,8 +21,6 @@
   left: 0;
   z-index: 10;
   background: $dark;
-
-  // animation: fadeOut $short-time ease-in-out $long-delay-time;
 
   .intro-container {
     @include flex(column, space-around);
@@ -35,6 +34,7 @@
       font-size: 10rem;
     }
     .key-word {
+      visibility: hidden;
       transform: translateX(-100vw);
       @include normalize($short-time, calc(#{$short-delay-time} + 200ms));
       color: $blue;
@@ -43,8 +43,17 @@
       visibility: hidden;
       transform: translateY(100vh);
       @include normalize($short-time, calc(#{$short-delay-time} + 400ms));
+      background: $light;
+      color: set-text-color($light);
+      border-radius: 50%;
+      min-height: 200px;
+      min-width: 200px;
+      @include flex(column, center);
       i {
         font-size: 6rem;
+        padding: 0.75rem;
+        animation: spin 1000ms ease-in-out;
+        animation-iteration-count: infinite;
       }
     }
   }

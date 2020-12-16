@@ -3,52 +3,23 @@ $(window).on("beforeunload", function () {
   $("body").hide();
   $(window).scrollTop(0);
 });
-
+window.addEventListener("load", () => {
+  const preload = document.getElementById("page-intro");
+  preload.classList.add("finished");
+  header.classList.add("loaded");
+  footer.classList.add("loaded");
+  headlines.classList.add("loaded");
+  shapes.classList.add("loaded");
+  bg.classList.add("bg-loaded");
+});
 const header = document.getElementById("header-home");
 const footer = document.getElementById("footer-home");
 const headlines = document.getElementById("headlines");
 const animation = document.getElementById("animation-wrapper");
 const shapes = document.getElementById("shapes-container");
-const bg_intro = document.getElementById("bg");
-
-window.addEventListener("load", () => {
-  const preload = document.getElementById("page-intro");
-  // $("html,body").animate({ scrollTop: 0 }, 800);
-  preload.classList.add("loaded");
-  header.classList.add("load-from");
-  footer.classList.add("load-from");
-  headlines.classList.add("load-from");
-  shapes.classList.add("load-from");
-  bg_intro.classList.add("load");
-
-  // header.classList.add("top");
-});
+const bg = document.getElementById("bg");
+const bgWrapper = document.getElementById("bg-wrapper");
 // scroll stuff
-
-function getScrollPercent() {
-  var h = document.documentElement,
-    b = document.body,
-    st = "scrollTop",
-    sh = "scrollHeight";
-  // console.log(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
-  return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
-}
-function getPos(el) {
-  // yay readability
-  for (
-    var lx = 0, ly = 0;
-    el != null;
-    lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent
-  );
-  return { x: lx, y: ly };
-}
-// from
-// https://stackoverflow.com/questions/288699/get-the-position-of-a-div-span-tag
-
-// const animationPos = getPos(animation);
-// const animationOrigX = animationPos.x - 100 + "px";
-// const animationOrigY = animationPos.y - 150 + "px";
-
 const aboutStop = document.getElementById("about-stop");
 const aboutPos = getPos(aboutStop);
 const aboutPosX = aboutPos.x - animation.offsetWidth / 4 + "px";
@@ -79,6 +50,25 @@ const bottomPos = getPos(bottomStop);
 const bottomPosX = bottomPos.x - animation.offsetWidth / 2 + "px";
 const bottomPosY = bottomPos.y - animation.offsetHeight / 1.5 + "px";
 
+function getScrollPercent() {
+  var h = document.documentElement,
+    b = document.body,
+    st = "scrollTop",
+    sh = "scrollHeight";
+  // console.log(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+  return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+}
+function getPos(el) {
+  // from
+  // https://stackoverflow.com/questions/288699/get-the-position-of-a-div-span-tag
+  for (
+    var lx = 0, ly = 0;
+    el != null;
+    lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent
+  );
+  return { x: lx, y: ly };
+}
+
 window.onscroll = function () {
   // scroll start
   if (getScrollPercent() > 2) {
@@ -89,10 +79,10 @@ window.onscroll = function () {
     header.classList.remove("header-scrolled");
     footer.classList.remove("footer-scrolled");
 
-    bg.classList.remove("bg-about");
-    bg.classList.remove("bg-icons");
-    bg.classList.remove("bg-video");
-    bg.classList.remove("bg-contact");
+    bgWrapper.classList.remove("bg-about");
+    bgWrapper.classList.remove("bg-icons");
+    bgWrapper.classList.remove("bg-video");
+    bgWrapper.classList.remove("bg-contact");
 
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");
@@ -113,11 +103,11 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-middle");
     animation.classList.remove("scrolled-contact");
 
-    bg.classList.add("bg-about");
-    // bg.classList.remove("bg-about");
-    bg.classList.remove("bg-icons");
-    bg.classList.remove("bg-video");
-    bg.classList.remove("bg-contact");
+    bgWrapper.classList.add("bg-about");
+
+    bgWrapper.classList.remove("bg-icons");
+    bgWrapper.classList.remove("bg-video");
+    bgWrapper.classList.remove("bg-contact");
   }
   // icons section
   if (getScrollPercent() > 23 && getScrollPercent() < 38) {
@@ -129,32 +119,31 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-middle");
     animation.classList.remove("scrolled-contact");
 
-    bg.classList.add("bg-icons");
+    bgWrapper.classList.add("bg-icons");
 
-    bg.classList.remove("bg-about");
-    // bg.classList.remove("bg-icons");
-    bg.classList.remove("bg-video");
-    bg.classList.remove("bg-contact");
+    bgWrapper.classList.remove("bg-about");
+    bgWrapper.classList.remove("bg-video");
+    bgWrapper.classList.remove("bg-contact");
   }
   // video seciton
-  if (getScrollPercent() > 38 && getScrollPercent() < 58) {
+  if (getScrollPercent() > 38 && getScrollPercent() < 62) {
     animation.classList.add("scrolled-icons");
     animation.style.left = videoPosX;
     animation.style.top = videoPosY;
+
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-middle");
     animation.classList.remove("scrolled-contact");
 
-    bg.classList.add("bg-video");
-    bg.classList.remove("bg-about");
-    bg.classList.remove("bg-icons");
-    // bg.classList.remove("bg-video");
-    bg.classList.remove("bg-contact");
+    bgWrapper.classList.add("bg-video");
+
+    bgWrapper.classList.remove("bg-about");
+    bgWrapper.classList.remove("bg-icons");
+    bgWrapper.classList.remove("bg-contact");
   }
   // ?middle link
-  if (getScrollPercent() > 58 && getScrollPercent() < 70) {
+  if (getScrollPercent() > 62 && getScrollPercent() < 74) {
     animation.classList.add("scrolled-middle");
-    // animation.classList.add("scrolled-middle");
 
     animation.style.left = middlePosX;
     animation.style.top = middlePosY;
@@ -163,13 +152,13 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-icons");
     animation.classList.remove("scrolled-contact");
 
-    bg.classList.remove("bg-about");
-    bg.classList.remove("bg-icons");
-    bg.classList.remove("bg-video");
-    bg.classList.remove("bg-contact");
+    bgWrapper.classList.remove("bg-about");
+    bgWrapper.classList.remove("bg-icons");
+    bgWrapper.classList.remove("bg-video");
+    bgWrapper.classList.remove("bg-contact");
   }
   //     contact
-  if (getScrollPercent() > 70 && getScrollPercent() < 85) {
+  if (getScrollPercent() > 74 && getScrollPercent() < 90) {
     animation.classList.add("scrolled-contact");
 
     animation.style.left = contactPosX;
@@ -178,25 +167,28 @@ window.onscroll = function () {
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");
     animation.classList.remove("scrolled-middle");
-    bg.classList.add("bg-contact");
-    bg.classList.remove("bg-about");
-    bg.classList.remove("bg-icons");
-    bg.classList.remove("bg-video");
-    //  bg.classList.remove("bg-contact");
+
+    bgWrapper.classList.add("bg-contact");
+
+    bgWrapper.classList.remove("bg-about");
+    bgWrapper.classList.remove("bg-icons");
+    bgWrapper.classList.remove("bg-video");
   }
-  if (getScrollPercent() > 85) {
-    bg.classList.add("bg-video");
+  // bottom
+  if (getScrollPercent() > 90) {
     animation.classList.add("scrolled-middle");
+
     animation.style.left = bottomPosX;
     animation.style.top = bottomPosY;
+
     animation.classList.remove("scrolled-about");
     animation.classList.remove("scrolled-icons");
     animation.classList.remove("scrolled-contact");
 
-    bg.classList.remove("bg-about");
-    bg.classList.remove("bg-icons");
-    bg.classList.remove("bg-video");
-    bg.classList.remove("bg-contact");
+    bgWrapper.classList.remove("bg-about");
+    bgWrapper.classList.remove("bg-icons");
+    bgWrapper.classList.remove("bg-video");
+    bgWrapper.classList.remove("bg-contact");
   }
 };
 
@@ -204,7 +196,6 @@ window.onscroll = function () {
 // from traversy media
 $("a").on("click", function (e) {
   if (this.hash !== "") {
-    // console.log(e.target);
     e.preventDefault();
     const hash = this.hash;
     $("html, body").animate(
@@ -216,17 +207,10 @@ $("a").on("click", function (e) {
   }
 });
 
-// scroll top on refresh
-
-// const page = document.getElementById("page-wrapper");
-// function reveal(){
-//   startTime = new Date();
-// }
-
+// slide in from
 const itemsLeft = document.getElementsByClassName("hide-left");
 const itemsRight = document.getElementsByClassName("hide-right");
 const itemsBottom = document.getElementsByClassName("hide-bottom");
-// const itemsLeft = document.querySelectorAll("hide-left");
 
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();

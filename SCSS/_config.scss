@@ -3,6 +3,13 @@ $short-time: 1000ms;
 $long-time: 1500ms;
 $short-delay-time: 300ms;
 $long-delay-time: 2500ms;
+$slide-time: 800ms;
+$shape-size: 550px;
+$shape-opacity: 0.4;
+$gap: 120px;
+$animation-shift: 1800ms;
+$bg-shift: 1200ms;
+
 @mixin flex($direction, $space) {
   display: flex;
   flex-direction: $direction;

@@ -1,110 +1,106 @@
-#header-home {
-  transition: all $transit-time ease-in-out;
+//hide for scroll
 
+#header-home {
+  transition-property: opacity, background-color;
+  transition-duration: $transit-time;
+  transition-timing-function: ease-in-out;
+  // removed on laod
   visibility: hidden;
-  opacity: 0;
   transform: translateY(-100vh);
 
   position: sticky;
   top: 0;
   left: 0;
   z-index: 2;
-  // width: 100%;
+
   .header-container {
     @include flex(row, flex-start);
     align-items: baseline;
     height: 15vh;
-
     .logo {
       align-self: baseline;
-      .key-word {
-        color: $blue;
+    }
+  }
+}
+.main-nav {
+  @include flex(row, flex-start);
+  height: 100%;
+  li {
+    padding: 0rem 2rem;
+    .nav-link {
+      font-size: 1.5rem;
+      display: inline-block;
+      transition: all $transit-time ease-in-out;
+      &:hover {
+        transform: scale(1.2);
       }
     }
-    .main-nav {
-      @include flex(row, flex-start);
-      height: 100%;
-      li {
-        padding: 0rem 2rem;
-        .nav-link {
-          font-size: 1.5rem;
-          display: inline-block;
-          transition: all 400ms ease-in-out;
-          &:hover {
-            transform: scale(1.2);
-            color: #fff;
-          }
-        }
-        .hover {
-          &-about {
-            &:hover {
-              @include text-shadow($trans-pink, $trans-blue);
-              // border-top: 3px solid $primary-3;
-            }
-          }
-          &-blog {
-            &:hover {
-              @include text-shadow($trans-blue, $trans-pink);
-            }
-          }
-          &-contact {
-            &:hover {
-              @include text-shadow($trans-blue, $trans-pink);
-            }
-          }
-        }
-      }
-    }
-    .nav-social {
-      width: 100%;
-      height: 100%;
-      @include flex(row, flex-end);
-      li {
-        padding: 1rem;
-        i {
-          transition: all 400ms ease-in-out;
-          // comma sep properties?
-          &:hover {
-            transform: scale(2) rotate(360deg);
-          }
-        }
-        .fa-twitter {
-          &:hover {
-            color: $twitter-color;
-          }
-        }
-        .fa-reddit {
-          &:hover {
-            color: $reddit-color;
-          }
-        }
-        .fa-instagram {
-          &:hover {
-            @include text-gradient($insta-color-1, $insta-color-2, 45deg);
-          }
-        }
-        .fa-facebook {
-          &:hover {
-            @include text-gradient($secondary-1-3, $facebook-color, -135deg);
-          }
-        }
-
-        .fa-tiktok {
-          &:hover {
-            color: #000;
-            text-shadow: 2px 2px $tiktok-color-2, -2px -2px $tiktok-color-1;
-          }
-        }
-      }
-      .fa-twitch {
+    .hover {
+      &-about {
         &:hover {
-          color: $twitch-color;
+          @include text-shadow($trans-pink, $trans-blue);
+        }
+      }
+      // &-blog {
+      //   &:hover {
+      //     @include text-shadow($trans-blue, $trans-pink);
+      //   }
+      // }
+      &-contact {
+        &:hover {
+          @include text-shadow($trans-blue, $trans-pink);
         }
       }
     }
   }
 }
-//hide for scroll
+.nav-social {
+  width: 100%;
+  height: 100%;
+  @include flex(row, flex-end);
+  li {
+    padding: 1rem;
+    i {
+      transition: all $transit-time ease-in-out;
+      // comma sep properties?
+      &:hover {
+        transform: scale(2) rotate(360deg);
+      }
+    }
+    .fa-twitter {
+      &:hover {
+        color: $twitter-color;
+      }
+    }
+    .fa-reddit {
+      &:hover {
+        color: $reddit-color;
+      }
+    }
+    .fa-instagram {
+      &:hover {
+        @include text-gradient($insta-color-1, $insta-color-2, 45deg);
+      }
+    }
+    .fa-facebook {
+      &:hover {
+        @include text-gradient($secondary-1-3, $facebook-color, -135deg);
+      }
+    }
+
+    .fa-tiktok {
+      &:hover {
+        color: #000;
+        text-shadow: 2px 2px $tiktok-color-2, -2px -2px $tiktok-color-1;
+      }
+    }
+  }
+  .fa-twitch {
+    &:hover {
+      color: $twitch-color;
+    }
+  }
+}
 .header-scrolled {
   opacity: 0.15;
   &:hover {

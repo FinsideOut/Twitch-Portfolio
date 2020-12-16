@@ -1,31 +1,24 @@
 @import "config";
-$shape-size: 550px;
-$gap: 120px;
-$animation-shift: 1800ms;
-$bg-shift: 1200ms;
-// .hidden {
-//   visibility: hidden;
-// }
+
 // added with js
 .bg-about {
-  transform: translate(50px, 30px) scale(1.15) !important;
+  transform: translate(50px, 30px) scale(1.15);
   transform-origin: center;
 }
 .bg-icons {
-  transform: translate(-30px, -20px) scale(1.2) !important;
+  transform: translate(-30px, -20px) scale(1.2);
   transform-origin: center;
 }
 .bg-video {
-  transform: translate(-30px, -25px) scale(1.15) !important;
+  transform: translate(-30px, -25px) scale(1.15);
   transform-origin: center;
 }
 .bg-contact {
-  transform: translate(-50px, 20px) scale(1.25) !important;
+  transform: translate(-50px, 20px) scale(1.25);
   transform-origin: center;
 }
 #bg-wrapper {
-  transition: all $bg-shift ease-in-out;
-
+  transition: transform $bg-shift ease-in-out;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -33,29 +26,22 @@ $bg-shift: 1200ms;
   width: 100%;
 }
 #bg {
-  // content: "";
-  position: fixed;
-  top: 0px;
-  left: 0px;
   height: 100%;
   width: 100%;
   z-index: -10;
   background: url("../img/intro-bg.jpg") no-repeat center center/cover;
   opacity: 0.2;
   transform: scale(1.1);
-  // animation: bg-normalize calc(1500ms + #{$long-time}) ease-in-out;
-  animation-delay: $long-delay-time;
-  animation-fill-mode: forwards;
-  transition: all $transit-time ease-in-out;
 }
+
+// moving animation around page
 #animation-wrapper {
   position: absolute;
   top: 20vh;
   left: 0vw;
-  transition: all 1000ms ease-in-out;
-  // border: 1px solid white;
-  // opacity: 0;
-  // visibility: hidden;
+  transition-property: transform, top, left, opacity;
+  transition-duration: $animation-shift;
+  transition-timing-function: ease-in-out;
   height: 50vh;
 }
 .scrolled-about {
@@ -77,28 +63,12 @@ $bg-shift: 1200ms;
   opacity: 0.4;
   transform-origin: center;
 }
-// .scrolled-icons {
-//   transition: transform $animation-shift ease-in-out;
-//   transform: translateX(-10vw) translateY(2000vh);
-// }
-// .scrolled-middle {
-//   transition: transform $animation-shift ease-in-out;
-//   transform: translateX(30vw) translateY(210vh);
-// }
-// .scrolled-contact {
-//   transition: transform $animation-shift ease-in-out;
-//   transform: translateX(30vw) translateY(100vh);
-// }
-// .scrolled-home {
-//   transition: transform $animation-shift ease-in-out;
-//   transform: none;
-// }
-// main animation
 
+// main animation
 .shape {
   width: $shape-size;
   height: $shape-size;
-  opacity: 0.3;
+  opacity: $shape-opacity;
   position: absolute;
 }
 #main-animation {
@@ -112,13 +82,13 @@ $bg-shift: 1200ms;
   #shapes-container {
     width: 100%;
     height: 100%;
-    opacity: 0;
+    // opacity: 0;
+    // removed on load
     visibility: hidden;
     transform: translate(-100vw, 100vh) scale(0.5);
-    // @include normalize($long-time, calc(300ms + #{$long-delay-time}));
     .square {
-      animation: spin 20000ms linear;
       background: url("../img/square.png") no-repeat center center/cover;
+      animation: spin 20000ms linear;
       animation-iteration-count: infinite;
       animation-direction: reverse;
       top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
@@ -126,25 +96,25 @@ $bg-shift: 1200ms;
     }
     //bottom right
     .circle {
+      background: url("../img/circle.png") no-repeat center center/cover;
       animation: spin 3000ms linear;
       animation-iteration-count: infinite;
-      background: url("../img/circle.png") no-repeat center center/cover;
       top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
       left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
     }
     //top left
     .triangle {
+      background: url("../img/triangle.png") no-repeat center center/cover;
       animation: spin 11000ms linear;
       animation-iteration-count: infinite;
-      background: url("../img/triangle.png") no-repeat center center/cover;
       top: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
       left: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
     }
     //bottom left
     .cross {
+      background: url("../img/cross.png") no-repeat center center/cover;
       animation: spin 9000ms linear;
       animation-iteration-count: infinite;
-      background: url("../img/cross.png") no-repeat center center/cover;
       top: calc(50% - calc(#{$shape-size}/ 2) + #{$gap});
       left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
     }
