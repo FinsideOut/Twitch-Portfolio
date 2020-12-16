@@ -1,11 +1,10 @@
-#footer-home,
-.footer-home {
+#footer-home {
   transition: all 800ms ease-in-out;
-
+  transform: translateY(100vh);
+  opacity: 0;
+  visibility: none;
   .footer-container {
-    transform: translateY(100vh);
-    opacity: 0;
-    @include normalize($long-time, $long-delay-time);
+    // @include normalize($long-time, $long-delay-time);
     margin-top: 15vh;
   }
 }

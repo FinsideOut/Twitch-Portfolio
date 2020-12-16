@@ -15,6 +15,13 @@
     visibility: visible;
   }
 }
+@keyframes normalize-animation {
+  to {
+    // transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
 @keyframes bg-normalize {
   to {
     transform: none;
@@ -31,6 +38,7 @@
   to {
     transform: translateY(-110vw);
     opacity: 0;
+    pointer-events: none;
     visibility: hidden;
   }
 }

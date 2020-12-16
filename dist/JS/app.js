@@ -1,16 +1,30 @@
-// scroll stuff
+// preload
+$(window).on("beforeunload", function () {
+  $("body").hide();
+  $(window).scrollTop(0);
+});
+
 const header = document.getElementById("header-home");
 const footer = document.getElementById("footer-home");
-// $(window).on("scroll", function () {
-//   var s = $(window).scrollTop(),
-//     d = $(document).height(),
-//     c = $(window).height();
+const headlines = document.getElementById("headlines");
+const animation = document.getElementById("animation-wrapper");
+const shapes = document.getElementById("shapes-container");
+const bg_intro = document.getElementById("bg");
 
-//   var getScrollPercent() = (s / (d - c)) * 100;
+window.addEventListener("load", () => {
+  const preload = document.getElementById("page-intro");
+  // $("html,body").animate({ scrollTop: 0 }, 800);
+  preload.classList.add("loaded");
+  header.classList.add("load-from");
+  footer.classList.add("load-from");
+  headlines.classList.add("load-from");
+  shapes.classList.add("load-from");
+  bg_intro.classList.add("load");
 
-//   // console.clear();
-//   console.log(scrollPercent);
-// });
+  // header.classList.add("top");
+});
+// scroll stuff
+
 function getScrollPercent() {
   var h = document.documentElement,
     b = document.body,
@@ -31,7 +45,6 @@ function getPos(el) {
 // from
 // https://stackoverflow.com/questions/288699/get-the-position-of-a-div-span-tag
 
-const animation = document.getElementById("animation-wrapper");
 // const animationPos = getPos(animation);
 // const animationOrigX = animationPos.x - 100 + "px";
 // const animationOrigY = animationPos.y - 150 + "px";
@@ -65,8 +78,6 @@ const bottomStop = document.getElementById("bottom-stop");
 const bottomPos = getPos(bottomStop);
 const bottomPosX = bottomPos.x - animation.offsetWidth / 2 + "px";
 const bottomPosY = bottomPos.y - animation.offsetHeight / 1.5 + "px";
-
-const bg = document.getElementById("bg-wrapper");
 
 window.onscroll = function () {
   // scroll start
@@ -158,7 +169,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-contact");
   }
   //     contact
-  if (getScrollPercent() > 70 && getScrollPercent() < 90) {
+  if (getScrollPercent() > 70 && getScrollPercent() < 85) {
     animation.classList.add("scrolled-contact");
 
     animation.style.left = contactPosX;
@@ -173,7 +184,7 @@ window.onscroll = function () {
     bg.classList.remove("bg-video");
     //  bg.classList.remove("bg-contact");
   }
-  if (getScrollPercent() > 90) {
+  if (getScrollPercent() > 85) {
     bg.classList.add("bg-video");
     animation.classList.add("scrolled-middle");
     animation.style.left = bottomPosX;
@@ -206,9 +217,6 @@ $("a").on("click", function (e) {
 });
 
 // scroll top on refresh
-$(window).on("unload", function () {
-  $(window).scrollTop(0);
-});
 
 // const page = document.getElementById("page-wrapper");
 // function reveal(){

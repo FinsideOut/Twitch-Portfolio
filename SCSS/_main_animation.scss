@@ -43,7 +43,7 @@ $bg-shift: 1200ms;
   background: url("../img/intro-bg.jpg") no-repeat center center/cover;
   opacity: 0.2;
   transform: scale(1.1);
-  animation: bg-normalize calc(1500ms + #{$long-time}) ease-in-out;
+  // animation: bg-normalize calc(1500ms + #{$long-time}) ease-in-out;
   animation-delay: $long-delay-time;
   animation-fill-mode: forwards;
   transition: all $transit-time ease-in-out;
@@ -54,6 +54,8 @@ $bg-shift: 1200ms;
   left: 0vw;
   transition: all 1000ms ease-in-out;
   // border: 1px solid white;
+  // opacity: 0;
+  // visibility: hidden;
   height: 50vh;
 }
 .scrolled-about {
@@ -107,12 +109,13 @@ $bg-shift: 1200ms;
   animation-iteration-count: infinite;
   animation-direction: reverse;
   z-index: -10;
-  .shapes-container {
+  #shapes-container {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transform: translateY(100vh) scale(0.5);
-    @include normalize($long-time, calc(300ms + #{$long-delay-time}));
+    visibility: hidden;
+    transform: translate(-100vw, 100vh) scale(0.5);
+    // @include normalize($long-time, calc(300ms + #{$long-delay-time}));
     .square {
       animation: spin 20000ms linear;
       background: url("../img/square.png") no-repeat center center/cover;

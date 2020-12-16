@@ -25,17 +25,16 @@
     height: 50vh;
   }
 }
-.headlines {
+#headlines {
   position: absolute;
   right: 0;
   top: -50vh;
   height: 50vh;
-  // margin-top: 2vh;
-  // height: 20vh;
+
   visibility: hidden;
-  // transform: translateX(-150vw);
+  transform: translateX(-100vw);
   opacity: 0;
-  @include normalize($short-time, calc(700ms + #{$long-delay-time}));
+  // @include normalize($short-time, calc(700ms + #{$long-delay-time}));
   @include flex(column, space-between);
   align-items: flex-end;
   // height: 100%;

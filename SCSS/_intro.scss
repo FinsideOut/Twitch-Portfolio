@@ -1,15 +1,28 @@
+.loaded {
+  animation: slideOutTop $short-time ease-in-out $long-delay-time;
+  animation-fill-mode: forwards;
+}
+.load {
+  animation: bg-normalize $long-time ease-in-out $long-delay-time;
+  animation-fill-mode: forwards;
+}
+
+.load-from {
+  animation: normalize $short-time ease-in-out $long-delay-time;
+  animation-fill-mode: forwards;
+}
+
 #page-intro {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   background: $dark;
 
   // animation: fadeOut $short-time ease-in-out $long-delay-time;
-  animation: slideOutTop $short-time ease-in-out $long-delay-time;
-  animation-fill-mode: forwards;
+
   .intro-container {
     @include flex(column, space-around);
     text-align: center;
