@@ -123,34 +123,35 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.back-to-container .back-to-link i,
-.back-to-container .back-to-link .key-word {
-  display: inline-block;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  color: #fff !important;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .back-to-container .back-to-link i {
-  -webkit-transform: translateY(2rem) rotate(-180deg);
-          transform: translateY(2rem) rotate(-180deg);
   opacity: 0;
+  -webkit-transform: translateY(2rem) rotate(180deg);
+          transform: translateY(2rem) rotate(180deg);
 }
 
-.back-to-container .back-to-link:hover i {
+.back-to-container .back-to-link .key-word,
+.back-to-container .back-to-link i {
+  -webkit-transition-property: opacity, color, -webkit-transform;
+  transition-property: opacity, color, -webkit-transform;
+  transition-property: opacity, color, transform;
+  transition-property: opacity, color, transform, -webkit-transform;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.back-to-container .back-to-link:hover i,
+.back-to-container .back-to-link:hover .key-word {
   opacity: 1;
   -webkit-transform: none;
           transform: none;
-}
-
-.back-to-container .back-to-link:hover .key-word,
-.back-to-container .back-to-link:hover i {
-  color: #01b5ce !important;
+  color: #01b5ce;
 }
 
 input,
@@ -703,18 +704,18 @@ textarea:focus {
 
 .arrow-link .key-word,
 .arrow-link i {
-  -webkit-transition: opacity, color, -webkit-transform 300ms ease-in-out;
-  transition: opacity, color, -webkit-transform 300ms ease-in-out;
-  transition: opacity, color, transform 300ms ease-in-out;
-  transition: opacity, color, transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
-}
-
-.arrow-link:hover {
-  color: #fff;
+  -webkit-transition-property: opacity, color, -webkit-transform;
+  transition-property: opacity, color, -webkit-transform;
+  transition-property: opacity, color, transform;
+  transition-property: opacity, color, transform, -webkit-transform;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 .arrow-link:hover i,
-.arrow-link:hover key-word {
+.arrow-link:hover .key-word {
   opacity: 1;
   -webkit-transform: none;
           transform: none;

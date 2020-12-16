@@ -75,26 +75,25 @@ a {
   font-size: 2rem;
   @include flex(row, center);
   color: #fff;
+
   .back-to-link {
-    @include flex(column, space-between);
-    i,
-    .key-word {
-      display: inline-block;
-      transition: all $transit-time ease-in-out;
-      color: #fff !important;
-    }
+    @include flex(column, flex-end);
     i {
-      transform: translateY(2rem) rotate(-180deg);
       opacity: 0;
+      transform: translateY(2rem) rotate(180deg);
+    }
+    .key-word,
+    i {
+      transition-property: opacity, color, transform;
+      transition-duration: $transit-time;
+      transition-timing-function: ease-in-out;
     }
     &:hover {
-      i {
+      i,
+      .key-word {
         opacity: 1;
         transform: none;
-      }
-      .key-word,
-      i {
-        color: $blue !important;
+        color: $blue;
       }
     }
   }

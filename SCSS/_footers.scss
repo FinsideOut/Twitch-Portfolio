@@ -17,12 +17,13 @@
   }
   .key-word,
   i {
-    transition: opacity, color, transform $transit-time ease-in-out;
+    transition-property: opacity, color, transform;
+    transition-duration: $transit-time;
+    transition-timing-function: ease-in-out;
   }
   &:hover {
-    color: #fff;
     i,
-    key-word {
+    .key-word {
       opacity: 1;
       transform: none;
       color: $blue;
