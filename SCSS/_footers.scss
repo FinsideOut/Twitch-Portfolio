@@ -6,10 +6,11 @@
 }
 .footer-links {
   font-size: 1.5rem;
-  @include flex(row, space-between);
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .arrow-link {
+  text-align: center;
   @include flex(column, flex-end);
   i {
     opacity: 0;
@@ -32,6 +33,7 @@
 
   &:first-child {
     @include flex(row, flex-start);
+    text-align: left;
     a {
       margin-left: 1rem;
     }
@@ -47,6 +49,7 @@
     }
   }
   &:last-child {
+    text-align: right;
     @include flex(row, flex-end);
     a {
       margin-right: 1rem;

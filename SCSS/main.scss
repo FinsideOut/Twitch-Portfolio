@@ -39,9 +39,23 @@
   }
 }
 .about-content {
-  @include flex(row, space-between);
-  .section-text {
-    width: 50%;
+  display: grid;
+  grid-template:
+    "about-title about-img" 1fr
+    "about-text about-img" 1fr
+    "about-footer about-img" 1fr/
+    1fr 1fr;
+  text-align: center;
+  .about-text {
+    grid-area: about-text;
+    font-size: 1rem;
+  }
+  .about-title {
+    grid-area: about-title;
+    font-size: 3rem;
+  }
+  .about-footer {
+    grid-area: about-footer;
   }
   img {
     width: 450px;
@@ -56,9 +70,12 @@
 .img-container {
   width: 40vw;
   position: relative;
+  grid-area: about-img;
   img {
     width: 100%;
     height: auto;
+    display: block;
+    margin: auto;
   }
   &:hover {
     .right,
@@ -91,7 +108,11 @@
 .icons-display {
   margin-top: 3rem;
   font-size: 1.5rem;
-  @include flex(row, space-around);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
 
   .about-icon {
     text-align: center;
@@ -215,3 +236,4 @@
     }
   }
 }
+@import "media";

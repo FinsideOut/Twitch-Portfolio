@@ -15,6 +15,7 @@
     transition-property: transform, color, text-shadow;
     transition-duration: $transit-time;
     transition-timing-function: ease-in-out;
+    text-align: right;
     .key-word {
       display: inline-block;
       transition-property: transform, color, text-shadow;
