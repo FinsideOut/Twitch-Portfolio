@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 .container {
-  width: 90%;
+  width: 90vw;
   margin: 0 auto;
   position: relative;
 }
@@ -73,7 +73,9 @@ a {
 }
 // links
 .back-to-container {
-  margin: 8rem auto;
+  margin: 0 auto !important;
+  border: 1px solid white;
+  padding: 8rem auto;
   font-size: 2rem;
   @include flex(row, center);
   color: #fff;

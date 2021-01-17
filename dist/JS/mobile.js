@@ -64,46 +64,65 @@ window.addEventListener("scroll", () => {
     window.scrollY < icons.offsetTop - vh(30)
   ) {
     animation.style.transform =
-      "translateY(" + (about.offsetTop - animation.offsetHeight) + "px)";
+      "translateY(" + (about.offsetTop - animation.offsetHeight / 2) + "px)";
+    animation.style.transform += "translateX(" + vw(50) + "px)";
   } else if (
     window.scrollY >= icons.offsetTop - vh(30) &&
     window.scrollY < videos.offsetTop - vh(30)
   ) {
     animation.style.transform =
-      "translateY(" + (icons.offsetTop - animation.offsetHeight) + "px)";
+      "translateY(" + (icons.offsetTop + animation.offsetHeight / 2) + "px)";
   } else if (
     window.scrollY >= videos.offsetTop - vh(30) &&
-    window.scrollY < middleLink.offsetTop - vh(30)
+    window.scrollY < middleLink.offsetTop - vh(70)
   ) {
     animation.style.transform =
-      "translateY(" + (videos.offsetTop - animation.offsetHeight) + "px)";
+      "translateY(" + (videos.offsetTop + animation.offsetHeight * 1.3) + "px)";
+    animation.style.transform += "translateX(" + vw(20) + "px)";
+    animation.style.transform += "scale(1.4)";
   } else if (
-    window.scrollY >= middleLink.offsetTop - vh(30) &&
+    window.scrollY >= middleLink.offsetTop - vh(70) &&
     window.scrollY < contact.offsetTop - vh(30)
   ) {
     animation.style.transform =
       "translateY(" +
       (middleLink.offsetTop -
-        middleLink.offsetHeight / 2 -
+        middleLink.offsetHeight * 2 -
         animation.offsetHeight) +
       "px)";
+    animation.style.transform +=
+      "translateX(" +
+      (middleLink.offsetLeft +
+        middleLink.offsetWidth / 2 -
+        animation.offsetWidth / 2 -
+        vw(5)) +
+      "px)";
+    animation.style.transform += "scale(0.3)";
   } else if (
     window.scrollY >= contact.offsetTop - vh(30) &&
-    window.scrollY < contact.offsetTop + contact.offsetHeight / 2 - vh(30)
+    window.scrollY < contact.offsetTop + contact.offsetHeight / 2 - vh(10)
   ) {
     animation.style.transform =
-      "translateY(" + (contact.offsetTop - animation.offsetHeight) + "px)";
+      "translateY(" + (contact.offsetTop + animation.offsetHeight) + "px)";
   } else if (
     window.scrollY >=
-    contact.offsetTop + contact.offsetHeight / 2 - vh(30)
+    contact.offsetTop + contact.offsetHeight / 2 - vh(10)
   ) {
     console.log("suckit");
     animation.style.transform =
       "translateY(" +
       (bottomLink.offsetTop -
-        bottomLink.offsetHeight / 2 -
+        bottomLink.offsetHeight * 2 -
         animation.offsetHeight) +
       "px)";
+    animation.style.transform +=
+      "translateX(" +
+      (bottomLink.offsetLeft +
+        bottomLink.offsetWidth / 2 -
+        animation.offsetWidth / 2 -
+        vw(5)) +
+      "px)";
+    animation.style.transform += "scale(0.5)";
   } else {
     // top reset
     animation.style.transform = "";
@@ -118,6 +137,13 @@ function vh(v) {
     window.innerHeight || 0
   );
   return (v * h) / 100;
+}
+function vw(w) {
+  var h = Math.max(
+    document.documentElement.clientWidth,
+    window.innerWidth || 0
+  );
+  return (w * h) / 100;
 }
 // const bg = document.getElementById("bg");
 // const bgWrapper = document.getElementById("bg-wrapper");

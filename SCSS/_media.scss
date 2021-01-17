@@ -1,4 +1,13 @@
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
+  body {
+    margin: 0;
+  }
+  .back-to-link {
+    margin: 0 auto !important;
+    i {
+      display: none !important;
+    }
+  }
   .video-display {
     flex-direction: column !important;
   }
@@ -51,6 +60,9 @@
   }
 }
 @media (max-width: 640px) {
+  #animation-wrapper {
+    transform: scale(0.7) translateX(-20%) translateY(-20%);
+  }
   body {
     background: linear-gradient(-45deg, #000, #333);
     // background-size: 100vh 100vw;
