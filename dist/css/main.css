@@ -1534,9 +1534,6 @@ textarea:focus {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
-  #headlines {
-    margin-top: 3rem !important;
-  }
   .footer-links {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
