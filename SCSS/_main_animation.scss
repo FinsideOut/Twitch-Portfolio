@@ -73,9 +73,15 @@
   position: absolute;
 }
 #main-animation {
-  width: 55vw;
-  margin-top: 3vh;
-  position: relative;
+  border: 1px solid green;
+
+  // width: 55vw;
+  // margin-top: 3vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   animation: spin 20000ms linear;
   animation-iteration-count: infinite;
   animation-direction: reverse;
@@ -120,4 +126,12 @@
       left: calc(50% - calc(#{$shape-size}/ 2) - #{$gap});
     }
   }
+}
+#animation-wrapper {
+  border: 1px solid white;
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
 }
