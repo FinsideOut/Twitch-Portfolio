@@ -92,7 +92,7 @@ a {
 }
 
 .back-to-container {
-  height: 40vh;
+  margin: 8rem auto;
   font-size: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -795,6 +795,7 @@ textarea:focus {
           justify-content: center;
   margin-top: 10vh;
   margin-bottom: 15vh;
+  text-align: center;
 }
 
 #page-footer p {
@@ -1275,8 +1276,18 @@ textarea:focus {
 
 .video-display .video-wrapper {
   margin: 3rem;
-  -webkit-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.9);
-          box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.9);
+  border: none;
+  outline: none;
+}
+
+.video-display .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #page-contact .key-word {
@@ -1308,8 +1319,8 @@ textarea:focus {
 
 #page-contact .contact-container form {
   background: rgba(0, 0, 0, 0.5);
-  margin-right: 3rem;
-  padding: 1rem;
+  margin: 2rem auto;
+  padding: 1rem 0rem;
   border-radius: 10px;
   font-size: 1.5rem;
   height: 100%;
@@ -1357,15 +1368,15 @@ textarea:focus {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin: 1rem 0.5rem;
+  margin: 1rem 0rem;
   width: 100%;
 }
 
 #page-contact .contact-container form .input-wrapper input,
 #page-contact .contact-container form .input-wrapper textarea {
   width: 80%;
-  padding: 0.5rem;
-  margin: 0.5rem;
+  padding: 0.5rem 0rem;
+  margin: 0.5rem 0rem;
   color: #fff;
   font-size: 1.5rem;
   resize: none;
@@ -1380,6 +1391,7 @@ textarea:focus {
 #page-contact .contact-container form .input-wrapper input {
   text-align: center;
   width: 70%;
+  margin: auto;
 }
 
 #page-contact .contact-container .section-text {
@@ -1450,6 +1462,29 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
+  body {
+    background: linear-gradient(-45deg, #000, #333);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  #bg-wrapper {
+    display: none;
+  }
+  iframe {
+    width: calc(560px / 2);
+    height: calc(315px / 2);
+  }
+  #page-contact .section-title {
+    font-size: 4rem;
+  }
+  #header-home {
+    height: 30vh;
+  }
+  .header-scrolled {
+    background: rgba(50, 50, 50, 0.5);
+  }
   .header-container {
     margin: 1rem auto 3rem;
     grid-template: "logo-nav" 1fr "social-nav" 1fr "main-nav" 1fr/ 1fr !important;
@@ -1544,6 +1579,15 @@ textarea:focus {
   }
   .footer-links .arrow-link:nth-child(2) {
     display: none;
+  }
+  form {
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+  }
+  form .message,
+  form .button {
+    -ms-grid-column: 1 !important;
+    grid-column: 1 !important;
   }
 }
 /*# sourceMappingURL=main.css.map */

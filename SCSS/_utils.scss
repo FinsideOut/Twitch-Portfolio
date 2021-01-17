@@ -71,7 +71,7 @@ a {
 }
 // links
 .back-to-container {
-  height: 40vh;
+  margin: 8rem auto;
   font-size: 2rem;
   @include flex(row, center);
   color: #fff;
