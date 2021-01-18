@@ -101,7 +101,7 @@ window.addEventListener("scroll", () => {
     window.scrollY < contact.offsetTop + contact.offsetHeight / 2 - vh(10)
   ) {
     animation.style.transform =
-      "translateY(" + (contact.offsetTop + animation.offsetHeight) + "px)";
+      "translateY(" + (contact.offsetTop - animation.offsetHeight / 2) + "px)";
   } else if (
     window.scrollY >=
     contact.offsetTop + contact.offsetHeight / 2 - vh(10)
