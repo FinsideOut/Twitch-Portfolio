@@ -443,12 +443,12 @@ textarea:focus {
   position: absolute;
   top: 20vh;
   left: 0vw;
-  -webkit-transition-property: top, left, opacity, -webkit-transform;
-  transition-property: top, left, opacity, -webkit-transform;
-  transition-property: transform, top, left, opacity;
-  transition-property: transform, top, left, opacity, -webkit-transform;
-  -webkit-transition-duration: 1800ms;
-          transition-duration: 1800ms;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-duration: 550ms;
+          transition-duration: 550ms;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   height: 50vh;
