@@ -15,7 +15,7 @@ const isInViewport = (el) => {
   );
 };
 $(window).on("beforeunload", function () {
-  //   $("body").hide();
+  $("body").hide();
   $(window).scrollTop(0);
 });
 window.addEventListener("load", () => {
@@ -50,10 +50,8 @@ const bottomLink = document.getElementById("bottom-link");
 const contact = document.getElementById("page-contact");
 window.addEventListener("scroll", () => {
   // scroll start
-
-  //   console.log(about.offsetTop - animation.offsetHeight / 2);
-  //   console.log(about.offsetTop);
-  console.log(window.scrollY);
+  console.log(about.offsetTop - animation.offsetHeight / 2);
+  console.log(about.offsetTop);
   //   console.log("vid", videos.offsetTop);
   //   console.log("mid", middleLink.offsetTop);
   //   console.log("con", contact.offsetTop);
@@ -66,20 +64,20 @@ window.addEventListener("scroll", () => {
     window.scrollY < icons.offsetTop - vh(30)
   ) {
     animation.style.transform =
-      "translateY(" + (about.offsetTop - animation.offsetHeight / 2) + "px)";
+      "translateY(" + (about.offsetTop + animation.offsetHeight / 2) + "px)";
     animation.style.transform += "translateX(" + vw(50) + "px)";
   } else if (
     window.scrollY >= icons.offsetTop - vh(30) &&
     window.scrollY < videos.offsetTop - vh(30)
   ) {
     animation.style.transform =
-      "translateY(" + (icons.offsetTop + animation.offsetHeight / 2) + "px)";
+      "translateY(" + (icons.offsetTop + animation.offsetHeight / 4) + "px)";
   } else if (
     window.scrollY >= videos.offsetTop - vh(30) &&
     window.scrollY < middleLink.offsetTop - vh(70)
   ) {
     animation.style.transform =
-      "translateY(" + (videos.offsetTop + animation.offsetHeight * 1.3) + "px)";
+      "translateY(" + (videos.offsetTop + vh(20)) + "px)";
     animation.style.transform += "translateX(" + vw(20) + "px)";
     animation.style.transform += "scale(1.4)";
   } else if (
@@ -88,9 +86,7 @@ window.addEventListener("scroll", () => {
   ) {
     animation.style.transform =
       "translateY(" +
-      (middleLink.offsetTop -
-        middleLink.offsetHeight * 2 -
-        animation.offsetHeight) +
+      (middleLink.offsetTop + vh(10) - animation.offsetHeight) +
       "px)";
     animation.style.transform +=
       "translateX(" +
@@ -99,7 +95,7 @@ window.addEventListener("scroll", () => {
         animation.offsetWidth / 2 -
         vw(5)) +
       "px)";
-    animation.style.transform += "scale(0.3)";
+    animation.style.transform += "scale(0.5)";
   } else if (
     window.scrollY >= contact.offsetTop - vh(30) &&
     window.scrollY < contact.offsetTop + contact.offsetHeight / 2 - vh(10)
@@ -113,9 +109,7 @@ window.addEventListener("scroll", () => {
     console.log("suckit");
     animation.style.transform =
       "translateY(" +
-      (bottomLink.offsetTop -
-        bottomLink.offsetHeight * 2 -
-        animation.offsetHeight) +
+      (bottomLink.offsetTop + vh(10) - animation.offsetHeight) +
       "px)";
     animation.style.transform +=
       "translateX(" +

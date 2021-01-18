@@ -43,7 +43,7 @@
       visibility: hidden;
       transform: translateY(100vh);
       @include normalize($short-time, calc(#{$short-delay-time} + 400ms));
-      background: $light;
+      background: #fff;
       color: set-text-color($light);
       border-radius: 50%;
       min-height: 200px;

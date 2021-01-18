@@ -7,7 +7,7 @@
   // removed on laod
   visibility: hidden;
   transform: translateY(-100vh);
-  height: fit-content;
+  // height: fit-content;
   position: sticky;
   top: 0;
   left: 0;
@@ -112,6 +112,11 @@
   .fa-twitch {
     &:hover {
       color: $twitch-color;
+    }
+  }
+  .fa-youtube {
+    &:hover {
+      color: $youtube-color;
     }
   }
 }

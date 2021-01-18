@@ -97,7 +97,6 @@ a {
 
 .back-to-container {
   margin: 0 auto !important;
-  border: 1px solid white;
   padding: 8rem auto;
   font-size: 2rem;
   display: -webkit-box;
@@ -487,7 +486,6 @@ textarea:focus {
 }
 
 #main-animation {
-  border: 1px solid green;
   position: absolute;
   top: 0;
   left: 0;
@@ -551,7 +549,6 @@ textarea:focus {
 }
 
 #animation-wrapper {
-  border: 1px solid white;
   position: relative;
   width: 50vw;
   height: 50vh;
@@ -638,7 +635,7 @@ textarea:focus {
           animation: normalize 1000ms ease-in-out calc(300ms + 400ms);
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  background: #ccc;
+  background: #fff;
   color: #222;
   border-radius: 50%;
   min-height: 200px;
@@ -811,8 +808,8 @@ textarea:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 10vh;
-  margin-bottom: 15vh;
+  margin-top: 30vh;
+  margin-bottom: 20vh;
   text-align: center;
 }
 
@@ -835,9 +832,6 @@ textarea:focus {
   visibility: hidden;
   -webkit-transform: translateY(-100vh);
           transform: translateY(-100vh);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -986,6 +980,10 @@ textarea:focus {
   color: #772ce8;
 }
 
+.nav-social .fa-youtube:hover {
+  color: red;
+}
+
 .header-scrolled {
   opacity: 0.15;
 }
@@ -1110,18 +1108,29 @@ textarea:focus {
 .about-content {
   display: -ms-grid;
   display: grid;
-  grid-template: "about-title about-img" 1fr "about-text about-img" 1fr "about-footer about-img" 1fr/ 1fr 1fr;
+  grid-template: "about-title about-img" 1fr "about-text about-img" 1fr "about-footer about-img" 1fr/ 3fr 2fr;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .about-content .about-text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   grid-area: about-text;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .about-content .about-title {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   grid-area: about-title;
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .about-content .about-footer {
@@ -1129,7 +1138,7 @@ textarea:focus {
 }
 
 .about-content img {
-  width: 450px;
+  width: 100%;
   height: auto;
   -webkit-filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #fe929a);
           filter: drop-shadow(-10px 10px #01b5ce) drop-shadow(10px -10px #fe929a);
@@ -1145,7 +1154,9 @@ textarea:focus {
 }
 
 .img-container {
-  width: 40vw;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  width: 85%;
   position: relative;
   grid-area: about-img;
 }
@@ -1169,7 +1180,7 @@ textarea:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: absolute;
-  top: 18%;
+  top: 16%;
   visibility: hidden;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
@@ -1183,11 +1194,11 @@ textarea:focus {
 }
 
 .img-container .left {
-  left: 40%;
+  left: 50%;
 }
 
 .img-container .right {
-  left: 50%;
+  left: 60%;
 }
 
 .icons-display {
@@ -1337,7 +1348,7 @@ textarea:focus {
 
 #page-contact .contact-container form {
   background: rgba(0, 0, 0, 0.5);
-  margin: 2rem auto;
+  margin: 2rem 2rem;
   padding: 1rem 0rem;
   border-radius: 10px;
   font-size: 1.5rem;
@@ -1417,7 +1428,12 @@ textarea:focus {
   margin-top: 0;
 }
 
-@media (max-width: 1025px) {
+.bg {
+  max-width: 100vw !important;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
   body {
     margin: 0;
   }
@@ -1443,7 +1459,7 @@ textarea:focus {
     max-width: 100% !important;
   }
   .contact-container form {
-    margin-top: 3rem;
+    margin: 3rem auto !important;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -1452,7 +1468,7 @@ textarea:focus {
 
 @media (max-width: 768px) {
   .header-container {
-    margin-top: 1rem;
+    padding-top: 1rem;
     grid-template: "logo-nav social-nav" 1fr "main-nav main-nav" 1fr/ 1fr 1fr !important;
     width: 100%;
   }
@@ -1469,7 +1485,11 @@ textarea:focus {
             justify-content: center;
   }
   .about-content {
-    grid-template: "about-title" 1fr "about-img" 2fr "about-text" 1fr "about-footer" 1fr/ 1fr;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    margin-top: 4rem !important;
+    grid-template: "about-img" 6fr "about-text" 2fr "about-footer" 1fr/ 1fr;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1478,23 +1498,74 @@ textarea:focus {
             justify-content: center;
   }
   .about-content .img-container {
-    width: 70%;
+    width: 90%;
+    -ms-flex-item-align: end !important;
+        -ms-grid-row-align: end !important;
+        align-self: end !important;
     margin: auto;
+  }
+  .about-content .about-title {
+    display: none;
+  }
+  .about-content .about-text {
+    margin-top: 3rem;
+  }
+  .about-content .about-footer {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin: 1rem !important;
   }
   .icons-display {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
   }
+  form {
+    margin: 2rem auto 6rem !important;
+  }
+  #video-section .mini-footer {
+    margin-bottom: 6rem !important;
+  }
 }
 
 @media (max-width: 640px) {
+  .about-content {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    margin-top: 4rem !important;
+    grid-template: "about-img" 4fr "about-text" 2fr "about-footer" 1fr/ 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .about-content .img-container {
+    width: 90%;
+    -ms-flex-item-align: end !important;
+        -ms-grid-row-align: end !important;
+        align-self: end !important;
+    margin: auto;
+  }
+  .about-content .about-title {
+    display: none;
+  }
+  .about-content .about-text {
+    margin-top: 3rem;
+  }
+  .about-content .about-footer {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-top: 2rem !important;
+  }
   #animation-wrapper {
     -webkit-transform: scale(0.7) translateX(-20%) translateY(-20%);
             transform: scale(0.7) translateX(-20%) translateY(-20%);
   }
   body {
-    background: linear-gradient(-45deg, #000, #333);
+    background: linear-gradient(-45deg, #000, #555);
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1519,7 +1590,7 @@ textarea:focus {
     background: rgba(50, 50, 50, 0.5);
   }
   .header-container {
-    margin: 1rem auto 3rem;
+    padding: 1rem auto 3rem;
     grid-template: "logo-nav" 1fr "social-nav" 1fr "main-nav" 1fr/ 1fr !important;
     width: 100%;
   }
@@ -1534,31 +1605,19 @@ textarea:focus {
             align-items: center;
     text-align: center;
   }
+  .header-container .nav-social {
+    width: 90% !important;
+    margin: auto;
+  }
+  .header-container .nav-social li {
+    padding: 1rem 0.5rem !important;
+  }
   .header-container .logo {
     margin-right: 0;
     font-size: 4rem !important;
   }
   .header-container .main-nav {
-    margin-top: 1rem;
-  }
-  .about-content {
-    grid-template: "about-img" 2fr "about-text" 1fr "about-footer" 1fr/ 1fr;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .about-content .img-container {
-    width: 90%;
-    margin: auto;
-  }
-  .about-content .about-title {
-    display: none;
-  }
-  .about-content .about-text {
-    margin-top: 3rem;
+    margin: 1rem auto 4rem;
   }
   .video-container p {
     font-size: 2rem;
@@ -1638,6 +1697,12 @@ textarea:focus {
   form .button {
     -ms-grid-column: 1 !important;
     grid-column: 1 !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .section-title {
+    font-size: 2.5rem !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
