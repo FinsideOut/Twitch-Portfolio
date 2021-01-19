@@ -1,4 +1,7 @@
 @media (max-width: 1024px) {
+  #animation-wrapper {
+    transition-duration: 550ms !important;
+  }
   body {
     margin: 0;
   }

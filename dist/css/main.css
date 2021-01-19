@@ -397,8 +397,8 @@ textarea:focus {
 }
 
 .bg-icons {
-  -webkit-transform: translate(-30px, -20px) scale(1.2);
-          transform: translate(-30px, -20px) scale(1.2);
+  -webkit-transform: translate(-100px, -20px) scale(1.2);
+          transform: translate(-100px, -20px) scale(1.2);
   -webkit-transform-origin: center;
           transform-origin: center;
 }
@@ -447,8 +447,8 @@ textarea:focus {
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
-  -webkit-transition-duration: 550ms;
-          transition-duration: 550ms;
+  -webkit-transition-duration: 1800ms;
+          transition-duration: 1800ms;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   height: 50vh;
@@ -1434,6 +1434,10 @@ textarea:focus {
 }
 
 @media (max-width: 1024px) {
+  #animation-wrapper {
+    -webkit-transition-duration: 550ms !important;
+            transition-duration: 550ms !important;
+  }
   body {
     margin: 0;
   }

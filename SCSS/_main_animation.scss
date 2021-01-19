@@ -6,7 +6,7 @@
   transform-origin: center;
 }
 .bg-icons {
-  transform: translate(-30px, -20px) scale(1.2);
+  transform: translate(-100px, -20px) scale(1.2);
   transform-origin: center;
 }
 .bg-video {
@@ -41,7 +41,7 @@
   top: 20vh;
   left: 0vw;
   transition-property: transform, opacity;
-  transition-duration: 550ms;
+  transition-duration: $animation-shift;
   transition-timing-function: ease-in-out;
   height: 50vh;
 }
