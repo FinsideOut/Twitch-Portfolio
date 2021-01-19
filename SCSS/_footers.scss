@@ -8,10 +8,12 @@
   font-size: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
 }
 .arrow-link {
   text-align: center;
   @include flex(column, flex-end);
+
   i {
     opacity: 0;
     transform: translateY(-2rem) rotate(180deg);
